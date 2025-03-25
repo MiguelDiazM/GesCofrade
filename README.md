@@ -10,4 +10,4 @@
   </ul>
 </h3>
 
-<p>El TFG consiste en un proyecto llamado GesCofrade, un programa de gestión para hermandades basado en módulos</p>
+<p>El TFG consiste en un proyecto llamado GesCofrade, un programa de gestión para hermandades basado en módulos y realizado en MEDAC Nova </p>
