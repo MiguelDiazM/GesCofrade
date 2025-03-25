@@ -9,3 +9,5 @@
    <li>Miguel Díaz</li>
   </ul>
 </h3>
+
+<p>El TFG consiste en un proyecto llamado GesCofrade, un programa de gestión para hermandades basado en módulos</p>
