@@ -9,14 +9,13 @@ CREATE TABLE Hermandad (
     ubicacion VARCHAR(255) NOT NULL  -- Nueva columna 'ubicacion'
 );
 
--- Tabla Hermanos
+-- Tabla Hermanos (ahora el DNI es la clave primaria)
 CREATE TABLE Hermanos (
-    id_hermano INT AUTO_INCREMENT PRIMARY KEY,
+    DNI VARCHAR(20) PRIMARY KEY,  -- Ahora el DNI es la clave primaria
     nombre VARCHAR(255) NOT NULL,
     apellido VARCHAR(255) NOT NULL,
     direccion TEXT NOT NULL,
     telefono VARCHAR(20) NOT NULL,
-    DNI VARCHAR(20) UNIQUE NOT NULL,
     id_hermandad JSON NOT NULL,
     CONSTRAINT chk_hermandad_json CHECK (JSON_VALID(id_hermandad))
 );
@@ -54,18 +53,18 @@ INSERT INTO Hermandad (nombre, tipo, ubicacion) VALUES
 ('Hermandad de Nuestro Padre Jesús Nazareno', 'Penitencial', 'Écija, Sevilla'),
 ('Hermandad de la Virgen del Rocío', 'Gloria', 'Alcalá de Guadaíra, Sevilla');
 
--- Inserción de datos para Hermanos (para las nuevas hermandades)
-INSERT INTO Hermanos (nombre, apellido, direccion, telefono, DNI, id_hermandad) VALUES
-('Antonio', 'López', 'Calle Real 5', '654321987', '11223344A', '[1,4]'),
-('Lucía', 'Martín', 'Av. de la Paz 12', '678123456', '22334455B', '[2]'),
-('Carlos', 'Ramírez', 'Calle Nueva 9', '698745632', '33445566C', '[3,5]'),
-('Rosa', 'Moreno', 'Plaza Mayor 3', '600123987', '44556677D', '[1,2,3]'),
-('David', 'Serrano', 'Camino del Molino 8', '612345678', '55667788E', '[4,5]'),
-('José', 'González', 'C/ Mayor 12', '610000001', '11223344J', '[6]'),  -- Alcalá de Guadaíra
-('María', 'Sánchez', 'C/ Real 14', '610000002', '22334455M', '[7]'),  -- Utrera
-('Carlos', 'Fernández', 'C/ Sevilla 9', '610000003', '33445566C', '[8]'),  -- Sevilla Capital
-('Laura', 'Hernández', 'C/ Virgen 20', '610000004', '44556677L', '[9]'),  -- Utrera
-('Antonio', 'Pérez', 'C/ Sol 15', '610000005', '55667788A', '[10]');  -- Dos Hermanas
+-- Inserción de datos para Hermanos (ahora con DNI como clave primaria)
+INSERT INTO Hermanos (DNI, nombre, apellido, direccion, telefono, id_hermandad) VALUES
+('11223344A', 'Antonio', 'López', 'Calle Real 5', '654321987', '[1,4]'),
+('22334455B', 'Lucía', 'Martín', 'Av. de la Paz 12', '678123456', '[2]'),
+('33445566C', 'Carlos', 'Ramírez', 'Calle Nueva 9', '698745632', '[3,5]'),
+('44556677D', 'Rosa', 'Moreno', 'Plaza Mayor 3', '600123987', '[1,2,3]'),
+('55667788E', 'David', 'Serrano', 'Camino del Molino 8', '612345678', '[4,5]'),
+('11223344J', 'José', 'González', 'C/ Mayor 12', '610000001', '[6]'),  -- Alcalá de Guadaíra
+('22334455M', 'María', 'Sánchez', 'C/ Real 14', '610000002', '[7]'),  -- Utrera
+('33445566C', 'Carlos', 'Fernández', 'C/ Sevilla 9', '610000003', '[8]'),  -- Sevilla Capital
+('44556677L', 'Laura', 'Hernández', 'C/ Virgen 20', '610000004', '[9]'),  -- Utrera
+('55667788A', 'Antonio', 'Pérez', 'C/ Sol 15', '610000005', '[10]');  -- Dos Hermanas
 
 -- Inserción de datos para Inventario (para las nuevas hermandades)
 INSERT INTO Inventario (referencia, elemento, descripcion, id_hermandad) VALUES
