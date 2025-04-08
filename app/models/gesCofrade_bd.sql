@@ -1,5 +1,5 @@
-CREATE DATABASE IF NOT EXISTS Hermandades;
-USE Hermandades;
+CREATE DATABASE IF NOT EXISTS gesCofrade;
+USE gesCofrade;
 
 CREATE TABLE Hermandad (
     id_hermandad INT AUTO_INCREMENT PRIMARY KEY,
@@ -56,7 +56,7 @@ INSERT INTO Hermanos (DNI, nombre, apellido, direccion, telefono, id_hermandad) 
 ('55667788E', 'David', 'Serrano', 'Camino del Molino 8', '612345678', '[4,5]'),
 ('11223344J', 'José', 'González', 'C/ Mayor 12', '610000001', '[6]'),
 ('22334455M', 'María', 'Sánchez', 'C/ Real 14', '610000002', '[7]'),
-('33445566C', 'Carlos', 'Fernández', 'C/ Sevilla 9', '610000003', '[8]'),
+('33445576C', 'Carlos', 'Fernández', 'C/ Sevilla 9', '610000003', '[8]'),
 ('44556677L', 'Laura', 'Hernández', 'C/ Virgen 20', '610000004', '[9]'),
 ('55667788A', 'Antonio', 'Pérez', 'C/ Sol 15', '610000005', '[10]');
 
