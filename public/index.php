@@ -29,8 +29,13 @@
         </div>
         <div class="singupLoginProfile">
             <img src="Img/profile.png" id="profile" alt="">
-            <a href="">Sign Up /</a>
-            <a href="">Login</a>
+            <a href="../config/signup.php">Sign Up /</a>
+            <a href="../config/login.php">Login</a>
+            <?php 
+            /**
+                HAY QUE AGREGAR UN LOGOUT QUE SE MUESTRE CON JS CUANDO HAYA UNA SESION INICIADA
+            */
+            ?>
         </div>
     </header>
 
