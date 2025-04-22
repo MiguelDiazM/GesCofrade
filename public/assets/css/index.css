@@ -7,6 +7,7 @@
 html{
     background-color: #73D2DE;
     font-family: "Roboto";
+
 }
 body{
     margin: 0;
@@ -30,7 +31,7 @@ header{
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: space-between;
-    list-style-type: none;
+    justify-content: space-around;
 }
 
 #profile{
@@ -182,5 +183,4 @@ a{
         width: 100%;
         margin: auto;
     }
-
 }
