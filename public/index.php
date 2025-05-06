@@ -9,7 +9,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="Img/logoProvisional.png" alt="Gescofrade">
+            <img src="assets/img/img/logoProvisional.png" alt="Gescofrade">
         </div>
         <div class="menuHeader">
         <ul>
@@ -28,7 +28,7 @@
         </ul>
         </div>
         <div class="singupLoginProfile">
-            <img src="Img/profile.png" id="profile" alt="">
+            <img src="assets/img/img/profile.png" id="profile" alt="">
             <a href="../config/signup.php">Sign Up /</a>
             <a href="../config/login.php">Login</a>
             <?php 
@@ -87,11 +87,11 @@
     <footer>
         <div class="redesSociales">
             <ul>
-                <li><img src="Img/instagram.png" alt=""></li>
-                <li><img src="Img/facebook.png" alt=""></li>
-                <li><img src="Img/twitter.png" alt=""></li>
-                <li><img src="Img/linkedin.png" alt=""></li>
-            </ul>
+                <li><img src="assets/img/img/instagram.png" alt=""></li>
+                <li><img src="assets/img/img/facebook.png" alt=""></li>
+                <li><img src="assets/img/img/twitter.png" alt=""></li>
+                <li><img src="assets/img/img/linkedin.png" alt=""></li>
+            </ul>        
         </div>
     </footer>
 </body>
