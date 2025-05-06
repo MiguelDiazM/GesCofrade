@@ -22,10 +22,11 @@
                     exit;
                 } else {
                     $err_contrasena = "<span class='bg-warning'>La contraseña no coincide.</span>";
+                    header("Location: ../views/login.php?err_contrasena=$err_contrasena");
                 }
             } else {
                 $err_nombre = "<span class='bg-warning'>El nombre de usuario no se encuentra en la base de datos.</span>";
-               
+                header("Location: ../views/login.php?err_nombre=$err_nombre");
                 
             }
         }
