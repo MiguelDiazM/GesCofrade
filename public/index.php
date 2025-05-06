@@ -44,14 +44,28 @@
         <h1 id="h1FirstSection">
             El #1º en administración de cofradías
         </h1>
-        <h3>
+        <p>
             Facilitamos la administración de tu cofradía
-        </h3>
+        </p>
+    </div>
+    <div class="dataFirstSection">
+        <table class="tableFirstSection">
+            <tr>
+                <td>680</td>
+                <td>8K+</td>
+                <td>500+</td>
+            </tr>
+            <tr>
+                <td>Hermanos activos</td>
+                <td>Cofradías asociadas</td>
+                <td>Suscripciones</td>
+            </tr>
+        </table>
     </div>
     </section>
 
     <section class="secondSection"> 
-        <h1>Nuestas suscripciones más populares...</h1>
+        <h1>Nuestras suscripciones más populares...</h1>
         <div>
         <article>
             Suscripcion 1
@@ -70,6 +84,15 @@
         </article>
     </div>
     </section>
-
+    <footer>
+        <div class="redesSociales">
+            <ul>
+                <li><img src="Img/instagram.png" alt=""></li>
+                <li><img src="Img/facebook.png" alt=""></li>
+                <li><img src="Img/twitter.png" alt=""></li>
+                <li><img src="Img/linkedin.png" alt=""></li>
+            </ul>
+        </div>
+    </footer>
 </body>
 </html>

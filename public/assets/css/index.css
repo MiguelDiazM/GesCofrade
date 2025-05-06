@@ -1,5 +1,13 @@
+/*BODY*/
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/static/Roboto-Regular.ttf");
+  }
+
 html{
     background-color: #73D2DE;
+    font-family: "Roboto";
+
 }
 body{
     margin: 0;
@@ -10,8 +18,9 @@ body{
 header{
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content:space-around;
+    justify-content:space-between;
     justify-items: center;
+    font-size: large;
 }
 
 .menuHeader{
@@ -21,8 +30,8 @@ header{
 .menuHeader ul{
     display: grid;
     grid-template-columns: repeat(4, auto);
+    justify-content: space-between;
     justify-content: space-around;
-    list-style-type: none;
 }
 
 #profile{
@@ -32,6 +41,7 @@ header{
 .singupLoginProfile{
     display: grid;
     grid-template-columns: auto auto auto;
+    margin-right: 10px;
 }
 
 .singupLoginProfile a{
@@ -50,18 +60,36 @@ a{
 /*FIRST SECTION*/
 
 .firstSection{
+    display: grid;
+    align-items: end;
     font-size: 30px;
-    height: 40rem;
+    height: 50rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../Img/VirgenPantalla0.jpg");
+    background-size: cover;
 }
 
 .textFirstSection{
+    margin-left: 3%;
     color: white;
-    position: absolute;
-    bottom: 0;
 }
 
-.textFirstSection h3{
-    color: #F1A00A;
+.textFirstSection p{
+    color: #FFBC42;
+}
+
+.dataFirstSection{
+    text-align: center;
+    background-color: #FFBC42;
+    width: 45%;
+    height: 40%;
+    border-top-right-radius: 70px;
+    font-size: smaller;
+}
+
+.tableFirstSection{
+    margin: auto;
+    margin-top: 20px;
 }
 
 /*SECOND SECTION*/
@@ -70,9 +98,8 @@ a{
     grid-template-rows: auto auto;
     justify-content: space-around;
     background-color: white;
-    height: 20rem;
+    height: 100%;
     width: 100%;
-
 }
 
 .secondSection div{
@@ -80,6 +107,7 @@ a{
     grid-template-columns: repeat(5, auto);
     gap: 50px;
     width: 100%;
+    margin-bottom: 50px;
 }
 
 .secondSection div article{
@@ -87,11 +115,72 @@ a{
     align-items: center;
     justify-content: center;
     background-color: #73D2DE;
-    width: 150px;
-    height: 200px;
+    width: 250px;
+    height: 300px;
     border-radius: 10%;
-    -webkit-border-radius: 10%;
-    -moz-border-radius: 10%;
-    -ms-border-radius: 10%;
-    -o-border-radius: 10%;
+}
+
+/*FOOTER*/
+.redesSociales ul{
+    display: grid;
+    grid-template-columns:  repeat(4, auto);
+    list-style-type: none;
+}
+
+.redesSociales{
+    width: 30%;
+    margin: auto;
+}
+
+.redesSociales img{
+    width: 35px;
+}
+
+/*RESPONSIVIDAD*/
+@media (max-width: 600px) {
+
+    header{
+        grid-template-columns: auto;
+        justify-content: center;
+    }
+
+    .menuHeader{
+        width: 100%;
+    }
+
+    .menuHeader li{
+        margin-right: 15px;
+    }
+
+    .firstSection{
+        background-size:cover;
+    }
+
+    .secondSection div{
+        display: grid;
+        grid-template-columns: auto;
+        width: 100%;
+    }  
+
+    .secondSection{
+        display: grid;
+        grid-template-rows: auto auto;
+        justify-content:center;
+        background-color: white;
+        height: 100%;
+        width: 100%;
+    }
+
+    .secondSection div article{
+        margin: auto;
+    }
+
+    .dataFirstSection{
+        display: none;
+    }
+
+    .redesSociales{
+        width: 100%;
+        margin: auto;
+    }
 }
