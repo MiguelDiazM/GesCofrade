@@ -9,7 +9,7 @@
     <?php 
         error_reporting(E_ALL);
         ini_set("display_errors",1);
-        require "database.php";
+        require "../../config/database.php";
     ?>
 </head>
 <body>
@@ -19,7 +19,6 @@
 
             $tmp_nombre = $_POST["nombre"] ?? "";
             $tmp_contrasena = $_POST["contrasena"] ?? "";
-            $tmp_idHermandad = $_POST["id"] ?? "";
 
             if(empty($tmp_nombre)){
                 $err_nombre = "<span class='bg-warning'>El nombre no puede estar vacío</span>";
@@ -33,13 +32,7 @@
                 $contrasena = $tmp_contrasena;
             }
 
-            if(isset($tmp_idHermandad)){
-                $idHermandad = $tmp_idHermandad;
-            } else {
-                $err_idHermandad = "<span class='bg-warning'>La id de la hermandad no puede estar vacía</span>";
-            }
-
-            if(isset($nombre) && isset($contrasena) && isset($idHermandad)){
+            if(isset($nombre) && isset($contrasena)){
                 // Comprobamos si el usuario ya existe
                 $consulta = "SELECT * FROM usuarios WHERE usuario = ?";
                 $stmt = $_conexion->prepare($consulta);
@@ -47,7 +40,7 @@
 
                 if($stmt->rowCount() == 0){
                     $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-                    $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (?, ?, ?)";
+                    $insert = "INSERT INTO usuarios (usuario, contrasena) VALUES (?, ?, ?)";
                     $stmt_insert = $_conexion->prepare($insert);
                     $stmt_insert->execute([$nombre, $contrasena_hash, $idHermandad]);
 
@@ -71,11 +64,6 @@
                 <label class="form-label">Contraseña</label>
                 <input type="password" name="contrasena" class="form-control">
                 <?php  if (isset($err_contrasena)) echo $err_contrasena; ?> 
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Id Hermandad</label>
-                <input type="number" name="id" class="form-control">
-                <?php  if (isset($err_idHermandad)) echo $err_idHermandad; ?> 
             </div>
             <div class="mb-3">
                 <input type="submit" value="Registrarse" class="btn btn-primary">
