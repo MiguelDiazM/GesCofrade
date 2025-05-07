@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>REGISTRARSE</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../public/assets/css/signup.css">
 
     <?php 
         error_reporting(E_ALL);
@@ -13,7 +13,9 @@
     ?>
 </head>
 <body>
-
+    <header>
+        <img src="../../public\assets\img\img\logoGescofrade.png" alt="Logo Gescofrade" id="logo">
+    </header>
     <?php
         if($_SERVER["REQUEST_METHOD"]=="POST"){
 
@@ -52,27 +54,28 @@
         }
     ?>
 
-    <div class="container m-5">
-        <h1>Formulario de registro</h1>
+    <div class="container-login">
+        <h1>Crea una cuenta</h1>
         <form action="" method="post" enctype="multipart/form-data" class="col-4">
-            <div class="mb-3">
+            <div class="name">
                 <label class="form-label">Nombre de usuario</label>
                 <input type="text" name="nombre" class="form-control">
                 <?php  if (isset($err_nombre)) echo $err_nombre; ?> 
             </div>
-            <div class="mb-3">
+            <div class="password">
                 <label class="form-label">Contraseña</label>
                 <input type="password" name="contrasena" class="form-control">
                 <?php  if (isset($err_contrasena)) echo $err_contrasena; ?> 
             </div>
-            <div class="mb-3">
+            <div class="submit">
                 <input type="submit" value="Registrarse" class="btn btn-primary">
             </div>
         </form>
         <br>
-        <h3>Si ya tienes cuenta, inicia sesión</h3>
-        <a href="login.php" class="btn btn-secondary">Iniciar sesión</a>
-
+        <p>Si ya tienes una cuenta, inicia sesión</p>
+        <div class="linkLogin">
+        <a href="login.php" class="btn btn-secondary"><p>Iniciar sesión</p></a>
+        </div>
         <?php  
             if(isset($err_nombre2)) echo $err_nombre2; 
             if(isset($correcto)) echo $correcto;

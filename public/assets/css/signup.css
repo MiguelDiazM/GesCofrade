@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/static/Roboto-Regular.ttf");
+}
+html {
+  height: 100%;
+  font-family: "Roboto";
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/img/semana-santa-sevilla-signup.jpg");
+  background-size: cover;
+}
+body {
+  display: grid;
+  justify-content: center;
+  place-content: center;
+  height: 100%;
+}
+
+#logo {
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 200px;
+}
+
+form div {
+  display: grid;
+  grid-auto-columns: 70%;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.container-login {
+  display: grid;
+
+  width: 400px;
+  height: 450px;
+  background-color: #73d2de;
+  color: white;
+  border-radius: 30px;
+}
+h1,
+p {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+input {
+  border-radius: 5px;
+  height: 30px;
+  border: 0;
+}
+
+.submit input:hover {
+  background-color: #ffbc42;
+  transition: 0.2s;
+}
+
+.linkLogin {
+  text-align: center;
+  background-color: #f0f0f0;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
