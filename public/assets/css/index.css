@@ -32,6 +32,12 @@ header{
     grid-template-columns: repeat(4, auto);
     justify-content: space-between;
     justify-content: space-around;
+    list-style: none;
+}
+
+a:hover{
+    color: #FFBC42;
+    transition: 0.5s;
 }
 
 #profile{
@@ -112,12 +118,42 @@ a{
 
 .secondSection div article{
     display: grid;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     background-color: #73D2DE;
-    width: 250px;
-    height: 300px;
-    border-radius: 10%;
+    width: 400px;
+    height: 1000px;
+    border-radius: 50px;
+    color: white;
+    font-size: larger;
+    box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.secondSection div article:hover{
+    transform: scale(1.04);
+    transition: 0.7s;
+}
+
+.standard-suscription{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/suscripcion-estandar.jpg");
+    background-size: cover;
+}
+
+.professional-suscription{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/suscripcion-profesional.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+.premium-suscription{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/suscripcionPremium.jpeg");
+    background-size: cover;
+    background-position: 50% 50%;
 }
 
 /*FOOTER*/
@@ -154,6 +190,7 @@ a{
 
     .firstSection{
         background-size:cover;
+        background-position: 50% 50%;
     }
 
     .secondSection div{

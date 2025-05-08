@@ -29,7 +29,7 @@
         </div>
         <div class="singupLoginProfile">
             <img src="assets/img/img/profile.png" id="profile" alt="">
-            <a href="../app/controllers/signup.php">Sign Up /</a>
+            <a href="../app/controllers/signup.php">Sign Up</a> 
             <a href="../app/views/login.php">Login</a>
             <?php 
             /**
@@ -67,20 +67,17 @@
     <section class="secondSection"> 
         <h1>Nuestras suscripciones más populares...</h1>
         <div>
-        <article>
-            Suscripcion 1
+        <article class="standard-suscription">
+            <h1>Suscripción estándar</h1>
+            <p>Ideal para cofradías pequeñas</p>
         </article>
-        <article>
-            Suscripcion 2
+        <article class="professional-suscription">
+            <h1>Suscripción profesional</h1>
+            <p>Pensado para cofradías de más de 100 hermanos</p>
         </article>
-        <article>
-            Suscripcion 3
-        </article>
-        <article>
-            Suscripcion 4
-        </article>
-        <article>
-            Suscripcion 5
+        <article class="premium-suscription">
+             <h1>Suscripción premium</h1>
+             <p>Para las cofradías que quieren llegar al siguiente nivel</p>
         </article>
     </div>
     </section>
