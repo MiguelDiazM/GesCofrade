@@ -4,19 +4,20 @@
     src: url("../fonts/static/Roboto-Regular.ttf");
   }
 
-html{
-    background-color: #73D2DE;
+html, body{
     font-family: "Roboto";
-
-}
-body{
+    background-color: white;
+    height: 100%;
     margin: 0;
+    padding: 0;
 }
+
 
 /*HEADER*/
 
 header{
     display: grid;
+    background-color: #73D2DE;
     grid-template-columns: auto auto auto;
     justify-content:space-between;
     justify-items: center;
@@ -32,6 +33,12 @@ header{
     grid-template-columns: repeat(4, auto);
     justify-content: space-between;
     justify-content: space-around;
+    list-style: none;
+}
+
+a:hover{
+    color: #FFBC42;
+    transition: 0.5s;
 }
 
 #profile{
@@ -63,7 +70,7 @@ a{
     display: grid;
     align-items: end;
     font-size: 30px;
-    height: 50rem;
+        height: 50rem;
     background: linear-gradient(rgba(0, 0, 0, 0.5), 
     rgba(0, 0, 0, 0.5)), url("../img/img/VirgenPantalla0.jpg");
     background-size: cover;
@@ -98,29 +105,112 @@ a{
     grid-template-rows: auto auto;
     justify-content: space-around;
     background-color: white;
-    height: 100%;
     width: 100%;
 }
 
 .secondSection div{
     display: grid;
-    grid-template-columns: repeat(5, auto);
+    grid-template-columns: repeat(3, auto);
     gap: 50px;
     width: 100%;
     margin-bottom: 50px;
 }
 
-.secondSection div article{
+.suscription{
     display: grid;
-    align-items: center;
-    justify-content: center;
+    text-align: center;
     background-color: #73D2DE;
-    width: 250px;
-    height: 300px;
-    border-radius: 10%;
+    width: 400px;
+    height: 1000px;
+    border-radius: 50px;
+    color: white;
+    font-size: larger;
+    box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+     rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
+.suscription:hover{
+    transform: scale(1.04);
+    transition: 0.7s;
+}
+
+#standard-suscription{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/suscripcion-estandar.jpg");
+    background-size: cover;
+}
+
+#professional-suscription{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/suscripcion-profesional.jpg");
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+#premium-suscription{
+    background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/suscripcionPremium.jpeg");
+    background-size: cover;
+    background-position: 50% 50%;
+}
+
+/*REVIEWS*/
+.section-reviews{
+    display: grid;
+    grid-template-rows: auto auto;
+    place-items: center;
+    align-items: center;
+}
+
+.article-reviews{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+}
+
+.review{
+    background-color: white;
+    display: grid;
+    place-items: center;
+    border-radius: 30px;
+    height: 250px;
+    width: 400px;
+    font-size: larger;
+    text-align: center;
+    box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.person-photo{
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+}
+
+#person1{
+    background-image: url("../img/img/persona1review.jpg");
+    background-size: 100px;
+}
+#person2{
+    background-image: url("../img/img/mujer.png");
+    background-size: 100px;
+}
+#person3{
+    background-image: url("../img/img/persona3review.jpg");
+    background-size: 75px;
+    background-position: center;
+}
+
+
 /*FOOTER*/
+
+footer{
+    background-color: #73D2DE;
+}
 .redesSociales ul{
     display: grid;
     grid-template-columns:  repeat(4, auto);
@@ -134,6 +224,26 @@ a{
 
 .redesSociales img{
     width: 35px;
+    cursor: pointer;
+}
+
+.container-info{
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.info{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+.table-footer{
+    font-size: larger;
+    margin: auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 50%;
+    text-align: left;
 }
 
 /*RESPONSIVIDAD*/
@@ -154,6 +264,7 @@ a{
 
     .firstSection{
         background-size:cover;
+        background-position: 50% 50%;
     }
 
     .secondSection div{
@@ -175,6 +286,11 @@ a{
         margin: auto;
     }
 
+    .article-reviews{
+        display: grid;
+        grid-template-columns: auto;    
+    }
+
     .dataFirstSection{
         display: none;
     }
@@ -182,5 +298,16 @@ a{
     .redesSociales{
         width: 100%;
         margin: auto;
+    }
+
+    .table-footer tr{
+        display: grid;
+        grid-template-columns: auto auto auto;
+    }
+
+    .table-footer td, th {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 5px; 
     }
 }

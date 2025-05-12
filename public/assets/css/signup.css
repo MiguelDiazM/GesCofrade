@@ -32,10 +32,9 @@ form div {
 
 .container-login {
   display: grid;
-
-  width: 400px;
-  height: 450px;
-  background-color: #73d2de;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
   border-radius: 30px;
 }
