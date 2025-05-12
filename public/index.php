@@ -38,7 +38,7 @@
             ?>
         </div>
     </header>
-
+    <main>
     <section class="firstSection">
     <div class="textFirstSection">
         <h1 id="h1FirstSection">
@@ -67,21 +67,57 @@
     <section class="secondSection"> 
         <h1>Nuestras suscripciones más populares...</h1>
         <div>
-        <article class="standard-suscription">
+        <article class="suscription" id="standard-suscription">
             <h1>Suscripción estándar</h1>
             <p>Ideal para cofradías pequeñas</p>
         </article>
-        <article class="professional-suscription">
+        <article class="suscription" id="professional-suscription">
             <h1>Suscripción profesional</h1>
             <p>Pensado para cofradías de más de 100 hermanos</p>
         </article>
-        <article class="premium-suscription">
+        <article class="suscription" id="premium-suscription">
              <h1>Suscripción premium</h1>
              <p>Para las cofradías que quieren llegar al siguiente nivel</p>
         </article>
     </div>
     </section>
+       
+    <section class="section-reviews">
+        <h1>¿Qué dicen nuestros clientes de nosotros?</h1>
+        <div class="article-reviews">
+            <article class="review">
+                <div class="person-photo" id="person1"></div>
+                <p>Increíble aplicación! Conseguí llevar la administración de mi cofradía a otro nivel.</p>
+            </article>
+            <article class="review">
+                <div class="person-photo" id="person2"></div>
+                <p>Es justo lo que necesitábamos, un software intuitivo y escalable.</p>
+            </article>
+            <article class="review"> 
+                <div class="person-photo" id="person3"></div>
+                <p>Todos los módulos disponibles son increíbles!! Sobre todo la función de geolocalización.</p>
+            </article>
+        </div>
+    </section>
+</main>
     <footer>
+        <table class="table-footer">
+            <tr>
+                <th><a href="#">Aprendizaje</a></th>
+                <th><a href="#">Comunidad</a></th>
+                <th><a href="#">Empresa</a></th>
+            </tr>
+            <tr>
+                <td><a href="#">Formación y certificación</a></td>
+                <td><a href="#">Comunidad de usuarios</a></td>
+                <td><a href="#">Acerca de nosotros</a></td>
+            </tr>
+            <tr>
+                <td><a href="#">Blog</a></td>
+                <td><a href="#">Programa de afiliados</a></td>
+                <td><a href="#">Eventos</a></td>
+            </tr>
+        </table>
         <div class="redesSociales">
             <ul>
                 <li><img src="assets/img/img/instagram.png" alt=""></li>
