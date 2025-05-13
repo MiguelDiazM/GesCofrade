@@ -9,7 +9,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="assets/img/img/logoProvisional.png" alt="Gescofrade">
+            <img src="assets/img/img/logoGescofrade.png" alt="Gescofrade">
         </div>
         <div class="menuHeader">
         <ul>
