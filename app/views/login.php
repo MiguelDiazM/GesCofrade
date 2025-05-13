@@ -12,7 +12,7 @@
         <div class="logo">GESCOFRADE</div>
         <h1>Inicia sesión en tu cuenta</h1>
         
-       <form action="../controllers/login.php" method="POST">
+       <form action="../controllers/loginLogic.php" method="POST">
             <div class="main">
                 <label for="user">Email</label>
                 <input type="text" id="user" name="user" placeholder="User">
