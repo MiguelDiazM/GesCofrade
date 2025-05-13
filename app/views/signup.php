@@ -29,7 +29,10 @@
             </div>
             <div class="type">
                 <label for="tipo" class="form-label">Tipo</label>
-                <input type="text" name="tipo" class="form-control">
+                <select name="tipo">
+                    <option value="penitencia">Penitencia</option>
+                    <option value="gloria">Gloria</option>
+                </select>
             </div>
             <div class="submit">
                 <input type="submit" value="Registrarse" class="btn btn-primary">
