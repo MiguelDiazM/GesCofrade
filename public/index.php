@@ -29,7 +29,7 @@
         </div>
         <div class="singupLoginProfile">
             <img src="assets/img/img/profile.png" id="profile" alt="">
-            <a href="../app/controllers/signup.php">Sign Up /</a>
+            <a href="../app/views/signup.php">Sign Up /</a>
             <a href="../app/views/login.php">Login</a>
             <?php 
             /**
