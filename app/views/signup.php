@@ -6,6 +6,7 @@
     <title>REGISTRARSE</title>
     <link rel="stylesheet" href="../../public/assets/css/signup.css">
 </head>
+
 <body>
 <header>
     <img src="../../public\assets\img\img\logoGescofrade.png" alt="Logo Gescofrade" id="logo">
