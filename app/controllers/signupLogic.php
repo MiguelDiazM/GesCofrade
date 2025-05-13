@@ -60,24 +60,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $poblacion = explode(" ", $city);
     
         $usuario = implode("_", $nombre) . "_" . implode("_", $poblacion);
-
+        $nombre = implode(" ", $nombre);
         if ($stmt->rowCount() === 0) {
             $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad)
-        SELECT :usuario, :contrasena, id_hermandad FROM hermandad WHERE nombre = :nombre";
+            $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) SELECT :usuario, :contrasena, id_hermandad FROM hermandad WHERE nombre = :nombre";
             $stmt_insert = $_conexion->prepare($insert);
-            echo "USUARIO: $usuario, CONTRASEÑA: $contrasena, ciudad: $city, tipo $tipo";
             $stmt_insert->execute([
                 ":usuario" => $usuario,
-                ":contrasena" => $contrasena,
+                ":contrasena" => $contrasena_hash,
                 ":nombre" => $nombre
             ]);
+            header("Location: ../../public/index.php");
         } else {
             $err_nombre = "<span class='bg-warning'>¡El nombre de usuario ya está en uso!</span>";
             $envioError .= "?err_nombre=$err_nombre";
         }
     }
-    //header("Location: $envioError");
+    header("Location: $envioError");
 }
 
 function crearUsuarioContrasena($nombre, $contrasena, $poblacion){
