@@ -33,7 +33,7 @@ $_SESSION['usuario'] = "alvaro";
         <div class="auth-area" id="authArea">
             <?php
             if (!isset($_SESSION['usuario'])) { ?>
-                <a href="../app/controllers/signup.php">Register</a>
+                <a href="../app/views/signup.php">Register</a>
                 <a href="../app/views/login.php">Log in</a>
                 <?php
             } else { ?>
@@ -42,9 +42,7 @@ $_SESSION['usuario'] = "alvaro";
                     <a href="#">Dashboard</a>
                     <a href="../app/controllers/logout.php">Cerrar sesión</a>
                 </div>
-            <?php }
-
-            ?>
+            <?php } ?>
         </div>
     </header>
     <main>
@@ -73,6 +71,7 @@ $_SESSION['usuario'] = "alvaro";
     </div>
     </section>
 
+    
     <section class="secondSection"> 
         <h1>Nuestras suscripciones más populares...</h1>
         <div>
