@@ -1,44 +1,55 @@
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/static/Roboto-Regular.ttf");
+}
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
     background-color: #f5f5f5;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
+        background: linear-gradient(rgba(0, 0, 0, 0.5), 
+    rgba(0, 0, 0, 0.5)), url("../img/img/semana-santa-login.jpg");
+    background-size: cover;
+    background-position: center;
 }
 
 .login {
     background-color: white;
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 350px;
     text-align: center;
+            box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#logo {
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 200px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 30px;
+    color: white;
 }
 
 h1 {
-    font-size: 20px;
-    margin-bottom: 30px;
-    color: #333;
+    color: white;
 }
 
 .main {
     margin-bottom: 20px;
     text-align: left;
-}
-
-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #555;
 }
 
 input {
@@ -63,11 +74,11 @@ input {
 
 .signup {
     margin-top: 20px;
-    color: #555;
+    color: white;
 }
 
 .signup a {
-    color: #000;
+    color: white;
     text-decoration: none;
     font-weight: bold;
 }
