@@ -1,3 +1,6 @@
+<?php
+$_SESSION['usuario'] = "alvaro";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="assets/img/img/logoProvisional.png" alt="Gescofrade">
+            <img src="assets/img/img/logoGescofradeBlack.png" alt="Gescofrade">
         </div>
         <div class="menuHeader">
         <ul>
@@ -27,15 +30,19 @@
             </li>
         </ul>
         </div>
-        <div class="singupLoginProfile">
-            <img src="assets/img/img/profile.png" id="profile" alt="">
-            <a href="../app/views/signup.php">Sign Up</a> 
-            <a href="../app/views/login.php">Login</a>
-            <?php 
-            /**
-                HAY QUE AGREGAR UN LOGOUT QUE SE MUESTRE CON JS CUANDO HAYA UNA SESION INICIADA
-            */
-            ?>
+        <div class="auth-area" id="authArea">
+            <?php
+            if (!isset($_SESSION['usuario'])) { ?>
+                <a href="../app/views/signup.php">Register</a>
+                <a href="../app/views/login.php">Log in</a>
+                <?php
+            } else { ?>
+                <div class="user-icon" id="userIcon"><img src="assets/img/img/persona1review.jpg" id="profile"></div>
+                <div class="dropdown" id="dropdownMenu">
+                    <a href="#">Dashboard</a>
+                    <a href="../app/controllers/logout.php">Cerrar sesión</a>
+                </div>
+            <?php } ?>
         </div>
     </header>
     <main>
@@ -64,6 +71,7 @@
     </div>
     </section>
 
+    
     <section class="secondSection"> 
         <h1>Nuestras suscripciones más populares...</h1>
         <div>
@@ -129,3 +137,26 @@
     </footer>
 </body>
 </html>
+
+<script>
+    let isLoggedIn = <?php echo isset($_SESSION['usuario']) ? 'true' : 'false'; ?>;
+
+    let authArea = document.getElementById("authArea");
+
+    if (isLoggedIn) {
+        let userIcon = document.getElementById("userIcon");
+        let dropdownMenu = document.getElementById("dropdownMenu");
+
+        userIcon.onclick = function () {
+            dropdownMenu.style.display = dropdownMenu.style.display === "block" ? "none" : "block";
+        };
+
+        // Ocultar el menú si se hace clic fuera
+        document.addEventListener("click", function(e) {
+        if (!authArea.contains(e.target)) {
+            dropdownMenu.style.display = "none";
+        }
+        });
+
+    }
+</script>
