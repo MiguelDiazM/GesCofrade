@@ -42,9 +42,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
         //TODO: Se debe crear una hermandad con el nombre introducido y a partir de ella se crearan los usuarios
-        $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
+        $consulta = "INSERT INTO hermandad (id_hermandad, nombre, tipo, ubicacion) VALUES (:i,:n, :t, :u)";
         $stmt = $_conexion->prepare($consulta);
         $stmt ->execute([
+            ":i" => "SELECT max(id_hermandad) + 1 FROM hermandad",
             ":n" => $nombre,
             ":t" => $tipo,
             ":u" => $city

@@ -26,8 +26,12 @@
             <div class="main">
                 <input type="text" name="poblacion" class="form-control" placeholder="Ciudad">
             </div>
-            <div class="main">
-                <input type="text" name="tipo" class="form-control" placeholder="Tipo de cofradía">
+            <div class="type">
+                <label for="tipo" class="form-label">Tipo</label>
+                <select name="tipo">
+                    <option value="penitencia">Penitencia</option>
+                    <option value="gloria">Gloria</option>
+                </select>
             </div>
             <div class="main">
                 <input type="submit" id="signUpButton" value="Registrarse" class="btn btn-primary">
