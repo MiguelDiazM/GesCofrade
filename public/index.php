@@ -12,7 +12,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="assets/img/img/logoGescofradeBlack.png" alt="Gescofrade">
+            <img src="assets/img/logoGescofradeBlack.png" alt="Gescofrade">
         </div>
         <div class="menuHeader">
         <ul>
@@ -37,7 +37,7 @@
                 <a href="../app/views/login.php">Log in</a>
                 <?php
             } else { ?>
-                <div class="user-icon" id="userIcon"><img src="assets/img/img/persona1review.jpg" id="profile"></div>
+                <div class="user-icon" id="userIcon"><img src="assets/img/persona1review.jpg" id="profile"></div>
                 <div class="dropdown" id="dropdownMenu">
                     <a href="#">Dashboard</a>
                     <a href="../app/controllers/logout.php">Cerrar sesión</a>
@@ -128,10 +128,10 @@
         </table>
         <div class="redesSociales">
             <ul>
-                <li><img src="assets/img/img/instagram.png" alt=""></li>
-                <li><img src="assets/img/img/facebook.png" alt=""></li>
-                <li><img src="assets/img/img/twitter.png" alt=""></li>
-                <li><img src="assets/img/img/linkedin.png" alt=""></li>
+                <li><img src="assets/img/instagram.png" alt=""></li>
+                <li><img src="assets/img/facebook.png" alt=""></li>
+                <li><img src="assets/img/twitter.png" alt=""></li>
+                <li><img src="assets/img/linkedin.png" alt=""></li>
             </ul>        
         </div>
     </footer>
