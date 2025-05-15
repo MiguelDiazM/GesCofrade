@@ -1,6 +1,3 @@
-<?php
-$_SESSION['usuario'] = "alvaro";
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +5,9 @@ $_SESSION['usuario'] = "alvaro";
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gescofrade inicio</title>
     <link rel="stylesheet" href="assets/css/index.css">
+    <?php
+        session_start();
+    ?>
 </head>
 <body>
     <header>

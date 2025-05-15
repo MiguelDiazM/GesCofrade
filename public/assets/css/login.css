@@ -11,7 +11,7 @@ body {
     height: 100vh;
     margin: 0;
         background: linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)), url("../img/img/semana-santa-login.jpg");
+    rgba(0, 0, 0, 0.5)), url("../img/semana-santa-login.jpg");
     background-size: cover;
     background-position: center;
 }

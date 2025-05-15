@@ -1,0 +1,17 @@
+{
+    "name": "mdm94/ges-cofrade",
+    "require-dev": {
+        "phpunit/phpunit": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mdm94\\GesCofrade\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "MiguelDiazM",
+            "email": "mdm947531@gmail.com"
+        }
+    ]
+}

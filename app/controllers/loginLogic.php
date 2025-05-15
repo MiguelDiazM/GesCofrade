@@ -12,17 +12,16 @@
             ]);
             $datos=$stmt->fetch();
             if ($datos) {
-                
+               
                 if (password_verify($contrasena, $datos["contrasena"])) {
                     
                     session_start();
                     $_SESSION["usuario"] = $nombre;
-                    $_SESSION["admin"] = $datos["admin"];
                     header("Location: ../../public/index.php");
                     exit;
                 } else {
                     $err_contrasena = "<span class='bg-warning'>La contraseña no coincide.</span>";
-                    header("Location: ../views/login.php?err_contrasena=$err_contrasena");
+                header("Location: ../views/login.php?err_contrasena=$err_contrasena");
                 }
             } else {
                 $err_nombre = "<span class='bg-warning'>El nombre de usuario no se encuentra en la base de datos.</span>";
