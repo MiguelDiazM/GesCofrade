@@ -9,12 +9,6 @@ html {
     url("../img/img/semana-santa-sevilla-signup.jpg");
   background-size: cover;
 }
-body {
-  display: grid;
-  justify-content: center;
-  place-content: center;
-  height: 100%;
-}
 
 #logo {
   top: 0;
@@ -23,45 +17,82 @@ body {
   width: 200px;
 }
 
-form div {
-  display: grid;
-  grid-auto-columns: 70%;
-  justify-content: center;
-  margin-bottom: 20px;
+body {
+    font-family: "Roboto", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white; 
 }
 
-.container-login {
-  display: grid;
-  width: 500px;
-  height: 500px;
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  border-radius: 30px;
-}
-h1,
-p {
-  text-align: center;
+.signup {
+    
+    background-color: black;
+    padding: 40px;
+    border-radius: 8px;
+        box-shadow: 
+    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
+     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    width: 350px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
-a {
-  text-decoration: none;
-  color: black;
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: white;
+}
+
+h1 {
+    margin-bottom: 30px;
+    color: white;
+}
+
+.main {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: white;
 }
 
 input {
-  border-radius: 5px;
-  height: 30px;
-  border: 0;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
-.submit input:hover {
-  background-color: #ffbc42;
-  transition: 0.2s;
+#signUpButton {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-.linkLogin {
-  text-align: center;
-  background-color: #f0f0f0;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
+.login {
+    margin-top: 20px;
+    color: white;
 }
+
+.login a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
