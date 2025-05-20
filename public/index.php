@@ -14,7 +14,7 @@
 <body>
     <header>
         <div id="logo">
-            <img src="assets/img/logoGescofradeBlack.png" alt="Gescofrade">
+            <img src="assets/img/logoGescofradeWhite.png" alt="Gescofrade">
         </div>
         <div class="menuHeader">
             <ul>
