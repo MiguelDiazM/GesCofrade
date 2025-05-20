@@ -2,9 +2,10 @@
 @font-face {
     font-family: "Roboto";
     src: url("../fonts/static/Roboto-Regular.ttf");
-  }
+}
 
-html, body{
+html,
+body {
     font-family: "Roboto";
     background-color: white;
     height: 100%;
@@ -12,23 +13,22 @@ html, body{
     padding: 0;
 }
 
-
 /*HEADER*/
 
-header{
+header {
     display: grid;
-    background-color: #73D2DE;
+    background-color: #73d2de;
     grid-template-columns: auto auto auto;
-    justify-content:space-between;
+    justify-content: space-between;
     justify-items: center;
     font-size: large;
 }
 
-.menuHeader{
+.menuHeader {
     width: 200%;
 }
 
-.menuHeader ul{
+.menuHeader ul {
     display: grid;
     grid-template-columns: repeat(4, auto);
     justify-content: space-between;
@@ -36,40 +36,40 @@ header{
     list-style: none;
 }
 
-a:hover{
-    color: #FFBC42;
+a:hover {
+    color: #ffbc42;
     transition: 0.5s;
 }
 
-#profile{
+#profile {
     width: 50px;
 }
 
-.singupLoginProfile{
+.singupLoginProfile {
     display: grid;
     grid-template-columns: auto auto auto;
     margin-right: 10px;
 }
 
-.singupLoginProfile a{
+.singupLoginProfile a {
     margin-top: 12px;
 }
 
 a {
     text-decoration: none;
-    color: white;  
+    color: white;
 }
 
-#logo img{
+#logo img {
     width: 160px;
 }
 
 .auth-area {
-  justify-self: end;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  position: relative;
+    justify-self: end;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    position: relative;
 }
 
 .user-icon {
@@ -117,41 +117,41 @@ a {
 
 /*FIRST SECTION*/
 
-.firstSection{
+.firstSection {
     display: grid;
     align-items: end;
     font-size: 30px;
-        height: 50rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)), url("../img/VirgenPantalla0.jpg");
+    height: 50rem;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/VirgenPantalla0.jpg");
     background-size: cover;
 }
 
-.textFirstSection{
+.textFirstSection {
     margin-left: 3%;
     color: white;
 }
 
-.textFirstSection p{
-    color: #FFBC42;
+.textFirstSection p {
+    color: #ffbc42;
 }
 
-.dataFirstSection{
+.dataFirstSection {
     text-align: center;
-    background-color: #FFBC42;
+    background-color: #ffbc42;
     width: 45%;
     height: 40%;
     border-top-right-radius: 70px;
     font-size: smaller;
 }
 
-.tableFirstSection{
+.tableFirstSection {
     margin: auto;
     margin-top: 20px;
 }
 
 /*SECOND SECTION*/
-.secondSection{
+.secondSection {
     display: grid;
     grid-template-rows: auto auto;
     justify-content: space-around;
@@ -159,7 +159,7 @@ a {
     width: 100%;
 }
 
-.secondSection div{
+.secondSection div {
     display: grid;
     grid-template-columns: repeat(3, auto);
     gap: 50px;
@@ -167,62 +167,60 @@ a {
     margin-bottom: 50px;
 }
 
-.suscription{
+.suscription {
     display: grid;
     text-align: center;
-    background-color: #73D2DE;
+    background-color: #73d2de;
     width: 400px;
     height: 1000px;
     border-radius: 50px;
     color: white;
     font-size: larger;
-    box-shadow: 
-    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.suscription:hover{
+.suscription:hover {
     transform: scale(1.04);
     transition: 0.7s;
 }
 
-#standard-suscription{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)), url("../img/suscripcion-estandar.jpg");
+#standard-suscription {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/suscripcion-estandar.jpg");
     background-size: cover;
 }
 
-#professional-suscription{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)), url("../img/suscripcion-profesional.jpg");
+#professional-suscription {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/suscripcion-profesional.jpg");
     background-size: cover;
     background-position: 50% 50%;
 }
 
-#premium-suscription{
-    background: linear-gradient(rgba(0, 0, 0, 0.5), 
-    rgba(0, 0, 0, 0.5)), url("../img/suscripcionPremium.jpeg");
+#premium-suscription {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url("../img/suscripcionPremium.jpeg");
     background-size: cover;
     background-position: 50% 50%;
 }
 
 /*REVIEWS*/
-.section-reviews{
+.section-reviews {
     display: grid;
     grid-template-rows: auto auto;
     place-items: center;
     align-items: center;
 }
 
-.article-reviews{
+.article-reviews {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 70px;
 }
 
-
-.review{
+.review {
     background-color: white;
     display: grid;
     place-items: center;
@@ -231,65 +229,66 @@ a {
     width: 400px;
     font-size: larger;
     text-align: center;
-    box-shadow: 
-    rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, 
-    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px,
-     rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.person-photo{
+.person-photo {
     border-radius: 50%;
     width: 90px;
     height: 90px;
 }
 
-#person1{
+#person1 {
     background-image: url("../img/persona1review.jpg");
     background-size: 100px;
 }
-#person2{
+
+#person2 {
     background-image: url("../img/mujer.png");
     background-size: 100px;
 }
-#person3{
+
+#person3 {
     background-image: url("../img/persona3review.jpg");
     background-size: 75px;
     background-position: center;
 }
 
-
 /*FOOTER*/
 
-footer{
-    background-color: #73D2DE;
+footer {
+    background-color: #73d2de;
 }
-.redesSociales ul{
+
+.redesSociales ul {
     display: grid;
-    grid-template-columns:  repeat(4, auto);
+    grid-template-columns: repeat(4, auto);
     list-style-type: none;
 }
 
-.redesSociales{
+.redesSociales {
     width: 30%;
     margin: auto;
 }
 
-.redesSociales img{
+.redesSociales img {
     width: 35px;
     cursor: pointer;
 }
 
-.container-info{
+.container-info {
     display: grid;
     grid-template-columns: auto auto auto;
 }
 
-.info{
+.info {
     display: grid;
     grid-template-columns: auto;
 }
 
-.table-footer{
+.table-footer {
     font-size: larger;
     margin: auto;
     margin-top: 50px;
@@ -300,66 +299,66 @@ footer{
 
 /*RESPONSIVIDAD*/
 @media (max-width: 600px) {
-
-    header{
+    header {
         grid-template-columns: auto;
         justify-content: center;
     }
 
-    .menuHeader{
+    .menuHeader {
         width: 100%;
     }
 
-    .menuHeader li{
+    .menuHeader li {
         margin-right: 15px;
     }
 
-    .firstSection{
-        background-size:cover;
+    .firstSection {
+        background-size: cover;
         background-position: 50% 50%;
     }
 
-    .secondSection div{
+    .secondSection div {
         display: grid;
         grid-template-columns: auto;
         width: 100%;
-    }  
+    }
 
-    .secondSection{
+    .secondSection {
         display: grid;
         grid-template-rows: auto auto;
-        justify-content:center;
+        justify-content: center;
         background-color: white;
         height: 100%;
         width: 100%;
     }
 
-    .secondSection div article{
+    .secondSection div article {
         margin: auto;
     }
 
-    .article-reviews{
+    .article-reviews {
         display: grid;
-        grid-template-columns: auto;    
+        grid-template-columns: auto;
     }
 
-    .dataFirstSection{
+    .dataFirstSection {
         display: none;
     }
 
-    .redesSociales{
+    .redesSociales {
         width: 100%;
         margin: auto;
     }
 
-    .table-footer tr{
+    .table-footer tr {
         display: grid;
         grid-template-columns: auto auto auto;
     }
 
-    .table-footer td, th {
+    .table-footer td,
+    th {
         display: grid;
         grid-template-columns: auto 1fr;
-        gap: 5px; 
+        gap: 5px;
     }
 }
