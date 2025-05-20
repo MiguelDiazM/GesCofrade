@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-    <img src="../../public\assets\img\img\logoGescofrade.png" alt="Logo Gescofrade" id="logo">
+    <img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo">
 </header>
     <div class="login">
         <div class="logo">GESCOFRADE</div>
