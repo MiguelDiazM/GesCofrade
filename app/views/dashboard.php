@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
     <title>Dashboard Gescofrade</title>
+    <?php
+        require("inventario.php");
+    ?>
 </head>
 
 <body>
@@ -16,13 +19,9 @@
         <aside class="sidebar">
             <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
             <ul class="list">
-                <li><a href="">Inicio</a></li>
-                <li><a href="">Miembros</a></li>
-                <li><a href="">Cortejo</a></li>
-                <li><a href="../views/inventario.php">Inventario</a></li>
-                <li><a href="">Cuotas</a></li>
-                <li><a href="">Correspondencia</a></li>
-                <li><a href="">Diseño 3D</a></li>
+                <?php 
+                    mostrarModulosContratados();
+                ?>
                 <li><a href="">Ajustes</a></li>
             </ul>
         </aside>
