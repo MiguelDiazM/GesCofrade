@@ -1,0 +1,114 @@
+@font-face {
+    font-family: "Roboto";
+    src: url("../fonts/static/Roboto-Regular.ttf");
+  }
+
+html, body{
+    font-family: "Roboto";
+    background-color: #F1F4F9;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+h1{
+    margin: 0;
+}
+
+header{
+    display: grid;
+    background-color: #73D2DE;
+    margin: 0;
+    margin-bottom: 0;
+    height: 80px;
+    align-items: center;
+}
+
+#logo{
+    width: 220px;
+}
+
+.sidebar{
+    background-color: #2BA6B6;
+    color: white;
+    text-align: center;
+    height: 100%;
+}
+
+.list{
+    width: 100%;
+    list-style: none;
+    padding-left: 0;
+}
+
+.list li{
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,.5);
+    font-size: larger;
+}
+
+.list a{
+  color: white;
+  line-height:3;
+  padding: 0 10px;
+  text-decoration:none;
+  transition:.4s ease;
+}
+
+main{
+    display: grid;
+    grid-template-columns: auto 80%;
+    gap: 30px;
+    height: 100%;
+}
+
+.cards-section{
+    display: grid;
+    grid-template-columns: repeat(3, 480px);
+    grid-template-rows: auto auto;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.card{
+    background-color: white;
+    height: 100px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.card-data{
+    display: grid;
+    grid-template-columns: 20% auto;
+    align-items: center;
+    width: 100%;
+}
+
+.card-icon{
+    width: 55px;
+    margin-left: 10px;
+}
+
+.graphics-section{
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 65% auto;
+    gap: 30px;
+}
+
+.card-data h1{
+    margin-left: 10px;
+}
+
+.graphic{
+    
+}
+
+.events{
+
+}
+
+.graphics-section div{
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    height: 300px;
+}
+
