@@ -19,7 +19,7 @@
                 <li><a href="">Inicio</a></li>
                 <li><a href="">Miembros</a></li>
                 <li><a href="">Cortejo</a></li>
-                <li><a href="">Inventario</a></li>
+                <li><a href="../views/inventario.php">Inventario</a></li>
                 <li><a href="">Cuotas</a></li>
                 <li><a href="">Correspondencia</a></li>
                 <li><a href="">Diseño 3D</a></li>
