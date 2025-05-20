@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+}
+
+#contenedor {
+  width: 100%;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+#titulo {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+#ruta {
+  color: gray;
+  font-size: 14px;
+}
+
+.resaltado {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.barra-superior {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20px;
+  gap: 10px;
+}
+
+#buscador {
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+}
+
+.botones {
+  display: flex;
+  gap: 10px;
+}
+
+.boton {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.boton-azul {
+  background-color: #007bff;
+  color: white;
+}
+
+#tabla {
+  width: 100%;
+  margin-top: 10px;
+  border-collapse: collapse;
+}
+
+#tabla th,
+#tabla td {
+  text-align: left;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+#tabla thead {
+  background-color: #f0f0f0;
+}
+
+#tabla td i {
+  margin-right: 8px;
+  color: gray;
+  cursor: pointer;
+}
+
+#tabla td i:hover {
+  color: black;
+}
+
+#paginacion {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  font-size: 14px;
+  align-items: center;
+}
+
+.flecha {
+  padding: 4px 10px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+#selector-pagina {
+  margin-left: 5px;
+  padding: 4px;
+}
