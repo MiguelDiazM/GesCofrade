@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,11 +18,11 @@
         <form action="../controllers/signupLogic.php" method="post" class="col-4">
             <div class="main">
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre de usuario">
-                <?php  if (isset($_GET["err_nombre"])) echo $_GET["err_nombre"]; ?> 
+                <?php if (isset($_GET["err_nombre"])) echo $_GET["err_nombre"]; ?>
             </div>
             <div class="main">
                 <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
-                <?php  if (isset($_GET["err_contrasena"])) echo $_GET["err_contrasena"]; ?> 
+                <?php if (isset($_GET["err_contrasena"])) echo $_GET["err_contrasena"]; ?>
             </div>
             <div class="main">
                 <input type="text" name="poblacion" class="form-control" placeholder="Ciudad">
@@ -43,4 +44,5 @@
         </div>
     </div>
 </body>
+
 </html>
