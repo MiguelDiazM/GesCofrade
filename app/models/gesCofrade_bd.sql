@@ -80,6 +80,16 @@
     ('RUC001XUS', 'Carreta del Simpecado', 'Carreta de madera para la romería', 9),
     ('VDR001XDH', 'Medalla de la Virgen', 'Medalla en oro de la Virgen de los Remedios', 10),
     ('JNZ001XEC', 'Faroles de procesión', 'Faroles antiguos de hierro', 11),
+    ('TEST001X62', 'Incensario', 'Incensario de plata usado en procesiones', 62),
+    ('TEST002X62', 'Cruz Parroquial', 'Cruz con detalles góticos para cortejos', 62),
+    ('TEST003X62', 'Ciriales', 'Juego de ciriales plateados', 62),
+    ('TEST004X62', 'Libro de Reglas', 'Libro encuadernado con las reglas de la hermandad', 62),
+    ('TEST005X62', 'Túnica', 'Túnica blanca con cíngulo morado', 62),
+    ('TEST006X62', 'Estandarte', 'Estandarte bordado con el escudo de la hermandad', 62),
+    ('TEST007X62', 'Bocina', 'Bocina de metal dorado utilizada en el cortejo', 62),
+    ('TEST008X62', 'Candelería', 'Candelabros grandes para el paso', 62),
+    ('TEST009X62', 'Paso de Cristo', 'Estructura del paso de misterio', 62),
+    ('TEST010X62', 'Faroles', 'Faroles de mano para acompañamiento', 62)
     ('VRC001XAG', 'Simpecado bordado', 'Simpecado con bordados dorados', 6);
         
     INSERT INTO `usuarios` (`id_usuario`, `usuario`, `contrasena`, `id_hermandad`) VALUES

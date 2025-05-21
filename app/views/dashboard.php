@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
     <title>Dashboard Gescofrade</title>
-    <?php
-        require("../controllers/inventarioLogic.php");
-    ?>
 </head>
 
 <body>
@@ -19,9 +16,7 @@
         <aside class="sidebar">
             <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
             <ul class="list">
-                <?php 
-                     mostrarModulosContratados();
-                ?>
+                <li><a href="inventario.php">Inventario</a></li>
                 <li><a href="">Ajustes</a></li>
             </ul>
         </aside>
