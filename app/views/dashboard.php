@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
     <title>Dashboard Gescofrade</title>
     <?php
-        require("inventario.php");
+        require("../controllers/inventarioLogic.php");
     ?>
 </head>
 
@@ -20,7 +20,7 @@
             <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
             <ul class="list">
                 <?php 
-                    mostrarModulosContratados();
+                     mostrarModulosContratados();
                 ?>
                 <li><a href="">Ajustes</a></li>
             </ul>
