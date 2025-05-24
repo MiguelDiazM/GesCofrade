@@ -14,79 +14,82 @@
 
     </header>
     <section class="section-tabla">
-        <div id="contenedor">
-            <div class="barra-superior">
-                <input type="text" placeholder="Buscar..." id="buscador">
-                <div class="botones">
-                    <button class="boton">Filtrar</button>
-                    <button class="boton boton-azul">Nuevo</button>
-                </div>
+        <div class="barra-superior">
+            <input type="text" placeholder="Buscar..." id="buscador">
+            <div class="botones">
+                <button class="boton">Filtrar</button>
+                <button class="boton boton-azul">Nuevo</button>
             </div>
-
-            <table id="tabla">
-                <thead>
-                    <tr>
-                        <th>Referencia</th>
-                        <th>Elemento</th>
-                        <th>Descripción</th>
-                        <th>Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img
-                                src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img
-                                src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img
-                                src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                    <tr>
-                        <td>HBOR001XHS</td>
-                        <td>Palmas para la Borriquita</td>
-                        <td>Palmas blancas trenzadas</td>
-                        <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
-                    </tr>
-                </tbody>
-            </table>
         </div>
+
+        <table id="tabla">
+            <thead>
+                <tr>
+                    <th>Referencia</th>
+                    <th>Elemento</th>
+                    <th>Descripción</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+                <tr>
+                    <td>HBOR001XHS</td>
+                    <td>Palmas para la Borriquita</td>
+                    <td>Palmas blancas trenzadas</td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                </tr>
+            </tbody>
+        </table>
     </section>
 </body>
 

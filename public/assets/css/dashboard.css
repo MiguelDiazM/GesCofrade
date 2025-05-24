@@ -174,9 +174,9 @@ main{
 .sub_barra{
     width: 100%;
     height: 80%;
-    background: -moz-linear-gradient(top, #2BA6B6 0%, #73D2DE 100%);
-    background: -webkit-linear-gradient(top, #2BA6B6 0%,#73D2DE 100%);
-    background: linear-gradient(to bottom, #2BA6B6 0%,#73D2DE 100%);
+    background: -moz-linear-gradient(top, #ffbc42 0%, #ffbc42 100%);
+    background: -webkit-linear-gradient(top, #ffbc42 0%,#ffbc42 100%);
+    background: linear-gradient(to bottom,  #ffbc42 0%,#ffbc42 100%);
     -webkit-border-radius: 3px 3px 0 0;
     border-radius: 3px 3px 0 0;
 

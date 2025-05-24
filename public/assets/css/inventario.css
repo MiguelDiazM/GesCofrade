@@ -17,14 +17,6 @@ header{
     width: 220px;
 }
 
-#contenedor {
-  width: 100%;
-  margin: 30px auto;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-}
-
 #titulo {
   font-size: 28px;
   margin-bottom: 5px;
@@ -76,7 +68,7 @@ header{
 }
 
 .boton-azul {
-  background-color: #73D2DE;
+  background-color: #2BA6B6;
   color: white;
 }
 
@@ -94,8 +86,13 @@ header{
   border-bottom: 1px solid #ddd;
 }
 
+th{
+  background-color: #2BA6B6;
+}
 
 .section-tabla{
+  display: grid;
+  gap:20px;
   margin: auto;
   margin-top: 30px;
   background-color: white;
