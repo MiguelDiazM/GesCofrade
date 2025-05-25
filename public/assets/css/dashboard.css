@@ -38,12 +38,24 @@ header{
     width: 100%;
     list-style: none;
     padding-left: 0;
+    
 }
 
 .list li{
-    margin-bottom: 20px;
-    border-bottom: 1px solid rgba(255,255,255,.5);
+    display: grid;
+    border-top: 1px solid rgba(255,255,255,.5); 
     font-size: larger;
+    height: 80px;
+    align-items: center;
+}
+
+#lastLi{
+    border-bottom: 1px solid rgba(255,255,255,.5); 
+}
+
+.list li:hover{
+    background-color: #73D2DE;
+    transition: 0.5s;
 }
 
 .list a{
@@ -51,7 +63,6 @@ header{
   line-height:3;
   padding: 0 10px;
   text-decoration:none;
-  transition:.4s ease;
 }
 
 main{
@@ -90,7 +101,7 @@ main{
 .graphics-section{
     margin-top: 100px;
     display: grid;
-    grid-template-columns: 65% auto;
+    grid-template-columns: 65% 31%;
     gap: 30px;
 }
 
@@ -98,17 +109,119 @@ main{
     margin-left: 10px;
 }
 
-.graphic{
-    
-}
 
 .events{
-
-}
-
-.graphics-section div{
+    display: grid;
     background-color: white;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-    height: 300px;
+    align-items: center;
 }
 
+.events h1{
+    margin-left: 10px;
+}
+
+.event{
+    line-height: 2;
+    border-bottom: 1px solid grey; 
+    width: 80%;
+    margin-left: 10px;
+}
+
+.fechaEvento{
+    margin: 0;
+    color: grey;
+    font-size: small;
+}
+
+.sub_board{
+    height: 300px;
+    margin-top: 0px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.sep_board{
+    width: 100%;
+    height: 10%;
+   
+}
+.cont_board{
+    width: 100%;
+    height: 80%;
+}
+.graf_board{
+    width: 85%;
+    height: 100%;
+    float: right;
+    margin-top: 0px;
+    background-color: white;
+    border-left: 2px solid #999999;
+    border-bottom: 2px solid #999999;
+    box-sizing: border-box;
+    display: flex;
+    
+}
+.barra{
+    width:100%;
+    height: 100%;
+    margin-right: 15px;
+    margin-left: 15px;
+    background-color: none;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+.sub_barra{
+    width: 100%;
+    height: 80%;
+    background: -moz-linear-gradient(top, #ffbc42 0%, #ffbc42 100%);
+    background: -webkit-linear-gradient(top, #ffbc42 0%,#ffbc42 100%);
+    background: linear-gradient(to bottom,  #ffbc42 0%,#ffbc42 100%);
+    -webkit-border-radius: 3px 3px 0 0;
+    border-radius: 3px 3px 0 0;
+
+}
+.tag_g{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 30px;
+    text-align: center;
+    margin-top: -20px;
+    z-index: 2;
+}
+.tag_leyenda{
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+}
+.tag_board{
+    height: 100%;
+    width: 15%;
+    border-bottom: 2px solid rgba(0,0,0,0);
+    box-sizing: border-box;
+}
+.sub_tag_board{
+    height: 100%;
+    width: 100%;
+}
+.sub_tag_board>div{
+    width: 100%;
+    height: 10%;
+    text-align: right;
+    padding-right: 10px;
+    box-sizing: border-box;
+}
+.b1{ height: 35%}
+.b2{ height: 45%}
+.b3{ height: 55%}
+.b4{ height: 75%}
+.b5{ height: 85%}
+footer{
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    text-align: center;
+    font-size: 12px;
+    font-family: sans-serif;
+}

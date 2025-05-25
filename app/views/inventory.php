@@ -9,15 +9,15 @@
 </head>
 
 <body>
-    <div id="contenedor">
-        <h1 id="titulo">Inventario</h1>
-        <p id="ruta">Inicio > <span class="resaltado">Inventario</span></p>
+    <header>
+        <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
 
+    </header>
+    <section class="section-tabla">
         <div class="barra-superior">
-            <input type="text" placeholder="Buscar producto..." id="buscador">
+            <input type="text" placeholder="Buscar..." id="buscador">
             <div class="botones">
-                <button class="boton">Filtro</button>
-                <button class="boton">Exportar</button>
+                <button class="boton">Filtrar</button>
                 <button class="boton boton-azul">Nuevo</button>
             </div>
         </div>
@@ -36,68 +36,61 @@
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img
-                            src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img
-                            src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img
-                            src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/editar.png" alt="Editar"><img src="../../public/assets/img/borrar.png" alt="Borrar"></td>
+                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
+                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
                 </tr>
             </tbody>
         </table>
-        <div id="paginacion">
-            <span class="texto-pagina">1 - 10 de 13 páginas</span>
-            <div>
-                Página:
-                <select id="selector-pagina">
-                    <option>1</option>
-                    <option>2</option>
-                </select>
-                <button class="flecha">&lt;</button>
-                <button class="flecha">&gt;</button>
-            </div>
-        </div>
-    </div>
+    </section>
 </body>
 
 </html>
