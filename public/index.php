@@ -41,7 +41,7 @@
             } else { ?>
                 <div class="user-icon" id="userIcon"><img src="assets/img/persona1review.jpg" id="profile"></div>
                 <div class="dropdown" id="dropdownMenu">
-                    <a href="#">Dashboard</a>
+                    <a href="../app\views\dashboard.php">Dashboard</a>
                     <a href="../app/controllers/logout.php">Cerrar sesión</a>
                 </div>
             <?php } ?>

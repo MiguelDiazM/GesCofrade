@@ -5,26 +5,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
+    <script src="../../public/assets/js/dashboard.js"></script>
     <title>Dashboard Gescofrade</title>
+    <button id="btnToggleSidebar" aria-label="Mostrar/Ocultar menú">MENÚ</button>
 </head>
 
 <body>
     <header>
-        <h1 id="nombreHermandad">(NOMBRE HERMANDAD)</h1>
+        <h1 id="nombreHermandad">GesCofrade</h1>
     </header>
     <main class="main">
-        <aside class="sidebar">
+        <aside id="sidebar" class="sidebar">
             <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
             <ul class="list">
                 <li><a href="../../public/index.php">Inicio</a></li>
-                <li><a href="">Miembros</a></li>
-                <li><a href="">Cortejo</a></li>
+                <li><a href="#">Miembros</a></li>
+                <li><a href="#">Cortejo</a></li>
                 <li><a href="inventory.php">Inventario</a></li>
-                <li><a href="">Cuotas</a></li>
-                <li><a href="">Correspondencia</a></li>
-                <li><a href="">Diseño 3D</a></li>
-                <li id="lastLi"><a href="">Ajustes</a></li>
-            </ul>
+                <li><a href="#">Cuotas</a></li>
+                <li><a href="#">Correspondencia</a></li>
+                <li><a href="#">Diseño 3D</a></li>
+                <li><a href="#">Ajustes</a></li>
+                <li id="btnToggleTheme"><a href="#">Alternar modo claro/oscuro</a></li>
+            </ul>  
         </aside>
         <div class="sections">
             <section class="cards-section">
@@ -110,34 +113,34 @@
                         </div>
                         <div class="tag_board">
                             <div class="sub_tag_board">
-                                <div>100</div>
-                                <div>90</div>
-                                <div>80</div>
-                                <div>70</div>
-                                <div>60</div>
-                                <div>50</div>
-                                <div>40</div>
-                                <div>30</div>
-                                <div>20</div>
-                                <div>10</div>
+                                <div>100 -</div>
+                                <div>90 -</div>
+                                <div>80 -</div>
+                                <div>70 -</div>
+                                <div>60 -</div>
+                                <div>50 -</div>
+                                <div>40 -</div>
+                                <div>30 -</div>
+                                <div>20 -</div>
+                                <div>10 -</div>
                             </div>
                         </div>
                     </div>
                 </div>
-        <div class="events">
-            <h1>Eventos importantes</h1>
-            <div class="event">
-                Traslado
-                <p class="fechaEvento">25/07/2025</p>
-            </div>
-            <div class="event">Procesión
-                <p class="fechaEvento">04/08/2025</p>
-            </div>
-            <div class="event">Ensayo
-                <p class="fechaEvento">17/08/2025</p>
-            </div>
-        </div>
-        </section>
+                <div class="events">
+                    <h1>Eventos importantes</h1>
+                    <div class="event">
+                        Traslado
+                        <p class="fechaEvento">25/07/2025</p>
+                    </div>
+                    <div class="event">Procesión
+                        <p class="fechaEvento">04/08/2025</p>
+                    </div>
+                    <div class="event">Ensayo
+                        <p class="fechaEvento">17/08/2025</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 </body>
