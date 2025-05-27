@@ -8,18 +8,26 @@
     <script src="../../public/assets/js/dashboard.js"></script>
     <title>Dashboard Gescofrade</title>
     <button id="btnToggleSidebar" aria-label="Mostrar/Ocultar menú">MENÚ</button>
+    <?php
+        require("../controllers/hermanosLogic.php");
+        require("../controllers/dashboardLogic.php");
+    ?>
 </head>
 
 <body>
     <header>
-        <h1 id="nombreHermandad">GesCofrade</h1>
+        <h1 id="nombreHermandad">
+            <?php
+                echo mostrarNombreHermandad();
+            ?>
+        </h1>
     </header>
     <main class="main">
         <aside id="sidebar" class="sidebar">
             <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
             <ul class="list">
                 <li><a href="../../public/index.php">Inicio</a></li>
-                <li><a href="#">Miembros</a></li>
+                <li><a href="hermanos.php">Hermanos</a></li>
                 <li><a href="#">Cortejo</a></li>
                 <li><a href="inventario.php">Inventario</a></li>
                 <li><a href="#">Cuotas</a></li>
@@ -35,7 +43,11 @@
                     <div class="card-data">
                         <img src="../../public/assets/img/members.svg" class="card-icon" alt="icono">
                         <p>Miembros registrados</p>
-                        <h1>150</h1>
+                        <h1>
+                            <?php
+                                echo count(mostrarHermanos());
+                            ?>
+                        </h1>
                     </div>
                 </div>
                 <div class="card">
