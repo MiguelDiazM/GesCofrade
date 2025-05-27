@@ -46,12 +46,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipo = $tmp_tipo;
     }
 
+   
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
         //TODO: Se debe crear una hermandad con el nombre introducido y a partir de ella se crearan los usuarios
-        $consulta = "INSERT INTO hermandad (id_hermandad, nombre, tipo, ubicacion) VALUES (:i,:n, :t, :u)";
+        $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
         $stmt = $_conexion->prepare($consulta);
         $stmt->execute([
-            ":i" => "SELECT max(id_hermandad) + 1 FROM hermandad",
             ":n" => $nombre,
             ":t" => $tipo,
             ":u" => $city
@@ -63,20 +63,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ":n" => $nombre
         ]);
 
-        $nombre = explode(" ", $nombre);
-        $poblacion = explode(" ", $city);
+        $usuarios=[];
+        $usuarios[]= crearUsuarioContrasena($nombre, $contrasena, $city);
+        $usuarios[]= crearUsuarioAdminContrasena($nombre, $contrasena, $city);
 
-        $usuario = implode("_", $nombre) . "_" . implode("_", $poblacion);
-        $nombre = implode(" ", $nombre);
+        var_dump($usuarios);
+
         if ($stmt->rowCount() === 0) {
-            $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-            $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) SELECT :usuario, :contrasena, id_hermandad FROM hermandad WHERE nombre = :nombre";
-            $stmt_insert = $_conexion->prepare($insert);
-            $stmt_insert->execute([
-                ":usuario" => $usuario,
-                ":contrasena" => $contrasena_hash,
-                ":nombre" => $nombre
-            ]);
+            foreach($usuarios as $usuario){
+                $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
+                $stmt_insert = $_conexion->prepare($insert);
+
+                $stmt_insert->execute([
+                    ":usuario" => $usuario["usuario"],
+                    ":contrasena" => $usuario["contrasena"],
+                    ":nombre" => $nombre
+                ]);
+            }
             header("Location: ../../public/index.php");
         } else {
             $err_nombre = "<span class='bg-warning'>¡El nombre de usuario ya está en uso!</span>";
@@ -91,8 +94,17 @@ function crearUsuarioContrasena($nombre, $contrasena, $poblacion)
     $nombre = explode(" ", $nombre);
     $poblacion = explode(" ", $poblacion);
 
-
     $usuario = implode("_", $nombre) . "_" . implode("_", $poblacion);
+    $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
+    return ["usuario" => $usuario, "contrasena" => $contrasena_hash];
+}
 
-    return ["usuario" => $usuario, "contrasena" => $contrasena];
+function crearUsuarioAdminContrasena($nombre, $contrasena, $poblacion)
+{
+    $nombre = explode(" ", $nombre);
+    $poblacion = explode(" ", $poblacion);
+
+    $usuario = "admin_" . implode("_", $nombre) . "_" . implode("_", $poblacion);
+    $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
+    return ["usuario" => $usuario, "contrasena" => $contrasena_hash];
 }
