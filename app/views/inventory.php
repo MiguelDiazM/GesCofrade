@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inventario</title>
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
+    <script src="../../public/assets/js/inventory.js"></script>
 </head>
 
 <body>
@@ -36,60 +37,91 @@
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
                 <tr>
                     <td>HBOR001XHS</td>
                     <td>Palmas para la Borriquita</td>
                     <td>Palmas blancas trenzadas</td>
-                    <td><img src="../../public/assets/img/edit.svg" alt="Editar"><img
-                            src="../../public/assets/img/delete.svg" alt="Borrar"></td>
+                    <td>
+                        <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
+                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                    </td>
                 </tr>
             </tbody>
         </table>
+        <section id="formulario-editar">
+            <h3>Editar elemento</h3>
+            <form id="form-editar">
+                <label for="referencia">Referencia</label>
+                <input type="text" id="referencia" name="referencia">
+
+                <label for="elemento">Elemento</label>
+                <input type="text" id="elemento" name="elemento">
+
+                <label for="descripcion">Descripción</label>
+                <input type="text" id="descripcion" name="descripcion">
+
+                <button type="submit">Guardar cambios</button>
+            </form>
+        </section>
     </section>
 </body>
 
