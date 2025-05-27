@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tipo = $tmp_tipo;
     }
 
-   
+
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
         //TODO: Se debe crear una hermandad con el nombre introducido y a partir de ella se crearan los usuarios
         $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
@@ -63,14 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ":n" => $nombre
         ]);
 
-        $usuarios=[];
-        $usuarios[]= crearUsuarioContrasena($nombre, $contrasena, $city);
-        $usuarios[]= crearUsuarioAdminContrasena($nombre, $contrasena, $city);
+        $usuarios = [];
+        $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
+        $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
 
         var_dump($usuarios);
 
         if ($stmt->rowCount() === 0) {
-            foreach($usuarios as $usuario){
+            foreach ($usuarios as $usuario) {
                 $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
                 $stmt_insert = $_conexion->prepare($insert);
 

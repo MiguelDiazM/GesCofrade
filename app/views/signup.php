@@ -9,10 +9,10 @@
 </head>
 
 <body>
-<header>
-    <img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo">
-</header>
-<div class="signup">
+    <header>
+        <img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo">
+    </header>
+    <div class="signup">
         <div class="logo">GESCOFRADE</div>
         <h1>Crea una cuenta</h1>
         <form action="../controllers/signupLogic.php" method="post" class="col-4">

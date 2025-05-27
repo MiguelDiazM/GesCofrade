@@ -18,4 +18,3 @@ function mostrarInventario()
     $inventario = $stmt->fetchAll(PDO::FETCH_ASSOC);
     return $inventario;
 }
-

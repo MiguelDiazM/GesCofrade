@@ -9,8 +9,8 @@
     <title>Dashboard Gescofrade</title>
     <button id="btnToggleSidebar" aria-label="Mostrar/Ocultar menú">MENÚ</button>
     <?php
-        require("../controllers/hermanosLogic.php");
-        require("../controllers/dashboardLogic.php");
+    require("../controllers/hermanosLogic.php");
+    require("../controllers/dashboardLogic.php");
     ?>
 </head>
 
@@ -18,7 +18,7 @@
     <header>
         <h1 id="nombreHermandad">
             <?php
-                echo mostrarNombreHermandad();
+            echo mostrarNombreHermandad();
             ?>
         </h1>
     </header>
@@ -35,7 +35,7 @@
                 <li><a href="#">Diseño 3D</a></li>
                 <li><a href="#">Ajustes</a></li>
                 <li id="btnToggleTheme"><a href="#">Alternar modo claro/oscuro</a></li>
-            </ul>  
+            </ul>
         </aside>
         <div class="sections">
             <section class="cards-section">
@@ -45,7 +45,7 @@
                         <p>Miembros registrados</p>
                         <h1>
                             <?php
-                                echo count(mostrarHermanos());
+                            echo count(mostrarHermanos());
                             ?>
                         </h1>
                     </div>
