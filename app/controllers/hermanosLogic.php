@@ -1,6 +1,6 @@
 <?php
 
-function mostrarInventario()
+function mostrarHermanos()
 {
     require("../../config/database.php");
     session_start();
@@ -11,11 +11,11 @@ function mostrarInventario()
 
     $id_hermandad = $_SESSION["id_hermandad"];
 
-    $consulta = "SELECT referencia, elemento, descripcion FROM inventario WHERE id_hermandad = :i";
+    $consulta = "SELECT * FROM Hermanos WHERE JSON_CONTAINS(id_hermandad,(:i) , '$');";
     $stmt = $_conexion->prepare($consulta);
     $stmt->execute([":i" => $id_hermandad]);
 
-    $inventario = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $inventario;
+    $hermanos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $hermanos;
 }
 

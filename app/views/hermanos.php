@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
     <script src="../../public/assets/js/inventory.js"></script>
     <?php
-    require("../controllers/inventarioLogic.php");
+    require("../controllers/hermanosLogic.php");
     ?>
 </head>
 
@@ -29,22 +29,24 @@
         <table id="tabla">
             <thead>
                 <tr>
-                    <th>Referencia</th>
-                    <th>Elemento</th>
-                    <th>Descripción</th>
-                    <th>Acción</th>
+                    <th>DNI</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Dirección</th>
+                    <th>Teléfono</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
-                $elementosInventario = mostrarInventario();
+                $hermanos = mostrarHermanos();
 
-                foreach ($elementosInventario as $elemento) {
+                foreach ($hermanos as $elemento) {
                     echo "<tr>";
-                    echo "<td>" . $elemento["referencia"] . "</td>";
-                    echo "<td>" . $elemento["elemento"] . "</td>";
-                    echo "<td>" . $elemento["descripcion"] . "</td>";
-
+                    echo "<td>" . $elemento["DNI"] . "</td>";
+                    echo "<td>" . $elemento["nombre"] . "</td>";
+                    echo "<td>" . $elemento["apellido"] . "</td>";
+                    echo "<td>" . $elemento["direccion"] . "</td>";
+                    echo "<td>" . $elemento["telefono"] . "</td>";
                 ?>
                     <td>
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">

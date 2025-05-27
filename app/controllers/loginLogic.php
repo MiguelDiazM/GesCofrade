@@ -30,7 +30,7 @@
                 
                 $_SESSION["usuario"] = $nombre;
                 $_SESSION["id_hermandad"] = $datos[0];
-               
+                header("Location: ../../public/index.php");
                 exit;
             } else {
                 $err_contrasena = "<span class='bg-warning'>La contraseña no coincide.</span>";

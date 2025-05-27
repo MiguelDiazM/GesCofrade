@@ -21,7 +21,7 @@
                 <li><a href="../../public/index.php">Inicio</a></li>
                 <li><a href="#">Miembros</a></li>
                 <li><a href="#">Cortejo</a></li>
-                <li><a href="inventory.php">Inventario</a></li>
+                <li><a href="inventario.php">Inventario</a></li>
                 <li><a href="#">Cuotas</a></li>
                 <li><a href="#">Correspondencia</a></li>
                 <li><a href="#">Diseño 3D</a></li>
