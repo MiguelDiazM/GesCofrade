@@ -1,7 +1,6 @@
 <?php
 function mostrarNombreHermandad()
 {
-    session_start();
     require("../../config/database.php");
 
     if ($_SESSION["id_hermandad"] == "") {

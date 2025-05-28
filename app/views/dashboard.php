@@ -11,6 +11,8 @@
     <?php
     require("../controllers/hermanosLogic.php");
     require("../controllers/dashboardLogic.php");
+    require("../controllers/inventarioLogic.php");
+    session_start();
     ?>
 </head>
 
@@ -68,7 +70,11 @@
                     <div class="card-data">
                         <img src="../../public/assets/img/inventario.svg" class="card-icon" alt="icono">
                         <p>Inventario</p>
-                        <h1>Undefined</h1>
+                        <h1>
+                            <?php
+                            echo count(mostrarInventario());
+                            ?>
+                        </h1>
                     </div>
                 </div>
                 <div class="card">
