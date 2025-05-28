@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GESCOFRADE - Login</title>
     <link rel="stylesheet" href="../../public/assets/css/login.css">
+    <?php
+    session_start();
+    ?>
 </head>
 
 <body>
     <header>
-    <img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo">
-</header>
+        <img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo">
+    </header>
     <div class="login">
         <div class="logo">GESCOFRADE</div>
         <h1>Inicia sesión en tu cuenta</h1>

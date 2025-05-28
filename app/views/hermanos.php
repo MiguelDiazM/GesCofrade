@@ -9,6 +9,7 @@
     <script src="../../public/assets/js/inventory.js"></script>
     <?php
     require("../controllers/hermanosLogic.php");
+    session_start();
     ?>
 </head>
 
@@ -60,16 +61,16 @@
         </table>
         <section id="formulario-editar">
             <h3>Editar elemento</h3>
-            <form id="form-editar">
+            <form class="form-editar">
                 <input type="hidden" name="editar">
                 <label for="referencia">Referencia</label>
-                <input type="text" id="referencia" name="referencia">
+                <input type="text" class="referencia" name="referencia">
 
                 <label for="elemento">Elemento</label>
-                <input type="text" id="elemento" name="elemento">
+                <input type="text" class="elemento" name="elemento">
 
                 <label for="descripcion">Descripción</label>
-                <input type="text" id="descripcion" name="descripcion">
+                <input type="text" class="descripcion" name="descripcion">
 
                 <button type="submit">Guardar cambios</button>
             </form>

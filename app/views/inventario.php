@@ -9,6 +9,7 @@
     <script src="../../public/assets/js/inventory.js"></script>
     <?php
     require("../controllers/inventarioLogic.php");
+    session_start();
     ?>
 </head>
 
@@ -56,12 +57,17 @@
                 ?>
             </tbody>
         </table>
+        <?php
+            if(isset($_GET["err_referencia"])) echo "<p>". $_GET["err_referencia"] ."</p>";
+            if(isset($_GET["err_elemento"])) echo "<p>". $_GET["err_elemento"] ."</p>";
+            if(isset($_GET["err_descripcion"])) echo "<p>". $_GET["err_descripcion"] ."</p>";
+        ?>
         <section id="formulario-editar">
             <h3>Editar elemento</h3>
-            <form id="form-editar">
-                <input type="hidden" name="editar">
+            <form class="form-editar" method="POST" action="../controllers/inventarioLogic.php">
+                <input type="hidden" name="control" value = "editar">
                 <label for="referencia">Referencia</label>
-                <input type="text" id="referencia" name="referencia">
+                <input readonly type="text" id="referencia" name="referencia">
 
                 <label for="elemento">Elemento</label>
                 <input type="text" id="elemento" name="elemento">
@@ -69,11 +75,10 @@
                 <label for="descripcion">Descripción</label>
                 <input type="text" id="descripcion" name="descripcion">
 
-                <button type="submit">Guardar cambios</button>
+                <input type="submit" value="Guardar cambios">
             </form>
         </section>
     </section>
     </div>
 </body>
-
 </html>

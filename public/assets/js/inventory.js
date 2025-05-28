@@ -2,7 +2,6 @@ window.onload = function () {
   const editarBtns = document.querySelectorAll(".btn-editar");
   const borrarBtns = document.querySelectorAll(".btn-borrar");
   const formEditar = document.getElementById("formulario-editar");
-  const form = document.getElementById("form-editar");
 
   let filaActual = null;
 
@@ -32,14 +31,5 @@ window.onload = function () {
     });
   });
 
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
-    if (filaActual) {
-      const celdas = filaActual.querySelectorAll("td");
-      celdas[0].innerText = document.getElementById("referencia").value;
-      celdas[1].innerText = document.getElementById("elemento").value;
-      celdas[2].innerText = document.getElementById("descripcion").value;
-      formEditar.style.display = "none";
-    }
-  });
+
 };
