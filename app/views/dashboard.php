@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="../../public/assets/css/dashboard.css">
     <script src="../../public/assets/js/dashboard.js"></script>
     <title>Dashboard Gescofrade</title>
-    <button id="btnToggleSidebar" aria-label="Mostrar/Ocultar menú">MENÚ</button>
+
     <?php
     require("../controllers/hermanosLogic.php");
     require("../controllers/dashboardLogic.php");
@@ -18,15 +18,16 @@
 
 <body>
     <header>
-        <h1 id="nombreHermandad">
-            <?php
-            echo mostrarNombreHermandad();
-            ?>
-        </h1>
+        <div>
+            <img id="btnToggleSidebar" src="../../public/assets/img/sidebar-toggle.svg" aria-label="Mostrar/Ocultar menú"></img>
+            <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
+        </div>
+        <h1 id="nombreHermandad">NOMBRE COFRADIA</h1>
+        <img src="../../public/assets/img/profile.svg" id="profile" alt="">
     </header>
     <main class="main">
         <aside id="sidebar" class="sidebar">
-            <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
+
             <ul class="list">
                 <li><a href="../../public/index.php">Inicio</a></li>
                 <li><a href="hermanos.php">Hermanos</a></li>
@@ -36,7 +37,6 @@
                 <li><a href="#">Correspondencia</a></li>
                 <li><a href="#">Diseño 3D</a></li>
                 <li><a href="#">Ajustes</a></li>
-                <li id="btnToggleTheme"><a href="#">Alternar modo claro/oscuro</a></li>
             </ul>
         </aside>
         <div class="sections">
@@ -63,7 +63,6 @@
                     <div class="card-data">
                         <img src="../../public/assets/img/cortejo.svg" class="card-icon" alt="icono">
                         <p>Cortejo actualizado</p>
-                        <h1>Undefined</h1>
                     </div>
                 </div>
                 <div class="card">
@@ -81,14 +80,12 @@
                     <div class="card-data">
                         <img src="../../public/assets/img/correspondencia.svg" class="card-icon" alt="icono">
                         <p>Correspondencia</p>
-                        <h1>Undefined</h1>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-data">
                         <img src="../../public/assets/img/3d.svg" class="card-icon" alt="icono">
                         <p>Diseño 3D</p>
-                        <h1>Undefined</h1>
                     </div>
                 </div>
             </section>
@@ -160,6 +157,7 @@
                 </div>
             </section>
         </div>
+        <footer><img id="btnToggleTheme" src="../../public/assets/img/modo_oscuro.svg" alt=""></footer>
     </main>
 </body>
 

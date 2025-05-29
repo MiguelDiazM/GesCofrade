@@ -21,7 +21,9 @@ header {
     grid-template-columns: auto auto auto;
     justify-content: space-between;
     justify-items: center;
+    align-items: center;
     font-size: large;
+    height: 90px;
 }
 
 .menuHeader {
@@ -61,11 +63,10 @@ a {
 }
 
 #logo img {
-    width: 160px;
+    width: 220px;
 }
 
 .auth-area {
-    justify-self: end;
     display: flex;
     align-items: center;
     gap: 15px;
@@ -212,6 +213,7 @@ a {
     grid-template-rows: auto auto;
     place-items: center;
     align-items: center;
+    margin-bottom: 40px;
 }
 
 .article-reviews {
@@ -302,6 +304,8 @@ footer {
     header {
         grid-template-columns: auto;
         justify-content: center;
+        height: 160px;
+        text-align: center;
     }
 
     .menuHeader {
@@ -361,4 +365,17 @@ footer {
         grid-template-columns: auto 1fr;
         gap: 5px;
     }
+}
+
+@media (min-width: 1000px) {
+        header {
+            width: 100%;
+    }
+
+    body{
+        width: 100%;
+       display: grid;
+    }
+
+
 }
