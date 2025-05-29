@@ -3,17 +3,26 @@ window.onload = function () {
   const btnToggleSidebar = document.getElementById("btnToggleSidebar");
 
   btnToggleSidebar.onclick = function () {
+
     if (sidebar.style.display === "block") {
       sidebar.style.display = "none";
     } else {
       sidebar.style.display = "block";
     }
+
+    const main = document.getElementsByTagName("main");
+    console.log(main[0].getAttribute("display"));
   };
 
   const btnToggleTheme = document.getElementById("btnToggleTheme");
   btnToggleTheme.onclick = function () {
     const body = document.body;
     body.classList.toggle("dark-theme");
+    if (btnToggleTheme.getAttribute("src") == "../../public/assets/img/modo_claro.svg"){
+        btnToggleTheme.setAttribute("src", "../../public/assets/img/modo_oscuro.svg");
+    }else{
+      btnToggleTheme.setAttribute("src", "../../public/assets/img/modo_claro.svg");
+    }
   };
 
   const cards = document.getElementsByClassName("card");

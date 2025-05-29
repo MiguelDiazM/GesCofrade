@@ -18,21 +18,42 @@ h1 {
 header {
   display: grid;
   background-color: #73d2de;
-  margin: 0;
-  margin-bottom: 0;
   height: 80px;
+  justify-content: space-between;
+  grid-template-columns: auto auto auto;
   align-items: center;
+  color: white;
+}
+
+header div{
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+}
+
+#btnToggleSidebar{
+  width: 50px;
+}
+
+#btnToggleSidebar:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 #logo {
   width: 220px;
 }
 
+#profile{
+  width: 50px;
+}
+
 .sidebar {
   background-color: #2ba6b6;
   color: white;
-  text-align: center;
   height: 100%;
+  text-align: center;
 }
 
 .list {
@@ -263,6 +284,16 @@ body.dark-theme {
   color: #eee;
 }
 
+body.dark-theme main{
+  background-color: #222;
+  color: #eee;
+}
+
+body.dark-theme footer{
+  background-color: #222;
+  color: #eee;
+}
+
 body.dark-theme #sidebar {
   background-color: #111;
   color: #eee;
@@ -276,7 +307,8 @@ body.dark-theme #btnToggleTheme {
   background-color: #444;
   color: #eee;
 }
-
+body.dark-theme .main,
+body.dark-theme .footer,
 body.dark-theme .card,
 body.dark-theme .sub_board,
 body.dark-theme .cont_board,
@@ -313,4 +345,21 @@ body {
   to {
     opacity: 1;
   }
+}
+
+footer{
+  position: fixed;
+  bottom: 0;
+  text-align: right;
+}
+
+#btnToggleTheme{
+  width: 50px;
+  color: #2ba6b6;
+}
+
+#btnToggleTheme:hover{
+  transform: scale(1.1);
+  transition: 0.5s;
+  cursor: pointer;
 }

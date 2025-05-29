@@ -15,7 +15,7 @@
 
 <body>
     <header>
-        <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
+        <a href="dashboard.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
 
     </header>
     <section class="section-tabla">
