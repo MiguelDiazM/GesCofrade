@@ -16,27 +16,35 @@
     ?>
 </head>
 
+
 <body>
     <header>
         <div>
-            <img id="btnToggleSidebar" src="../../public/assets/img/sidebar-toggle.svg" aria-label="Mostrar/Ocultar menú"></img>
-            <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
+
+            <a href="../../public/index.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
         </div>
-        <h1 id="nombreHermandad">NOMBRE COFRADIA</h1>
-        <img src="../../public/assets/img/profile.svg" id="profile" alt="">
+        <div></div>
+        <div class="auth-area" id="authArea">
+            <div class="user-icon" id="userIcon"><img src="../../public/assets/img/profile2.svg" id="profile"></div>
+            <div class="dropdown" id="dropdownMenu">
+                <a href="../../app/controllers/logout.php">Cerrar sesión</a>
+            </div>
+        </div>
     </header>
     <main class="main">
         <aside id="sidebar" class="sidebar">
 
             <ul class="list">
-                <li><a href="../../public/index.php">Inicio</a></li>
-                <li><a href="hermanos.php">Hermanos</a></li>
-                <li><a href="#">Cortejo</a></li>
-                <li><a href="inventario.php">Inventario</a></li>
-                <li><a href="#">Cuotas</a></li>
-                <li><a href="#">Correspondencia</a></li>
-                <li><a href="#">Diseño 3D</a></li>
-                <li><a href="#">Ajustes</a></li>
+                <img id="btnToggleSidebar" src="../../public/assets/img/sidebar-toggle.svg" aria-label="Mostrar/Ocultar menú"></img>
+                <img id="btnToggleTheme" src="../../public/assets/img/modo_oscuro.svg" alt="">
+                <li><a href="../../public/index.php"><img src="../../public/assets/img/inicio.svg" alt=""><span class="sidebar-text">Inicio</span></a></li>
+                <li><a href="hermanos.php"><img src="../../public/assets/img/hermanos.svg" alt=""><span class="sidebar-text">Hermanos</span></a></li>
+                <li><a href="#"><img src="../../public/assets/img/cortejo.svg" alt=""><span class="sidebar-text">Cortejo</span></a></li>
+                <li><a href="inventario.php"><img src="../../public/assets/img/inventario.svg" alt=""><span class="sidebar-text">Inventario</span></a></li>
+                <li><a href="#"><img src="../../public/assets/img/cuotas.svg" alt=""><span class="sidebar-text">Cuotas</span></a></li>
+                <li><a href="#"><img src="../../public/assets/img/correspondencia.svg" alt=""><span class="sidebar-text">Correspondencia</span></a></li>
+                <li><a href="#"><img src="../../public/assets/img/3d.svg" alt=""><span class="sidebar-text">Diseño 3D</span></a></li>
+                <li><a href="#"><img src="../../public/assets/img/ajustes.svg" alt=""><span class="sidebar-text">Ajustes</span></a></li>
             </ul>
         </aside>
         <div class="sections">
@@ -143,21 +151,26 @@
                     </div>
                 </div>
                 <div class="events">
-                    <h1>Eventos importantes</h1>
+                    <div>
+                        <h1>Eventos importantes</h1>
+                        <button id="mostrarTodos">Mostrar todos</button>
+                    </div>
                     <div class="event">
                         Traslado
-                        <p class="fechaEvento">25/07/2025</p>
+                        <p class="fechaEvento">25/01/2025</p>
                     </div>
                     <div class="event">Procesión
-                        <p class="fechaEvento">04/08/2025</p>
+                        <p class="fechaEvento">17/03/2025</p>
                     </div>
                     <div class="event">Ensayo
-                        <p class="fechaEvento">17/08/2025</p>
+                        <p class="fechaEvento">04/03/2025</p>
+                    </div>
+                    <div class="event">Traslado
+                        <p class="fechaEvento">18/05/2025</p>
                     </div>
                 </div>
             </section>
         </div>
-        <footer><img id="btnToggleTheme" src="../../public/assets/img/modo_oscuro.svg" alt=""></footer>
     </main>
 </body>
 

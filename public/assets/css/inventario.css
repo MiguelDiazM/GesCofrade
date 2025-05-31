@@ -7,16 +7,71 @@ body {
 header {
   display: grid;
   background-color: #73d2de;
-  margin: 0;
-  margin-bottom: 0;
-  height: 80px;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  justify-items: center;
   align-items: center;
+  font-size: large;
+  height: 90px;
+}
+
+header div {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto;
+}
+
+.auth-area {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+#profile {
+  width: 50px;
+  padding-right: 10px;
+  cursor: pointer;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  min-width: 150px;
+  z-index: 10;
+  text-align: center;
+}
+
+.dropdown a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
+}
+
+.dropdown a:last-child {
+  border-bottom: none;
+}
+
+.dropdown a:hover {
+  background-color: #f0f0f0;
 }
 
 #logo {
   width: 220px;
 }
 
+a {
+  text-decoration: none;
+}
 #titulo {
   font-size: 28px;
   margin-bottom: 5px;
@@ -42,6 +97,20 @@ header {
   padding-right: 10px;
 }
 
+.dashboardBtn {
+  padding: 8px 16px;
+  background-color: #e0e0e0;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+}
+
 #buscador {
   flex: 1;
   padding: 10px;
@@ -64,6 +133,8 @@ header {
   cursor: pointer;
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: black;
   gap: 5px;
 }
 
@@ -120,6 +191,54 @@ th {
   border-radius: 5px;
 }
 
+#formulario-nuevo {
+  border: 2px solid #2ba6b6;
+  background-color: #f9fbfc;
+  padding: 10px;
+  width: 50%;
+  margin: auto;
+  border-radius: 0 0 8px 8px;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 2px 4px;
+  display: none;
+}
+
+#formulario-nuevo h3 {
+  font-size: 22px;
+  color: #2ba6b6;
+  margin-bottom: 20px;
+}
+
+.form-nuevo label {
+  font-weight: bold;
+  color: #333;
+}
+
+.form-nuevo input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.form-nuevo button[type="submit"] {
+  grid-column: span 2;
+  padding: 12px;
+  font-size: 16px;
+  background-color: #2ba6b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.form-nuevo button[type="submit"]:hover {
+  background-color: #218a99;
+}
+
 #formulario-editar {
   border: 2px solid #2ba6b6;
   background-color: #f9fbfc;
@@ -135,11 +254,6 @@ th {
   font-size: 22px;
   color: #2ba6b6;
   margin-bottom: 20px;
-}
-
-.form-editar {
-  gap: 10px;
-  grid-template-columns: 1fr 1fr;
 }
 
 .form-editar label {

@@ -39,7 +39,7 @@
                 <a href="../app/views/login.php">Iniciar sesión</a>
             <?php
             } else { ?>
-                <div class="user-icon" id="userIcon"><img src="assets/img/profile.svg" id="profile"></div>
+                <div class="user-icon" id="userIcon"><img src="assets/img/profile2.svg" id="profile"></div>
                 <div class="dropdown" id="dropdownMenu">
                     <a href="../app\views\dashboard.php">Dashboard</a>
                     <a href="../app/controllers/logout.php">Cerrar sesión</a>
