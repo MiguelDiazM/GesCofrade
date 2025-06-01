@@ -1,381 +1,369 @@
 /*BODY*/
 @font-face {
-    font-family: "Roboto";
-    src: url("../fonts/static/Roboto-Regular.ttf");
+  font-family: "Roboto";
+  src: url("../fonts/static/Roboto-Regular.ttf");
 }
 
 html,
 body {
-    font-family: "Roboto";
-    background-color: white;
-    height: 100%;
-    margin: 0;
-    padding: 0;
+  font-family: "Roboto";
+  background-color: white;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 /*HEADER*/
 
 header {
-    display: grid;
-    background-color: #73d2de;
-    grid-template-columns: auto auto auto;
-    justify-content: space-between;
-    justify-items: center;
-    align-items: center;
-    font-size: large;
-    height: 90px;
+  display: grid;
+  background-color: #73d2de;
+  grid-template-columns: auto auto auto;
+  justify-content: space-between;
+  justify-items: center;
+  align-items: center;
+  font-size: large;
+  height: 90px;
 }
 
 .menuHeader {
-    width: 200%;
+  width: 200%;
 }
 
 .menuHeader ul {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    justify-content: space-between;
-    justify-content: space-around;
-    list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  justify-content: space-between;
+  justify-content: space-around;
+  list-style: none;
 }
 
 a:hover {
-    color: #ffbc42;
-    transition: 0.5s;
+  color: #ffbc42;
+  transition: 0.5s;
 }
 
 #profile {
-    width: 50px;
+  width: 50px;
+  padding-right: 10px;
+  cursor: pointer;
 }
 
 .singupLoginProfile {
-    display: grid;
-    grid-template-columns: auto auto auto;
-    margin-right: 10px;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  margin-right: 10px;
 }
 
 .singupLoginProfile a {
-    margin-top: 12px;
+  margin-top: 12px;
 }
 
 a {
-    text-decoration: none;
-    color: white;
+  text-decoration: none;
+  color: white;
 }
 
 #logo img {
-    width: 220px;
+  width: 220px;
 }
 
 .auth-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    position: relative;
-}
-
-.user-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background-color: white;
-    color: #218380;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
 }
 
 .dropdown {
-    display: none;
-    position: absolute;
-    right: 0;
-    top: 50px;
-    background-color: white;
-    color: black;
-    border-radius: 6px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    min-width: 150px;
-    z-index: 10;
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background-color: white;
+  color: black;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  min-width: 150px;
+  z-index: 10;
+  text-align: center;
 }
 
 .dropdown a {
-    display: block;
-    padding: 10px;
-    text-decoration: none;
-    color: black;
-    border-bottom: 1px solid #eee;
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+  border-bottom: 1px solid #eee;
 }
 
 .dropdown a:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .dropdown a:hover {
-    background-color: #f0f0f0;
+  background-color: #f0f0f0;
 }
 
 /*FIRST SECTION*/
 
 .firstSection {
-    display: grid;
-    align-items: end;
-    font-size: 30px;
-    height: 50rem;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../img/VirgenPantalla0.jpg");
-    background-size: cover;
+  display: grid;
+  align-items: end;
+  font-size: 30px;
+  height: 50rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/VirgenPantalla0.jpg");
+  background-size: cover;
 }
 
 .textFirstSection {
-    margin-left: 3%;
-    color: white;
+  margin-left: 3%;
+  color: white;
 }
 
 .textFirstSection p {
-    color: #ffbc42;
+  color: #ffbc42;
 }
 
 .dataFirstSection {
-    text-align: center;
-    background-color: #ffbc42;
-    width: 45%;
-    height: 40%;
-    border-top-right-radius: 70px;
-    font-size: smaller;
+  text-align: center;
+  background-color: #ffbc42;
+  width: 45%;
+  height: 40%;
+  border-top-right-radius: 70px;
+  font-size: smaller;
 }
 
 .tableFirstSection {
-    margin: auto;
-    margin-top: 20px;
+  margin: auto;
+  margin-top: 20px;
 }
 
 /*SECOND SECTION*/
 .secondSection {
-    display: grid;
-    grid-template-rows: auto auto;
-    justify-content: space-around;
-    background-color: white;
-    width: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  justify-content: space-around;
+  background-color: white;
+  width: 100%;
 }
 
 .secondSection div {
-    display: grid;
-    grid-template-columns: repeat(3, auto);
-    gap: 50px;
-    width: 100%;
-    margin-bottom: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 50px;
+  width: 100%;
+  margin-bottom: 50px;
 }
 
 .suscription {
-    display: grid;
-    text-align: center;
-    background-color: #73d2de;
-    width: 400px;
-    height: 1000px;
-    border-radius: 50px;
-    color: white;
-    font-size: larger;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: grid;
+  text-align: center;
+  background-color: #73d2de;
+  width: 400px;
+  height: 1000px;
+  border-radius: 50px;
+  color: white;
+  font-size: larger;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .suscription:hover {
-    transform: scale(1.04);
-    transition: 0.7s;
+  transform: scale(1.04);
+  transition: 0.7s;
 }
 
 #standard-suscription {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../img/suscripcion-estandar.jpg");
-    background-size: cover;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/suscripcion-estandar.jpg");
+  background-size: cover;
 }
 
 #professional-suscription {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../img/suscripcion-profesional.jpg");
-    background-size: cover;
-    background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/suscripcion-profesional.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 #premium-suscription {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../img/suscripcionPremium.jpeg");
-    background-size: cover;
-    background-position: 50% 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/suscripcionPremium.jpeg");
+  background-size: cover;
+  background-position: 50% 50%;
 }
 
 /*REVIEWS*/
 .section-reviews {
-    display: grid;
-    grid-template-rows: auto auto;
-    place-items: center;
-    align-items: center;
-    margin-bottom: 40px;
+  display: grid;
+  grid-template-rows: auto auto;
+  place-items: center;
+  align-items: center;
+  margin-bottom: 40px;
 }
 
 .article-reviews {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 70px;
 }
 
 .review {
-    background-color: white;
-    display: grid;
-    place-items: center;
-    border-radius: 30px;
-    height: 250px;
-    width: 400px;
-    font-size: larger;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: white;
+  display: grid;
+  place-items: center;
+  border-radius: 30px;
+  height: 250px;
+  width: 400px;
+  font-size: larger;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 .person-photo {
-    border-radius: 50%;
-    width: 90px;
-    height: 90px;
+  border-radius: 50%;
+  width: 90px;
+  height: 90px;
 }
 
 #person1 {
-    background-image: url("../img/persona1review.jpg");
-    background-size: 100px;
+  background-image: url("../img/persona1review.jpg");
+  background-size: 100px;
 }
 
 #person2 {
-    background-image: url("../img/mujer.png");
-    background-size: 100px;
+  background-image: url("../img/mujer.png");
+  background-size: 100px;
 }
 
 #person3 {
-    background-image: url("../img/persona3review.jpg");
-    background-size: 75px;
-    background-position: center;
+  background-image: url("../img/persona3review.jpg");
+  background-size: 75px;
+  background-position: center;
 }
 
 /*FOOTER*/
 
 footer {
-    background-color: #73d2de;
+  background-color: #73d2de;
 }
 
 .redesSociales ul {
-    display: grid;
-    grid-template-columns: repeat(4, auto);
-    list-style-type: none;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  list-style-type: none;
 }
 
 .redesSociales {
-    width: 30%;
-    margin: auto;
+  width: 30%;
+  margin: auto;
 }
 
 .redesSociales img {
-    width: 35px;
-    cursor: pointer;
+  width: 35px;
+  cursor: pointer;
 }
 
 .container-info {
-    display: grid;
-    grid-template-columns: auto auto auto;
+  display: grid;
+  grid-template-columns: auto auto auto;
 }
 
 .info {
-    display: grid;
-    grid-template-columns: auto;
+  display: grid;
+  grid-template-columns: auto;
 }
 
 .table-footer {
-    font-size: larger;
-    margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    width: 50%;
-    text-align: left;
+  font-size: larger;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  width: 50%;
+  text-align: left;
 }
 
 /*RESPONSIVIDAD*/
 @media (max-width: 600px) {
-    header {
-        grid-template-columns: auto;
-        justify-content: center;
-        height: 160px;
-        text-align: center;
-    }
+  header {
+    grid-template-columns: auto;
+    justify-content: center;
+    height: 160px;
+    text-align: center;
+  }
 
-    .menuHeader {
-        width: 100%;
-    }
+  .menuHeader {
+    width: 100%;
+  }
 
-    .menuHeader li {
-        margin-right: 15px;
-    }
+  .menuHeader li {
+    margin-right: 15px;
+  }
 
-    .firstSection {
-        background-size: cover;
-        background-position: 50% 50%;
-    }
+  .firstSection {
+    background-size: cover;
+    background-position: 50% 50%;
+  }
 
-    .secondSection div {
-        display: grid;
-        grid-template-columns: auto;
-        width: 100%;
-    }
+  .secondSection div {
+    display: grid;
+    grid-template-columns: auto;
+    width: 100%;
+  }
 
-    .secondSection {
-        display: grid;
-        grid-template-rows: auto auto;
-        justify-content: center;
-        background-color: white;
-        height: 100%;
-        width: 100%;
-    }
+  .secondSection {
+    display: grid;
+    grid-template-rows: auto auto;
+    justify-content: center;
+    background-color: white;
+    height: 100%;
+    width: 100%;
+  }
 
-    .secondSection div article {
-        margin: auto;
-    }
+  .secondSection div article {
+    margin: auto;
+  }
 
-    .article-reviews {
-        display: grid;
-        grid-template-columns: auto;
-    }
+  .article-reviews {
+    display: grid;
+    grid-template-columns: auto;
+  }
 
-    .dataFirstSection {
-        display: none;
-    }
+  .dataFirstSection {
+    display: none;
+  }
 
-    .redesSociales {
-        width: 100%;
-        margin: auto;
-    }
+  .redesSociales {
+    width: 100%;
+    margin: auto;
+  }
 
-    .table-footer tr {
-        display: grid;
-        grid-template-columns: auto auto auto;
-    }
+  .table-footer tr {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
 
-    .table-footer td,
-    th {
-        display: grid;
-        grid-template-columns: auto 1fr;
-        gap: 5px;
-    }
+  .table-footer td,
+  th {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 5px;
+  }
 }
 
 @media (min-width: 1000px) {
-        header {
-            width: 100%;
-    }
+  header {
+    width: 100%;
+  }
 
-    body{
-        width: 100%;
-       display: grid;
-    }
-
-
+  body {
+    width: 100%;
+    display: grid;
+  }
 }
