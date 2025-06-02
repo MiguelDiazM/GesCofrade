@@ -1,4 +1,4 @@
-  window.onload = function () {
+window.onload = function () {
   let authArea = document.getElementById("authArea");
   let userIcon = document.getElementById("userIcon");
   let dropdownMenu = document.getElementById("dropdownMenu");
@@ -13,16 +13,14 @@
       dropdownMenu.style.display = "none";
     }
   });
+const editarBtns = document.querySelectorAll(".btn-editar");
+const borrarBtns = document.querySelectorAll(".btn-borrar");
+const nuevoBtns = document.getElementById("btn-nuevo");
+const formEditar = document.getElementById("formulario-editar");
+const formNuevo = document.getElementById("formulario-nuevo");    
+let filaActual = null;
 
-  const editarBtns = document.querySelectorAll(".btn-editar");
-  const borrarBtns = document.querySelectorAll(".btn-borrar");
-  const nuevoBtns = document.getElementById("btn-nuevo");
-  const formEditar = document.getElementById("formulario-editar");
-  const formNuevo = document.getElementById("formulario-nuevo");
-
-  let filaActual = null;
-
-  editarBtns.forEach((btn) => {
+editarBtns.forEach((btn) => {
     btn.addEventListener("click", function () {
       if (formEditar.style.display == "block") {
         formEditar.style.display = "none";
@@ -32,9 +30,11 @@
         filaActual = this.closest("tr");
         const celdas = filaActual.querySelectorAll("td");
 
-        document.getElementById("referencia").value = celdas[0].innerText;
-        document.getElementById("elemento").value = celdas[1].innerText;
-        document.getElementById("descripcion").value = celdas[2].innerText;
+        document.getElementById("dni").value = celdas[0].innerText;
+        document.getElementById("nombre").value = celdas[1].innerText;
+        document.getElementById("apellido").value = celdas[2].innerText;
+        document.getElementById("direccion").value = celdas[3].innerText;
+        document.getElementById("telefono").value = celdas[4].innerText;
       }
     });
   });

@@ -24,8 +24,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!$control) {
-            $err_referencia = "No existe esa referencia en la BBDD";
-            header("Location: ../views/inventario.php?err_referencia=$err_referencia");
+            $err .= "err_referencia=No existe esa referencia en la BBDD";
+            header("Location: ../views/inventario.php$err");
         }
 
         $tmp_elemento = isset($_POST["elemento"]) ? $_POST["elemento"] : null;

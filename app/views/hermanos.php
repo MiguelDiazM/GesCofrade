@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Inventario</title>
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
-    <script src="../../public/assets/js/inventory.js"></script>
+    <script src="../../public/assets/js/hermanos.js"></script>
     <?php
     require("../controllers/hermanosLogic.php");
     session_start();
@@ -14,16 +14,28 @@
 </head>
 
 <body>
-    <header>
-        <img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt="">
+     <header>
+        <div>
 
+            <a href="../../public/index.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
+        </div>
+        <div></div>
+        <div class="auth-area" id="authArea">
+            <div class="user-icon" id="userIcon"><img src="../../public/assets/img/profile2.svg" id="profile"></div>
+            <div class="dropdown" id="dropdownMenu">
+                <a href="../../public/index.php">Inicio</a>
+                <a href="../../app/views/dashboard.php">Dashboard</a>
+                <a href="../../app/controllers/logout.php">Cerrar sesión</a>
+            </div>
+        </div>
     </header>
     <section class="section-tabla">
         <div class="barra-superior">
+            <a href="../../app/views/dashboard.php" class="botones boton">Volver a Dashboard</a>
             <input type="text" placeholder="Buscar..." id="buscador">
             <div class="botones">
-                <button class="boton">Filtrar</button>
-                <button class="boton boton-azul">Nuevo</button>
+                <button id="btn-filtrar" class="boton">Limpiar filtro</button>
+                <button id="btn-nuevo" class="boton boton-azul">Nuevo</button>
             </div>
         </div>
 
@@ -35,6 +47,7 @@
                     <th>Apellido</th>
                     <th>Dirección</th>
                     <th>Teléfono</th>
+                    <th>Acción</th>
                 </tr>
             </thead>
             <tbody>
@@ -59,20 +72,89 @@
                 ?>
             </tbody>
         </table>
-        <section id="formulario-editar">
-            <h3>Editar elemento</h3>
-            <form class="form-editar">
-                <input type="hidden" name="editar">
-                <label for="referencia">Referencia</label>
-                <input type="text" class="referencia" name="referencia">
+         <section id="formulario-editar">
+            <form class="form-editar" method="POST" action="../controllers/hermanosLogic.php">
+                <h3>Editar elemento</h3>
+                <input type="hidden" name="control" value="editar">
+                <label for="dni">DNI</label>
+                <input readonly type="text" id="dni" name="dni">
 
-                <label for="elemento">Elemento</label>
-                <input type="text" class="elemento" name="elemento">
+                <?php
+                if (isset($_GET["err_dni"])) echo "<p>" . $_GET["err_dni"] . "</p>";
+                ?>
 
-                <label for="descripcion">Descripción</label>
-                <input type="text" class="descripcion" name="descripcion">
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
 
-                <button type="submit">Guardar cambios</button>
+                <?php
+                if (isset($_GET["err_nombre"])) echo "<p>" . $_GET["err_nombre"] . "</p>";
+                ?>
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido">
+
+                <?php
+                if (isset($_GET["err_apellido"])) echo "<p>" . $_GET["err_apellido"] . "</p>";
+                ?>
+
+                <label for="direccion">Direccion</label>
+                <input type="text" id="direccion" name="direccion">
+
+                <?php
+                if (isset($_GET["err_direccion"])) echo "<p>" . $_GET["err_direccion"] . "</p>";
+                ?>
+
+                <label for="telefono">Telefono</label>
+                <input type="text" id="telefono" name="telefono">
+
+                <?php
+                if (isset($_GET["err_telefono"])) echo "<p>" . $_GET["err_telefono"] . "</p>";
+                ?>
+                
+                <input type="submit" value="Guardar cambios">
+            </form>
+        </section>
+
+        <section id="formulario-nuevo">
+            <form class="form-nuevo" method="POST" action="../controllers/inventarioLogic.php">
+                <h3>Nuevo hermano</h3>
+                <input type="hidden" name="control" value="nuevo">
+                <label for="dni">DNI</label>
+                <input type="text" id="dni" name="dni">
+
+                <?php
+                if (isset($_GET["err_dni"])) echo "<p>" . $_GET["err_dni"] . "</p>";
+                ?>
+
+                <label for="nombre">Nombre</label>
+                <input type="text" id="nombre" name="nombre">
+
+                <?php
+                if (isset($_GET["err_nombre"])) echo "<p>" . $_GET["err_nombre"] . "</p>";
+                ?>
+
+                <label for="apellido">Apellido</label>
+                <input type="text" id="apellido" name="apellido">
+
+                <?php
+                if (isset($_GET["err_apellido"])) echo "<p>" . $_GET["err_apellido"] . "</p>";
+                ?>
+
+                <label for="direccion">Direccion</label>
+                <input type="text" id="direccion" name="direccion">
+                
+                <?php
+                if (isset($_GET["err_direccion"])) echo "<p>" . $_GET["err_direccion"] . "</p>";
+                ?>
+
+                <label for="telefono">Telefono</label>
+                <input type="text" id="telefono" name="telefono">
+
+                <?php
+                if (isset($_GET["err_telefono"])) echo "<p>" . $_GET["err_telefono"] . "</p>";
+                ?>
+
+                <input type="submit" value="Guardar cambios">
             </form>
         </section>
     </section>
