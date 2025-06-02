@@ -116,9 +116,10 @@
         </section>
 
         <section id="formulario-nuevo">
-            <form class="form-nuevo" method="POST" action="../controllers/inventarioLogic.php">
+            <form class="form-nuevo" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Nuevo hermano</h3>
                 <input type="hidden" name="control" value="nuevo">
+                <input type="hidden" name="id_hermandad" value=<?php echo $_SESSION["id_hermandad"] ?>>
                 <label for="dni">DNI</label>
                 <input type="text" id="dni" name="dni">
 

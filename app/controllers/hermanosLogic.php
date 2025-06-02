@@ -1,5 +1,5 @@
 <?php
-require("../../config/database.php");
+require("../../config/database.php");   
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $control = true;
@@ -108,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_apellido = isset($_POST["apellido"]) ? $_POST["apellido"] : null;
         $tmp_direccion = isset($_POST["direccion"]) ? $_POST["direccion"] : null;
         $tmp_telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
+        $id_hermandad = isset($_POST["id_hermandad"]) ? $_POST["id_hermandad"] : null;
 
         if ($tmp_nombre == null) {
             $err .= "err_nombre=Debes introducir un nombre&";
@@ -133,7 +134,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $telefono = htmlspecialchars($tmp_telefono);
         }
 
-        if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono)) {
+        if($tmp_id_hermandad != null){
+            $id_hermandad = $tmp_id_hermandad;
+        }
+    
+        print_r("nombre: $nombre, apellido: $apellido, direccion: $direccion, telefono: $telefono, hermandad: $id_hermandad");
+        if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono) && isset($id_hermandad)) {
             if ($nombre === "") {
                 $nombre = $datosAntiguos["nombre"];
             }
@@ -147,16 +153,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $telefono = $datosAntiguos["telefono"];
             }
 
+            $hermandad[] = intval($id_hermandad);
+           
+           
+            $consulta = "INSERT INTO hermanos (DNI, nombre, apellido, direccion, telefono, id_hermandad) VALUES (:dni, :e, :a, :d, :t, :id)";
 
-
-            $consulta = "UPDATE Hermanos SET nombre = :e, apellido = :a, direccion = :d, telefono = :t WHERE DNI = :dni";
             $stmt = $_conexion->prepare($consulta);
             $stmt->execute([
                 ":e" => $nombre,
                 ":a" => $apellido,
                 ":d" => $direccion,
                 ":t" => $telefono,
-                ":dni" => $dni
+                ":dni" => $dni,
+                ":id" => json_encode($hermandad)
             ]);
         }
         header("Location: ../views/hermanos.php$err");
