@@ -40,7 +40,8 @@ header {
 
 a:hover {
   color: #ffbc42;
-  transition: 0.5s;
+  transition: 0.3s;
+  
 }
 
 #profile {
@@ -66,6 +67,7 @@ a {
 
 #logo img {
   width: 220px;
+  cursor: pointer;
 }
 
 .auth-area {
@@ -112,8 +114,8 @@ a {
   display: grid;
   align-items: end;
   font-size: 30px;
-  height: 50rem;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  height: 51.3rem;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../img/VirgenPantalla0.jpg");
   background-size: cover;
 }
@@ -127,22 +129,53 @@ a {
   color: #ffbc42;
 }
 
+
 .dataFirstSection {
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   background-color: #ffbc42;
-  width: 45%;
-  height: 40%;
-  border-top-right-radius: 70px;
-  font-size: smaller;
+  width: 50%;
+  height: 35%;
+  border-top-right-radius: 60px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 1rem 2rem;
+  gap: 1rem;
+  transition: transform 0.3s ease;
+  
 }
 
-.tableFirstSection {
-  margin: auto;
-  margin-top: 20px;
+.dataFirstSection:hover {
+  transform: translateX(-15px);
+}
+
+.dataItem {
+  text-align: center;
+  cursor: pointer;
+}
+
+.dataNumber {
+  font-size: 2.5rem;
+  font-weight: bold;
+  display: block;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.dataLabel {
+  font-size: 1rem;
+  color: #222;
+  transition: color 0.3s ease;
+}
+
+.dataItem:hover .dataNumber,
+.dataItem:hover .dataLabel {
+  color: #00b7ff;
 }
 
 /*SECOND SECTION*/
 .secondSection {
+  padding-top: 10px;
   display: grid;
   grid-template-rows: auto auto;
   justify-content: space-around;
@@ -163,35 +196,31 @@ a {
   text-align: center;
   background-color: #73d2de;
   width: 400px;
-  height: 1000px;
+  height: 500px;
   border-radius: 50px;
   color: white;
   font-size: larger;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-}
-
-.suscription:hover {
-  transform: scale(1.04);
-  transition: 0.7s;
+  cursor: pointer;
 }
 
 #standard-suscription {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../img/suscripcion-estandar.jpg");
   background-size: cover;
 }
 
 #professional-suscription {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../img/suscripcion-profesional.jpg");
   background-size: cover;
   background-position: 50% 50%;
 }
 
 #premium-suscription {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
     url("../img/suscripcionPremium.jpeg");
   background-size: cover;
   background-position: 50% 50%;
@@ -199,53 +228,105 @@ a {
 
 /*REVIEWS*/
 .section-reviews {
-  display: grid;
-  grid-template-rows: auto auto;
-  place-items: center;
-  align-items: center;
-  margin-bottom: 40px;
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.section-reviews h1 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #333;
 }
 
 .article-reviews {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 70px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
 }
 
 .review {
-  background-color: white;
-  display: grid;
-  place-items: center;
-  border-radius: 30px;
-  height: 250px;
-  width: 400px;
-  font-size: larger;
-  text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  width: 100%;
+  max-width: 700px;
+  transition: transform 0.3s ease;
 }
 
+.review:hover {
+  transform: scale(1.02);
+}
+
+
 .person-photo {
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  width: 90px;
-  height: 90px;
+  background-color: #ddd;
+  margin-right: 20px;
+  background-size: cover;
+  background-position: center;
+  flex-shrink: 0;
 }
 
 #person1 {
-  background-image: url("../img/persona1review.jpg");
-  background-size: 100px;
+  background-image: url("");
 }
 
 #person2 {
-  background-image: url("../img/mujer.png");
-  background-size: 100px;
+  background-image: url("");
 }
 
 #person3 {
-  background-image: url("../img/persona3review.jpg");
-  background-size: 75px;
-  background-position: center;
+  background-image: url("");
+}
+
+.review-content {
+  text-align: left;
+}
+
+.review-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #218380;
+}
+
+.review-content .stars {
+  color: #ffbc42;
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+.review-content p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.review-content .date {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.see-more-button {
+  display: inline-block;
+  margin-top: 5px;
+  padding: 12px 20px;
+  background-color: #ffbc42;
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.see-more-button:hover {
+  background-color: #c98913;
+  transform: scale(1.05);
 }
 
 /*FOOTER*/
