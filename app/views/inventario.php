@@ -62,7 +62,15 @@
                 ?>
                     <td>
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
-                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+
+                        <form action="../controllers/inventarioLogic.php" method="POST">
+                            <input type="hidden" name="control" value="borrar">
+                            <input type="hidden" name="referencia" value=<?php echo $elemento["referencia"] ?>>
+
+                            <button type="submit" style="border:none; background:none; padding:0;">
+                                <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+                            </button>
+                        </form>
                     </td>
                 <?php
                     echo "</tr>";
@@ -71,17 +79,18 @@
             </tbody>
         </table>
         <?php
-            if (isset($_GET["err_referencia"])) echo "<p>" . $_GET["err_referencia"] . "</p>";
-            if (isset($_GET["err_elemento"])) echo "<p>" . $_GET["err_elemento"] . "</p>";
-            if (isset($_GET["err_descripcion"])) echo "<p>" . $_GET["err_descripcion"] . "</p>";
-                
+        if (isset($_GET["err_referencia"])) echo "<p>" . $_GET["err_referencia"] . "</p>";
+        if (isset($_GET["err_elemento"])) echo "<p>" . $_GET["err_elemento"] . "</p>";
+        if (isset($_GET["err_descripcion"])) echo "<p>" . $_GET["err_descripcion"] . "</p>";
+
+
         ?>
 
         <section id="formulario-editar">
             <form class="form-editar" method="POST" action="../controllers/inventarioLogic.php">
                 <h3>Editar elemento</h3>
                 <input type="hidden" name="control" value="editar">
-                
+
                 <label for="referencia">Referencia</label>
                 <input readonly type="text" id="referencia" name="referencia">
 

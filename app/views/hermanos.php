@@ -64,7 +64,14 @@
                 ?>
                     <td>
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
-                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                        <form action="../controllers/hermanosLogic.php" method="POST">
+                            <input type="hidden" name="control" value="borrar">
+                            <input type="hidden" name="dni" value=<?php echo $elemento["DNI"] ?>>
+
+                            <button type="submit" style="border:none; background:none; padding:0;">
+                                <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+                            </button>
+                        </form>
                     </td>
                 <?php
                     echo "</tr>";

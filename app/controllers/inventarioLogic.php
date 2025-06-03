@@ -121,6 +121,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ":i" => $id_hermandad
             ]);
         }
+    } else if ($_POST["control"] == "borrar") {
+        
+        $referencia = $_POST["referencia"];
+        $consulta = "DELETE FROM inventario WHERE referencia = :r";
+        $stmt = $_conexion->prepare($consulta);
+        $stmt->execute([
+            ":r" => $referencia
+        ]);
+        
     }
     header("Location: ../views/inventario.php$err");
 }

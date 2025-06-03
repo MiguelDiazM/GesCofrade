@@ -168,8 +168,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ":id" => json_encode($hermandad)
             ]);
         }
-        header("Location: ../views/hermanos.php$err");
+        
+    } else if ($_POST["control"] == "borrar") {
+        
+        $dni = $_POST["dni"];
+        $consulta = "DELETE FROM hermanos WHERE DNI = :dni";
+        $stmt = $_conexion->prepare($consulta);
+        $stmt->execute([
+            ":dni" => $dni
+        ]);
+        
     }
+    header("Location: ../views/hermanos.php$err");
 }
 
 function mostrarHermanos()
