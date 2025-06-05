@@ -18,7 +18,7 @@
 <body>
     <header>
         <div>
-            <a href="../../public/index.php"><img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo"></a>
+            <a href="../../public/index.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
         </div>
         <div></div>
         <div class="auth-area" id="authArea">
@@ -65,13 +65,12 @@
                     <td>
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
 
-                        <form action="../controllers/inventarioLogic.php" method="POST">
+                        <form action="../controllers/inventarioLogic.php" method="POST" id="formulario-borrar">
                             <input type="hidden" name="control" value="borrar">
                             <input type="hidden" name="referencia" value=<?php echo $elemento["referencia"] ?>>
 
-                            <button type="submit" style="border:none; background:none; padding:0;">
-                                <img class="btn-borrar" src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
-
+                            <button class="btn-borrar" type="submit" style="border:none; background:none; padding:0;">
+                                <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
                             </button>
                         </form>
                     </td>
