@@ -48,7 +48,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
-        //TODO: Se debe crear una hermandad con el nombre introducido y a partir de ella se crearan los usuarios
         $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
         $stmt = $_conexion->prepare($consulta);
         $stmt->execute([
@@ -71,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     ":nombre" => $nombre
                 ]);
             }
-            header("Location: ../../public/index.php");
+        header("Location: ../views/login.php");
     }
     header("Location: $envioError");
 }
