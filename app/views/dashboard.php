@@ -23,9 +23,14 @@
 
             <a href="../../public/index.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
         </div>
-        <div></div>
+
         <div class="auth-area" id="authArea">
-            <div class="user-icon" id="userIcon"><img src="../../public/assets/img/profile2.svg" id="profile"></div>
+
+
+            <div class="user-icon" id="userIcon">
+                <img id="btnToggleTheme" src="../../public/assets/img/modo_oscuro.svg" alt="">
+                <img src="../../public/assets/img/profile2.svg" id="profile">
+            </div>
             <div class="dropdown" id="dropdownMenu">
                 <a href="../../app/controllers/logout.php">Cerrar sesión</a>
             </div>
@@ -36,8 +41,7 @@
 
             <ul class="list">
                 <img id="btnToggleSidebar" src="../../public/assets/img/sidebar-toggle.svg" aria-label="Mostrar/Ocultar menú"></img>
-                <img id="btnToggleTheme" src="../../public/assets/img/modo_oscuro.svg" alt="">
-                <li><a href="../../public/index.php"><img src="../../public/assets/img/inicio.svg" alt=""><span class="sidebar-text">Inicio</span></a></li>
+                <li><div><a href="../../public/index.php"><img src="../../public/assets/img/inicio.svg" alt=""><span class="sidebar-text">Inicio</span></a></div></li>
                 <li><a href="hermanos.php"><img src="../../public/assets/img/hermanos.svg" alt=""><span class="sidebar-text">Hermanos</span></a></li>
                 <li><a href="#"><img src="../../public/assets/img/cortejo.svg" alt=""><span class="sidebar-text">Cortejo</span></a></li>
                 <li><a href="inventario.php"><img src="../../public/assets/img/inventario.svg" alt=""><span class="sidebar-text">Inventario</span></a></li>
@@ -151,7 +155,7 @@
                     </div>
                 </div>
                 <div class="events">
-                    <div>
+                    <div class="button-events">
                         <h1>Eventos importantes</h1>
                         <button id="mostrarTodos">Mostrar todos</button>
                     </div>
@@ -173,4 +177,5 @@
         </div>
     </main>
 </body>
+
 </html>
