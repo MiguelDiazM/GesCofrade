@@ -16,8 +16,7 @@
 <body>
      <header>
         <div>
-
-            <a href="../../public/index.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
+            <a href="../../public/index.php"><img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo"></a>
         </div>
         <div></div>
         <div class="auth-area" id="authArea">
