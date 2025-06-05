@@ -16,8 +16,7 @@
 <body>
      <header>
         <div>
-
-            <a href="../../public/index.php"><img id="logo" src="../../public/assets/img/logoGescofradeWhite.png" alt=""></a>
+            <a href="../../public/index.php"><img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo"></a>
         </div>
         <div></div>
         <div class="auth-area" id="authArea">
@@ -69,7 +68,7 @@
                             <input type="hidden" name="dni" value=<?php echo $elemento["DNI"] ?>>
 
                             <button type="submit" style="border:none; background:none; padding:0;">
-                                <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+                                <img class="btn-borrar" src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
                             </button>
                         </form>
                     </td>
