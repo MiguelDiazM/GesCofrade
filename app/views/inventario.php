@@ -33,7 +33,9 @@
     <section class="section-tabla">
         <div class="barra-superior">
             <a href="../../app/views/dashboard.php" class="botones boton">Volver a Dashboard</a>
-            <input type="text" placeholder="Buscar..." id="buscador">
+            <input type="text" placeholder="Buscar por elemento
+            
+            .." id="buscador">
             <div class="botones">
                 <button id="btn-filtrar" class="boton">Limpiar filtro</button>
                 <button id="btn-nuevo" class="boton boton-azul">Nuevo</button>
@@ -69,6 +71,7 @@
 
                             <button type="submit" style="border:none; background:none; padding:0;">
                                 <img class="btn-borrar" src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+
                             </button>
                         </form>
                     </td>
