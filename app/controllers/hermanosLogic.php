@@ -101,7 +101,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (!$control) {
             $err .= "err_referencia=&";
-            header("Location: ../views/inventario.php$err");
+            header("Location: ../views/hermanos.php$err");
         }
 
         $tmp_nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : null;

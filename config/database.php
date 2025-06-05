@@ -1,5 +1,5 @@
 <?php
-// Config pa la conexion con la bd
+
 $_host = "localhost";
 $_bd = "gescofrade";
 $_usuario = "root";
