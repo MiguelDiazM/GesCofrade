@@ -38,6 +38,7 @@
                 <input type="submit" id="signUpButton" value="Registrarse" class="btn btn-primary">
             </div>
         </form>
+        <?php if (isset($_GET["err_usuario"])) echo $_GET["err_usuario"]; ?>
         <br>
         <div class="login">
             ¿No tienes cuenta? <a href="login.php">inicia sesión</a>

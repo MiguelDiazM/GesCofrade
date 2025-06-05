@@ -56,20 +56,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ":t" => $tipo,
             ":u" => $city
         ]);
-        // Comprobamos si el usuario ya existe
-        $consulta = "SELECT * FROM usuarios WHERE usuario = :n";
-        $stmt = $_conexion->prepare($consulta);
-        $stmt->execute([
-            ":n" => $nombre
-        ]);
 
         $usuarios = [];
         $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
         $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
-
-        var_dump($usuarios);
-
-        if ($stmt->rowCount() === 0) {
+         
             foreach ($usuarios as $usuario) {
                 $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
                 $stmt_insert = $_conexion->prepare($insert);
@@ -81,10 +72,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ]);
             }
             header("Location: ../../public/index.php");
-        } else {
-            $err_nombre = "<span class='bg-warning'>¡El nombre de usuario ya está en uso!</span>";
-            $envioError .= "?err_nombre=$err_nombre";
-        }
     }
     header("Location: $envioError");
 }
