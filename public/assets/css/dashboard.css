@@ -10,6 +10,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  
 }
 
 h1 {
@@ -19,7 +20,7 @@ h1 {
 header {
   display: grid;
   background-color: #73d2de;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto;
   justify-content: space-between;
   justify-items: center;
   align-items: center;
@@ -94,8 +95,7 @@ header div {
   display: grid;
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   font-size: larger;
-  height: 80px;
-  align-items: center;
+  
 }
 
 #lastLi {
@@ -394,8 +394,7 @@ footer {
 }
 
 #btnToggleTheme {
-  width: 30px;
-  color: #2ba6b6;
+  width: 40px;
 }
 
 #btnToggleTheme:hover {
@@ -450,3 +449,89 @@ a {
 .dropdown a:hover {
   background-color: #f0f0f0;
 }
+
+.button-events{
+  display: grid;
+  grid-template-columns: auto auto;
+}
+
+#mostrarTodos{
+  background-color: #2ba6b6;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white;
+  gap: 5px;
+  text-align: center;
+  margin-right: 35px;
+}
+
+@media (max-width: 600px) {
+  header {
+    grid-template-columns: 1fr 1fr;
+    height: auto;
+    padding: 10px;
+  }
+
+  #logo {
+    width: 150px;
+  }
+
+  #profile {
+    width: 40px;
+  }
+
+  main {
+    grid-template-columns: auto;
+    gap: 20px;
+  }
+
+  #sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .sidebar-text {
+    display: none;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+  }
+
+  .list li {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 10px;
+    font-size: small;
+  }
+
+  .cards-section {
+    grid-template-columns: 400px;
+  }
+
+  .card {
+    margin-left: 45px;
+    width: 100%;
+  }
+
+  .graphics-section{
+     grid-template-columns: auto;
+     place-items: center;
+     margin-left: 20px;
+  }
+
+  .b5{
+    display: none;
+  }
+
+  .events{
+    width: 400px;
+  }
+  }
