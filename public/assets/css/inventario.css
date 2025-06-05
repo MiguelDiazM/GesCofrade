@@ -224,14 +224,15 @@ th {
   margin-bottom: 20px;
 }
 
-.form-nuevo button[type="submit"] {
+input[type="submit"] {
   grid-column: span 2;
-  padding: 12px;
-  font-size: 16px;
+  padding: 7px;
+  font-size: 17px;
   background-color: #2ba6b6;
+  font-weight: bolder;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 5px;
   cursor: pointer;
 }
 
