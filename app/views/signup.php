@@ -26,6 +26,7 @@
             </div>
             <div class="main">
                 <input type="text" name="poblacion" class="form-control" placeholder="Ciudad">
+                <?php if (isset($_GET["err_city"])) echo $_GET["err_city"]; ?>
             </div>
             <div class="type">
                 <label for="tipo" class="form-label">Tipo</label>
@@ -33,6 +34,7 @@
                     <option value="penitencia">Penitencia</option>
                     <option value="gloria">Gloria</option>
                 </select>
+                <?php if (isset($_GET["err_tipo"])) echo $_GET["err_tipo"]; ?>
             </div>
             <div class="main">
                 <input type="submit" id="signUpButton" value="Registrarse" class="btn btn-primary">

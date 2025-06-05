@@ -1,11 +1,11 @@
-describe('Prueba registro', () => {
-  it('passes', () => {
-    cy.visit('https://localhost/GesCofrade/public/index.php')
-    cy.location("pathname").should("eq", "/GesCofrade/public/index.php")
+describe("Prueba registro", () => {
+  it("passes", () => {
+    cy.visit("https://localhost/GesCofrade/public/index.php");
+    cy.location("pathname").should("eq", "/GesCofrade/public/index.php");
 
     cy.contains("Registrarse").click();
-    cy.location("pathname").should("eq", "/GesCofrade/app/views/signup.php")
-    cy.wait(500)
+    cy.location("pathname").should("eq", "/GesCofrade/app/views/signup.php");
+    cy.wait(500);
     let formulario = "pruebaCypress";
 
     cy.get('input[name="nombre"]').type(formulario);
@@ -14,9 +14,7 @@ describe('Prueba registro', () => {
 
     cy.contains("Registrarse").click();
     cy.wait(500);
-    cy.location("pathname").should("eq", "/GesCofrade/public/index.php")
-
-
-
-  })
-})
+    cy.get('.login > a').click()
+    cy.location("pathname").should("eq", "/GesCofrade/app/views/login.php");
+  });
+});
