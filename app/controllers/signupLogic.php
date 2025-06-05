@@ -16,32 +16,32 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tmp_city = $_POST["poblacion"] ?? "";
     $tmp_tipo = $_POST["tipo"] ?? "";
 
-    $envioError = "../views/signup.php";
+    $envioError = "../views/signup.php?";
 
     if (empty($tmp_nombre)) {
         $err_nombre = "<span class='bg-warning'>El nombre no puede estar vacío</span>";
-        $envioError .= "?err_nombre=$err_nombre";
+        $envioError .= "&err_nombre=$err_nombre";
     } else {
         $nombre = $tmp_nombre;
     }
 
     if (empty($tmp_contrasena)) {
         $err_contrasena = "<span class='bg-warning'>La contraseña no puede estar vacía</span>";
-        $envioError .= "?err_contrasena=$err_contrasena?";
+        $envioError .= "&err_contrasena=$err_contrasena";
     } else {
         $contrasena = $tmp_contrasena;
     }
 
     if (empty($tmp_city)) {
         $err_city = "<span class='bg-warning'>Debes introducir una ciudad</span>";
-        $envioError .= "?err_city=$err_city";
+        $envioError .= "&err_city=$err_city";
     } else {
         $city = $tmp_city;
     }
 
     if (empty($tmp_tipo)) {
         $err_tipo = "<span class='bg-warning' Debes introducir un tipo></span>";
-        $envioError .= "?err_tipo=$err_tipo";
+        $envioError .= "&err_tipo=$err_tipo";
     } else {
         $tipo = $tmp_tipo;
     }
