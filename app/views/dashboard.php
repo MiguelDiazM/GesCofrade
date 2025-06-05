@@ -68,13 +68,14 @@
                     <div class="card-data">
                         <img src="../../public/assets/img/cuotas.svg" class="card-icon" alt="icono">
                         <p>Cuotas pendientes</p>
-                        <h1>8</h1>
+                        <h1>Proximamente...</h1>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-data">
                         <img src="../../public/assets/img/cortejo.svg" class="card-icon" alt="icono">
                         <p>Cortejo actualizado</p>
+                        <h1>Proximamente...</h1>
                     </div>
                 </div>
                 <div class="card">
@@ -92,12 +93,14 @@
                     <div class="card-data">
                         <img src="../../public/assets/img/correspondencia.svg" class="card-icon" alt="icono">
                         <p>Correspondencia</p>
+                        <h1>Proximamente...</h1>
                     </div>
                 </div>
                 <div class="card">
                     <div class="card-data">
                         <img src="../../public/assets/img/3d.svg" class="card-icon" alt="icono">
                         <p>Diseño 3D</p>
+                        <h1>Proximamente...</h1>
                     </div>
                 </div>
             </section>
