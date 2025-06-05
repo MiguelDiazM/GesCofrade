@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo">
+        <a href="../../public/index.php"><img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo"></a>
     </header>
     <div class="signup">
         <div class="logo">GESCOFRADE</div>
