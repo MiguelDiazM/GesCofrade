@@ -64,7 +64,14 @@
                 ?>
                     <td>
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
-                        <img src="../../public/assets/img/delete.svg" alt="Borrar" class="btn-borrar">
+                        <form action="../controllers/hermanosLogic.php" method="POST">
+                            <input type="hidden" name="control" value="borrar">
+                            <input type="hidden" name="dni" value=<?php echo $elemento["DNI"] ?>>
+
+                            <button type="submit" style="border:none; background:none; padding:0;">
+                                <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+                            </button>
+                        </form>
                     </td>
                 <?php
                     echo "</tr>";
@@ -116,9 +123,10 @@
         </section>
 
         <section id="formulario-nuevo">
-            <form class="form-nuevo" method="POST" action="../controllers/inventarioLogic.php">
+            <form class="form-nuevo" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Nuevo hermano</h3>
                 <input type="hidden" name="control" value="nuevo">
+                <input type="hidden" name="id_hermandad" value=<?php echo $_SESSION["id_hermandad"] ?>>
                 <label for="dni">DNI</label>
                 <input type="text" id="dni" name="dni">
 
