@@ -14,7 +14,7 @@
 </head>
 
 <body>
-     <header>
+    <header>
         <div>
             <a href="../../public/index.php"><img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo"></a>
         </div>
@@ -31,7 +31,7 @@
     <section class="section-tabla">
         <div class="barra-superior">
             <a href="../../app/views/dashboard.php" class="botones boton">Volver a Dashboard</a>
-            <input type="text" placeholder="Buscar por DNI..." id="buscador">
+            <input type="text" placeholder="Buscar..." id="buscador">
             <div class="botones">
                 <button id="btn-filtrar" class="boton">Limpiar filtro</button>
                 <button id="btn-nuevo" class="boton boton-azul">Nuevo</button>
@@ -79,7 +79,7 @@
                 ?>
             </tbody>
         </table>
-         <section id="formulario-editar">
+        <section id="formulario-editar">
             <form class="form-editar" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Editar elemento</h3>
                 <input type="hidden" name="control" value="editar">
@@ -117,7 +117,7 @@
                 <?php
                 if (isset($_GET["err_telefono"])) echo "<p>" . $_GET["err_telefono"] . "</p>";
                 ?>
-                
+
                 <input type="submit" value="Guardar cambios">
             </form>
         </section>
@@ -150,7 +150,7 @@
 
                 <label for="direccion">Direccion</label>
                 <input type="text" id="direccion" name="direccion">
-                
+
                 <?php
                 if (isset($_GET["err_direccion"])) echo "<p>" . $_GET["err_direccion"] . "</p>";
                 ?>

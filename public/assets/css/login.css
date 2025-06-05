@@ -1,84 +1,84 @@
 @font-face {
-    font-family: "Roboto";
-    src: url("../fonts/static/Roboto-Regular.ttf");
+  font-family: "Roboto";
+  src: url("../fonts/static/Roboto-Regular.ttf");
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    background-color: #f5f5f5;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../img/semana-santa-login.jpg");
-    background-size: cover;
-    background-position: center;
+  font-family: "Roboto", sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/semana-santa-login.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 .login {
-    background-color: white;
-    padding: 40px;
-    border-radius: 8px;
-    width: 350px;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: white;
+  padding: 40px;
+  border-radius: 8px;
+  width: 350px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 #logo {
-    top: 0;
-    position: fixed;
-    left: 0;
-    width: 200px;
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 200px;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: white;
 }
 
 h1 {
-    color: white;
+  color: white;
 }
 
 .main {
-    margin-bottom: 20px;
-    text-align: left;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 .login-button {
-    background-color: #000;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+  background-color: #000;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .signup {
-    margin-top: 20px;
-    color: white;
+  margin-top: 20px;
+  color: white;
 }
 
 .signup a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }

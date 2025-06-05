@@ -59,17 +59,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $usuarios = [];
         $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
         $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
-         
-            foreach ($usuarios as $usuario) {
-                $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
-                $stmt_insert = $_conexion->prepare($insert);
 
-                $stmt_insert->execute([
-                    ":usuario" => $usuario["usuario"],
-                    ":contrasena" => $usuario["contrasena"],
-                    ":nombre" => $nombre
-                ]);
-            }
+        foreach ($usuarios as $usuario) {
+            $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
+            $stmt_insert = $_conexion->prepare($insert);
+
+            $stmt_insert->execute([
+                ":usuario" => $usuario["usuario"],
+                ":contrasena" => $usuario["contrasena"],
+                ":nombre" => $nombre
+            ]);
+        }
         header("Location: ../views/login.php");
     }
     header("Location: $envioError");
