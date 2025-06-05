@@ -68,7 +68,7 @@
                             <input type="hidden" name="dni" value=<?php echo $elemento["DNI"] ?>>
 
                             <button type="submit" style="border:none; background:none; padding:0;">
-                                <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+                                <img class="btn-borrar" src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
                             </button>
                         </form>
                     </td>

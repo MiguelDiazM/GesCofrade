@@ -73,8 +73,33 @@ a {
 .auth-area {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
   position: relative;
+  padding-right: 15px;
+}
+
+.auth-area a {
+  padding: 8px 14px;
+  border-radius: 6px;
+  border: 1px solid white;
+  color: white;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  font-size: 15px;
+}
+
+/* Enlace destacado: Iniciar sesión */
+.auth-area a:nth-child(2) {
+  background-color: white;
+  color: #218380;
+  font-weight: bold;
+}
+
+.auth-area a:hover {
+  background-color: #ffbc42;
+  color: black;
+  border-color: #ffbc42;
+  font-weight: bold;
 }
 
 .dropdown {
@@ -275,15 +300,15 @@ a {
 }
 
 #person1 {
-  background-image: url("");
+  background-image: url("../img/person1.jpg");
 }
 
 #person2 {
-  background-image: url("");
+  background-image: url("../img/person2.jpg");
 }
 
 #person3 {
-  background-image: url("");
+  background-image: url("../img/person3.jpg");
 }
 
 .review-content {
@@ -325,14 +350,15 @@ a {
 }
 
 .see-more-button:hover {
-  background-color: #c98913;
+  background-color: #e2a025;
   transform: scale(1.05);
+  color: white;
 }
 
 /*FOOTER*/
 
 footer {
-  background-color: #73d2de;
+  background-color: #262727;
 }
 
 .redesSociales ul {
