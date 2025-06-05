@@ -1,5 +1,5 @@
 window.onload = function () {
-  let authArea = document.getElementById("authArea");
+  let authArea = document.getElementById("profile");
 
   let userIcon = document.getElementById("userIcon");
   let dropdownMenu = document.getElementById("dropdownMenu");
