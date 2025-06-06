@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inventario</title>
+    <title>Hermanos</title>
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
     <script src="../../public/assets/js/hermanos.js"></script>
     <?php
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-     <header>
+    <header>
         <div>
             <a href="../../public/index.php"><img src="../../public/assets/img/logoGescofradeWhite.png" alt="Logo Gescofrade" id="logo"></a>
         </div>
@@ -69,6 +69,7 @@
 
                             <button type="submit" style="border:none; background:none; padding:0;">
                                 <img class="btn-borrar" src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
+
                             </button>
                         </form>
                     </td>
@@ -78,7 +79,7 @@
                 ?>
             </tbody>
         </table>
-         <section id="formulario-editar">
+        <section id="formulario-editar">
             <form class="form-editar" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Editar elemento</h3>
                 <input type="hidden" name="control" value="editar">
@@ -116,7 +117,7 @@
                 <?php
                 if (isset($_GET["err_telefono"])) echo "<p>" . $_GET["err_telefono"] . "</p>";
                 ?>
-                
+
                 <input type="submit" value="Guardar cambios">
             </form>
         </section>
@@ -149,7 +150,7 @@
 
                 <label for="direccion">Direccion</label>
                 <input type="text" id="direccion" name="direccion">
-                
+
                 <?php
                 if (isset($_GET["err_direccion"])) echo "<p>" . $_GET["err_direccion"] . "</p>";
                 ?>

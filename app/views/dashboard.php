@@ -34,7 +34,7 @@
         </div>
     </header>
     <main class="main">
-        <aside id="sidebar" class="sidebar">
+        <aside id="sidebar" class="sidebar collapsed">
 
             <ul class="list">
                 <img id="btnToggleSidebar" src="../../public/assets/img/sidebar-toggle.svg" aria-label="Mostrar/Ocultar menú"></img>

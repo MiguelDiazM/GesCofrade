@@ -43,7 +43,7 @@
     btn.addEventListener("click", function () {
       const fila = this.closest("tr");
       if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
-        fila.remove();
+        fila.preventDefault(); 
       }
       formEditar.style.display = "none";
       formNuevo.style.display = "none";

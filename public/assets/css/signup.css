@@ -1,96 +1,96 @@
 @font-face {
-    font-family: "Roboto";
-    src: url("../fonts/static/Roboto-Regular.ttf");
+  font-family: "Roboto";
+  src: url("../fonts/static/Roboto-Regular.ttf");
 }
 
 html {
-    height: 100%;
-    font-family: "Roboto";
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-        url("../img/semana-santa-sevilla-signup.jpg");
-    background-size: cover;
+  height: 100%;
+  font-family: "Roboto";
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("../img/semana-santa-sevilla-signup.jpg");
+  background-size: cover;
 }
 
 #logo {
-    top: 0;
-    position: fixed;
-    left: 0;
-    width: 200px;
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 200px;
 }
 
 body {
-    font-family: "Roboto", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    color: white;
+  font-family: "Roboto", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  color: white;
 }
 
 .signup {
-    background-color: black;
-    padding: 40px;
-    border-radius: 8px;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 350px;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.7);
+  background-color: black;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  width: 350px;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 30px;
-    color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: white;
 }
 
 h1 {
-    margin-bottom: 30px;
-    color: white;
+  margin-bottom: 30px;
+  color: white;
 }
 
 .main {
-    margin-bottom: 20px;
-    text-align: left;
+  margin-bottom: 20px;
+  text-align: left;
 }
 
 label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: white;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: white;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 #signUpButton {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 12px;
-    width: 100%;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    margin-top: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 4px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .login {
-    margin-top: 20px;
-    color: white;
+  margin-top: 20px;
+  color: white;
 }
 
 .login a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
 }

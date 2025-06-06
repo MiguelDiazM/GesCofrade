@@ -10,7 +10,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  
 }
 
 h1 {
@@ -75,9 +74,9 @@ header div {
   display: none;
 }
 
-#sidebar.collapsed li img{
-margin-left: 14px;
-transition: 0.2s;
+#sidebar.collapsed li img {
+  margin-left: 14px;
+  transition: 0.2s;
 }
 
 .sections {
@@ -85,7 +84,7 @@ transition: 0.2s;
   transition: margin-left 1s ease;
 }
 
-#sidebar.collapsed~.sections {
+#sidebar.collapsed ~ .sections {
   margin-left: -170px;
 }
 
@@ -101,7 +100,7 @@ transition: 0.2s;
   font-size: larger;
 }
 
-.list li a{
+.list li a {
   display: grid;
   align-items: center;
   grid-template-columns: auto auto;
@@ -118,7 +117,6 @@ transition: 0.2s;
 }
 
 .list a {
-
   line-height: 3;
   padding: 0 10px;
   text-decoration: none;
@@ -180,7 +178,7 @@ main {
   display: grid;
   background-color: white;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
-  align-items:baseline;
+  align-items: baseline;
 }
 
 .events:hover {
@@ -274,7 +272,7 @@ main {
   width: 100%;
 }
 
-.sub_tag_board>div {
+.sub_tag_board > div {
   width: 100%;
   height: 10%;
   text-align: right;
@@ -338,6 +336,14 @@ footer {
 
 #mostrarTodos {
   display: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#mostrarTodos:hover {
+  background-color: #e2a025;
+  transform: scale(1.05);
+  color: white;
 }
 
 body.dark-theme {
@@ -460,14 +466,18 @@ a {
   background-color: #f0f0f0;
 }
 
-.button-events{
+.button-events {
   display: grid;
   grid-template-columns: auto auto;
   margin-top: 15px;
 }
 
-#mostrarTodos{
-  background-color: #FFBC42;
+.button-events h1 {
+  margin-left: 15px;
+}
+
+#mostrarTodos {
+  background-color: #ffbc42;
   border: none;
   padding: 8px 15px;
   border-radius: 8px;
@@ -507,8 +517,7 @@ a {
 
   .sidebar-text {
     display: none;
-
-    }
+  }
 
   .list {
     display: flex;
@@ -533,17 +542,17 @@ a {
     width: 100%;
   }
 
-  .graphics-section{
-     grid-template-columns: auto;
-     place-items: center;
-     margin-left: 20px;
+  .graphics-section {
+    grid-template-columns: auto;
+    place-items: center;
+    margin-left: 20px;
   }
 
-  .b5{
+  .b5 {
     display: none;
   }
 
-  .events{
+  .events {
     width: 400px;
   }
-  }
+}
