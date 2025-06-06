@@ -42,12 +42,12 @@
                     <div><a href="../../public/index.php"><img src="../../public/assets/img/inicio.svg" alt=""><span class="sidebar-text">Inicio</span></a></div>
                 </li>
                 <li><a href="hermanos.php"><img src="../../public/assets/img/hermanos.svg" alt=""><span class="sidebar-text">Hermanos</span></a></li>
-                <li><a href="#"><img src="../../public/assets/img/cortejo.svg" alt=""><span class="sidebar-text">Cortejo</span></a></li>
+                <li><a href="desarrollo.php"><img src="../../public/assets/img/cortejo.svg" alt=""><span class="sidebar-text">Cortejo</span></a></li>
                 <li><a href="inventario.php"><img src="../../public/assets/img/inventario.svg" alt=""><span class="sidebar-text">Inventario</span></a></li>
-                <li><a href="#"><img src="../../public/assets/img/cuotas.svg" alt=""><span class="sidebar-text">Cuotas</span></a></li>
-                <li><a href="#"><img src="../../public/assets/img/correspondencia.svg" alt=""><span class="sidebar-text">Correspondencia</span></a></li>
-                <li><a href="#"><img src="../../public/assets/img/3d.svg" alt=""><span class="sidebar-text">Diseño 3D</span></a></li>
-                <li><a href="#"><img src="../../public/assets/img/ajustes.svg" alt=""><span class="sidebar-text">Ajustes</span></a></li>
+                <li><a href="desarrollo.php"><img src="../../public/assets/img/cuotas.svg" alt=""><span class="sidebar-text">Cuotas</span></a></li>
+                <li><a href="desarrollo.php"><img src="../../public/assets/img/correspondencia.svg" alt=""><span class="sidebar-text">Correspondencia</span></a></li>
+                <li><a href="desarrollo.php"><img src="../../public/assets/img/3d.svg" alt=""><span class="sidebar-text">Diseño 3D</span></a></li>
+                <li><a href="desarrollo.php"><img src="../../public/assets/img/ajustes.svg" alt=""><span class="sidebar-text">Ajustes</span></a></li>
             </ul>
         </aside>
         <div class="sections">
