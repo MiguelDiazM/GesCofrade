@@ -15,6 +15,7 @@ body {
     url("../img/semana-santa-login.jpg");
   background-size: cover;
   background-position: center;
+  color: white;
 }
 
 .login {

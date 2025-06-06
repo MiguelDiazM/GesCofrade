@@ -32,7 +32,7 @@
     </header>
     <section class="section-tabla">
         <div class="barra-superior">
-            <a href="../../app/views/dashboard.php" class="botones boton">Volver a Dashboard</a>
+            <a href="../../app/views/dashboard.php" id="volver" class="botones boton">Volver a Dashboard</a>
             <input type="text" placeholder="Buscar..." id="buscador">
             <div class="botones">
                 <button id="btn-filtrar" class="boton">Limpiar filtro</button>
