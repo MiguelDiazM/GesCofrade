@@ -488,7 +488,7 @@ a {
   margin-right: 35px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   header {
     grid-template-columns: 1fr 1fr;
     height: auto;
@@ -503,20 +503,18 @@ a {
     width: 40px;
   }
 
-  main {
-    grid-template-columns: auto;
-    gap: 20px;
-  }
-
   #sidebar {
     width: 100%;
     display: flex;
     flex-direction: row;
     overflow-x: auto;
+    display: none;
   }
 
-  .sidebar-text {
-    display: none;
+  main{
+    grid-template-columns: auto;
+    justify-content: center;
+    margin-left: 60px;
   }
 
   .list {
@@ -534,19 +532,24 @@ a {
   }
 
   .cards-section {
-    grid-template-columns: 400px;
+    grid-template-columns: auto;
   }
 
   .card {
-    margin-left: 45px;
-    width: 100%;
+    margin-left:100px;
+    width: 400px;
   }
 
   .graphics-section {
     grid-template-columns: auto;
     place-items: center;
-    margin-left: 20px;
+    margin-left: 100px;
   }
+
+.graf_board {
+  width: 100%;
+
+}
 
   .b5 {
     display: none;

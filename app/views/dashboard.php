@@ -47,7 +47,7 @@
                 <li><a href="desarrollo.php"><img src="../../public/assets/img/cuotas.svg" alt=""><span class="sidebar-text">Cuotas</span></a></li>
                 <li><a href="desarrollo.php"><img src="../../public/assets/img/correspondencia.svg" alt=""><span class="sidebar-text">Correspondencia</span></a></li>
                 <li><a href="desarrollo.php"><img src="../../public/assets/img/3d.svg" alt=""><span class="sidebar-text">Diseño 3D</span></a></li>
-                <li id="lastLi"><a href="desarrollo.php"><img src="../../public/assets/img/ajustes.svg" alt=""><span class="sidebar-text">Ajustes</span></a></li>
+                <li><a href="desarrollo.php"><img src="../../public/assets/img/ajustes.svg" alt=""><span class="sidebar-text">Ajustes</span></a></li>
             </ul>
         </aside>
         <div class="sections">
