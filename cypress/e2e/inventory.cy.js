@@ -34,7 +34,7 @@ describe("Inventario", () => {
   });
 
   it("Editar elemento", () => {
-    cy.get(":nth-child(10) > :nth-child(4) > .btn-editar").click();
+    cy.get(':nth-child(11) > :nth-child(4) > .btn-editar').click();
 
     cy.get(".form-editar > #elemento").type(
       "Elemento Prueba Cypress MODIFICADO"
@@ -47,9 +47,7 @@ describe("Inventario", () => {
   });
 
   it("borrar elemento", () => {
-    cy.get(
-      ":nth-child(10) > :nth-child(4) > #formulario-borrar > .btn-borrar"
-    ).click();
+    cy.get(':nth-child(11) > :nth-child(4) > #formulario-borrar > .btn-borrar').click();
     cy.contains(referenciaElemento).should("not.exist");
   });
 });
