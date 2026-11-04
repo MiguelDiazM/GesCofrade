@@ -31,3 +31,8 @@ Cypress.Commands.add("login", (usuario = "admin_admin", contrasena = "admin") =>
   cy.get('input[type="submit"]').click();
   cy.location("pathname").should("eq", "/GesCofrade/public/index.php");
 });
+
+// Ejecuta una consulta en la BD de pruebas y devuelve el resultado como texto
+Cypress.Commands.add("sql", (consulta) => {
+  return cy.exec(`${Cypress.env("mysql")} -N -e "${consulta}"`).its("stdout").then((salida) => salida.trim());
+});
