@@ -1,3 +1,13 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: login.php");
+    exit;
+}
+require("../controllers/hermanosLogic.php");
+require("../controllers/dashboardLogic.php");
+require("../controllers/inventarioLogic.php");
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,12 +18,6 @@
     <script src="../../public/assets/js/dashboard.js"></script>
     <title>Dashboard Gescofrade</title>
 
-    <?php
-    require("../controllers/hermanosLogic.php");
-    require("../controllers/dashboardLogic.php");
-    require("../controllers/inventarioLogic.php");
-    session_start();
-    ?>
 </head>
 
 

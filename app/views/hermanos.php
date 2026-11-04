@@ -1,3 +1,14 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: login.php");
+    exit;
+}
+if (!isset($_SESSION["csrf"])) {
+    $_SESSION["csrf"] = bin2hex(random_bytes(32));
+}
+require("../controllers/hermanosLogic.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,10 +18,6 @@
     <title>Hermanos</title>
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
     <script src="../../public/assets/js/hermanos.js"></script>
-    <?php
-    require("../controllers/hermanosLogic.php");
-    session_start();
-    ?>
 </head>
 
 <body>
@@ -55,17 +62,18 @@
 
                 foreach ($hermanos as $elemento) {
                     echo "<tr>";
-                    echo "<td>" . $elemento["DNI"] . "</td>";
-                    echo "<td>" . $elemento["nombre"] . "</td>";
-                    echo "<td>" . $elemento["apellido"] . "</td>";
-                    echo "<td>" . $elemento["direccion"] . "</td>";
-                    echo "<td>" . $elemento["telefono"] . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["DNI"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["nombre"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["apellido"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["direccion"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["telefono"]) . "</td>";
                 ?>
                     <td>
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
                         <form action="../controllers/hermanosLogic.php" method="POST">
                             <input type="hidden" name="control" value="borrar">
-                            <input type="hidden" name="dni" value=<?php echo $elemento["DNI"] ?>>
+                            <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
+                            <input type="hidden" name="dni" value="<?php echo htmlspecialchars($elemento["DNI"]) ?>">
 
                             <button type="submit" style="border:none; background:none; padding:0;">
                                 <img class="btn-borrar" src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
@@ -83,39 +91,40 @@
             <form class="form-editar" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Editar elemento</h3>
                 <input type="hidden" name="control" value="editar">
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
                 <label for="dni">DNI</label>
                 <input readonly type="text" id="dni" name="dni">
 
                 <?php
-                if (isset($_GET["err_dni"])) echo "<p>" . $_GET["err_dni"] . "</p>";
+                if (isset($_GET["err_dni"])) echo "<p>" . htmlspecialchars($_GET["err_dni"]) . "</p>";
                 ?>
 
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre">
 
                 <?php
-                if (isset($_GET["err_nombre"])) echo "<p>" . $_GET["err_nombre"] . "</p>";
+                if (isset($_GET["err_nombre"])) echo "<p>" . htmlspecialchars($_GET["err_nombre"]) . "</p>";
                 ?>
 
                 <label for="apellido">Apellido</label>
                 <input type="text" id="apellido" name="apellido">
 
                 <?php
-                if (isset($_GET["err_apellido"])) echo "<p>" . $_GET["err_apellido"] . "</p>";
+                if (isset($_GET["err_apellido"])) echo "<p>" . htmlspecialchars($_GET["err_apellido"]) . "</p>";
                 ?>
 
                 <label for="direccion">Direccion</label>
                 <input type="text" id="direccion" name="direccion">
 
                 <?php
-                if (isset($_GET["err_direccion"])) echo "<p>" . $_GET["err_direccion"] . "</p>";
+                if (isset($_GET["err_direccion"])) echo "<p>" . htmlspecialchars($_GET["err_direccion"]) . "</p>";
                 ?>
 
                 <label for="telefono">Telefono</label>
                 <input type="text" id="telefono" name="telefono">
 
                 <?php
-                if (isset($_GET["err_telefono"])) echo "<p>" . $_GET["err_telefono"] . "</p>";
+                if (isset($_GET["err_telefono"])) echo "<p>" . htmlspecialchars($_GET["err_telefono"]) . "</p>";
                 ?>
 
                 <input type="submit" value="Guardar cambios">
@@ -126,40 +135,41 @@
             <form class="form-nuevo" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Nuevo hermano</h3>
                 <input type="hidden" name="control" value="nuevo">
-                <input type="hidden" name="id_hermandad" value=<?php echo $_SESSION["id_hermandad"] ?>>
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
+                <input type="hidden" name="id_hermandad" value="<?php echo htmlspecialchars($_SESSION["id_hermandad"]) ?>">
                 <label for="dni">DNI</label>
                 <input type="text" id="dni" name="dni">
 
                 <?php
-                if (isset($_GET["err_dni"])) echo "<p>" . $_GET["err_dni"] . "</p>";
+                if (isset($_GET["err_dni"])) echo "<p>" . htmlspecialchars($_GET["err_dni"]) . "</p>";
                 ?>
 
                 <label for="nombre">Nombre</label>
                 <input type="text" id="nombre" name="nombre">
 
                 <?php
-                if (isset($_GET["err_nombre"])) echo "<p>" . $_GET["err_nombre"] . "</p>";
+                if (isset($_GET["err_nombre"])) echo "<p>" . htmlspecialchars($_GET["err_nombre"]) . "</p>";
                 ?>
 
                 <label for="apellido">Apellido</label>
                 <input type="text" id="apellido" name="apellido">
 
                 <?php
-                if (isset($_GET["err_apellido"])) echo "<p>" . $_GET["err_apellido"] . "</p>";
+                if (isset($_GET["err_apellido"])) echo "<p>" . htmlspecialchars($_GET["err_apellido"]) . "</p>";
                 ?>
 
                 <label for="direccion">Direccion</label>
                 <input type="text" id="direccion" name="direccion">
 
                 <?php
-                if (isset($_GET["err_direccion"])) echo "<p>" . $_GET["err_direccion"] . "</p>";
+                if (isset($_GET["err_direccion"])) echo "<p>" . htmlspecialchars($_GET["err_direccion"]) . "</p>";
                 ?>
 
                 <label for="telefono">Telefono</label>
                 <input type="text" id="telefono" name="telefono">
 
                 <?php
-                if (isset($_GET["err_telefono"])) echo "<p>" . $_GET["err_telefono"] . "</p>";
+                if (isset($_GET["err_telefono"])) echo "<p>" . htmlspecialchars($_GET["err_telefono"]) . "</p>";
                 ?>
 
                 <input type="submit" value="Guardar cambios">

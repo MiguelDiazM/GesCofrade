@@ -2,16 +2,28 @@
 require("../../config/database.php");   
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    if (!isset($_SESSION["id_hermandad"])) {
+        header("Location: ../views/login.php");
+        exit;
+    }
+    $id_hermandad = $_SESSION["id_hermandad"];
+    if (!isset($_POST["csrf"], $_SESSION["csrf"]) || !hash_equals($_SESSION["csrf"], $_POST["csrf"])) {
+        header("Location: ../views/hermanos.php");
+        exit;
+    }
+
     $control = true;
     $err = "?";
     if ($_POST["control"] == "editar") {
         if (isset($_POST["dni"])) {
             $dni = $_POST["dni"];
 
-            $consulta = "SELECT * FROM hermanos WHERE DNI = :d";
+            $consulta = "SELECT * FROM hermanos WHERE DNI = :d AND JSON_CONTAINS(id_hermandad, :i, '$')";
             $stmt = $_conexion->prepare($consulta);
             $stmt->execute([
-                ":d" => $dni
+                ":d" => $dni,
+                ":i" => $id_hermandad
             ]);
 
             if ($stmt->rowCount() > 0) {
@@ -24,8 +36,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!$control) {
-            $err .= "err_referencia=No existe esa referencia en la BBDD&";
-            header("Location: ../views/inventario.php$err");
+            $err .= "err_referencia=" . urlencode("No existe esa referencia en la BBDD") . "&";
+            header("Location: ../views/hermanos.php$err");
+            exit;
         }
 
         $tmp_nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : null;
@@ -34,27 +47,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
 
         if ($tmp_nombre == null) {
-            $err .= "err_nombre=Debes introducir un nombre&";
+            $err .= "err_nombre=" . urlencode("Debes introducir un nombre") . "&";
         } else {
-            $nombre = htmlspecialchars($tmp_nombre);
+            $nombre = $tmp_nombre;
         }
 
         if ($tmp_apellido == null) {
-            $err .= "err_apellido=Debes introducir un apellido&";
+            $err .= "err_apellido=" . urlencode("Debes introducir un apellido") . "&";
         } else {
-            $apellido = htmlspecialchars($tmp_apellido);
+            $apellido = $tmp_apellido;
         }
 
         if ($tmp_direccion == null) {
-            $err .= "err_direccion=Debes introducir una direccion&";
+            $err .= "err_direccion=" . urlencode("Debes introducir una direccion") . "&";
         } else {
-            $direccion = htmlspecialchars($tmp_direccion);
+            $direccion = $tmp_direccion;
         }
 
         if ($tmp_telefono == null) {
-            $err .= "err_telefono=Debes introducir un telefono&";
+            $err .= "err_telefono=" . urlencode("Debes introducir un telefono") . "&";
         } else {
-            $telefono = htmlspecialchars($tmp_telefono);
+            $telefono = $tmp_telefono;
         }
 
         if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono)) {
@@ -71,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $telefono = $datosAntiguos["telefono"];
             }
 
-            $consulta = "UPDATE Hermanos SET nombre = :e, apellido = :a, direccion = :d, telefono = :t WHERE DNI = :dni";
+            $consulta = "UPDATE hermanos SET nombre = :e, apellido = :a, direccion = :d, telefono = :t WHERE DNI = :dni";
             $stmt = $_conexion->prepare($consulta);
             $stmt->execute([
                 ":e" => $nombre,
@@ -102,43 +115,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$control) {
             $err .= "err_referencia=&";
             header("Location: ../views/hermanos.php$err");
+            exit;
         }
 
         $tmp_nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : null;
         $tmp_apellido = isset($_POST["apellido"]) ? $_POST["apellido"] : null;
         $tmp_direccion = isset($_POST["direccion"]) ? $_POST["direccion"] : null;
         $tmp_telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
-        $id_hermandad = isset($_POST["id_hermandad"]) ? $_POST["id_hermandad"] : null;
 
         if ($tmp_nombre == null) {
-            $err .= "err_nombre=Debes introducir un nombre&";
+            $err .= "err_nombre=" . urlencode("Debes introducir un nombre") . "&";
         } else {
-            $nombre = htmlspecialchars($tmp_nombre);
+            $nombre = $tmp_nombre;
         }
 
         if ($tmp_apellido == null) {
-            $err .= "err_apellido=Debes introducir un apellido&";
+            $err .= "err_apellido=" . urlencode("Debes introducir un apellido") . "&";
         } else {
-            $apellido = htmlspecialchars($tmp_apellido);
+            $apellido = $tmp_apellido;
         }
 
         if ($tmp_direccion == null) {
-            $err .= "err_direccion=Debes introducir una direccion&";
+            $err .= "err_direccion=" . urlencode("Debes introducir una direccion") . "&";
         } else {
-            $direccion = htmlspecialchars($tmp_direccion);
+            $direccion = $tmp_direccion;
         }
 
         if ($tmp_telefono == null) {
-            $err .= "err_telefono=Debes introducir un telefono&";
+            $err .= "err_telefono=" . urlencode("Debes introducir un telefono") . "&";
         } else {
-            $telefono = htmlspecialchars($tmp_telefono);
+            $telefono = $tmp_telefono;
         }
 
-        if($tmp_id_hermandad != null){
-            $id_hermandad = $tmp_id_hermandad;
-        }
-    
-        print_r("nombre: $nombre, apellido: $apellido, direccion: $direccion, telefono: $telefono, hermandad: $id_hermandad");
         if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono) && isset($id_hermandad)) {
             if ($nombre === "") {
                 $nombre = $datosAntiguos["nombre"];
@@ -172,14 +180,37 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if ($_POST["control"] == "borrar") {
         
         $dni = $_POST["dni"];
-        $consulta = "DELETE FROM hermanos WHERE DNI = :dni";
+        $consulta = "SELECT id_hermandad FROM hermanos WHERE DNI = :dni AND JSON_CONTAINS(id_hermandad, :i, '$')";
         $stmt = $_conexion->prepare($consulta);
         $stmt->execute([
-            ":dni" => $dni
+            ":dni" => $dni,
+            ":i" => $id_hermandad
         ]);
-        
+        $hermano = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($hermano) {
+            // El hermano solo deja la hermandad actual; si no pertenece a ninguna más, se elimina
+            $hermandades = array_values(array_diff(json_decode($hermano["id_hermandad"]), [intval($id_hermandad)]));
+
+            if (count($hermandades) == 0) {
+                $consulta = "DELETE FROM hermanos WHERE DNI = :dni";
+                $stmt = $_conexion->prepare($consulta);
+                $stmt->execute([
+                    ":dni" => $dni
+                ]);
+            } else {
+                $consulta = "UPDATE hermanos SET id_hermandad = :h WHERE DNI = :dni";
+                $stmt = $_conexion->prepare($consulta);
+                $stmt->execute([
+                    ":h" => json_encode($hermandades),
+                    ":dni" => $dni
+                ]);
+            }
+        }
+
     }
     header("Location: ../views/hermanos.php$err");
+    exit;
 }
 
 function mostrarHermanos()
@@ -192,7 +223,7 @@ function mostrarHermanos()
 
     $id_hermandad = $_SESSION["id_hermandad"];
 
-    $consulta = "SELECT * FROM Hermanos WHERE JSON_CONTAINS(id_hermandad,(:i) , '$');";
+    $consulta = "SELECT * FROM hermanos WHERE JSON_CONTAINS(id_hermandad,(:i) , '$');";
     $stmt = $_conexion->prepare($consulta);
     $stmt->execute([":i" => $id_hermandad]);
 

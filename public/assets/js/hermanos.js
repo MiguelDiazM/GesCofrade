@@ -40,10 +40,9 @@ editarBtns.forEach((btn) => {
   });
 
   borrarBtns.forEach((btn) => {
-    btn.addEventListener("click", function () {
-      const fila = this.closest("tr");
-      if (confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
-        fila.preventDefault(); 
+    btn.addEventListener("click", function (event) {
+      if (!confirm("¿Estás seguro de que deseas eliminar este elemento?")) {
+        event.preventDefault();
       }
       formEditar.style.display = "none";
       formNuevo.style.display = "none";

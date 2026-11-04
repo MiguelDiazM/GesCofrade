@@ -1,12 +1,11 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 require "../../config/database.php";
 
 session_start();
 
 if (isset($_SESSION["usuario"])) {
     header("Location: ../../public/index.php");
+    exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -19,60 +18,86 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $envioError = "../views/signup.php?";
 
     if (empty($tmp_nombre)) {
-        $err_nombre = "<span class='bg-warning'>El nombre no puede estar vacío</span>";
-        $envioError .= "&err_nombre=$err_nombre";
+        $err_nombre = "El nombre no puede estar vacío";
+        $envioError .= "&err_nombre=" . urlencode($err_nombre);
     } else {
         $nombre = $tmp_nombre;
     }
 
     if (empty($tmp_contrasena)) {
-        $err_contrasena = "<span class='bg-warning'>La contraseña no puede estar vacía</span>";
-        $envioError .= "&err_contrasena=$err_contrasena";
+        $err_contrasena = "La contraseña no puede estar vacía";
+        $envioError .= "&err_contrasena=" . urlencode($err_contrasena);
     } else {
         $contrasena = $tmp_contrasena;
     }
 
     if (empty($tmp_city)) {
-        $err_city = "<span class='bg-warning'>Debes introducir una ciudad</span>";
-        $envioError .= "&err_city=$err_city";
+        $err_city = "Debes introducir una ciudad";
+        $envioError .= "&err_city=" . urlencode($err_city);
     } else {
         $city = $tmp_city;
     }
 
     if (empty($tmp_tipo)) {
-        $err_tipo = "<span class='bg-warning' Debes introducir un tipo></span>";
-        $envioError .= "&err_tipo=$err_tipo";
+        $err_tipo = "Debes introducir un tipo";
+        $envioError .= "&err_tipo=" . urlencode($err_tipo);
     } else {
         $tipo = $tmp_tipo;
     }
 
 
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
-        $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
-        $stmt = $_conexion->prepare($consulta);
-        $stmt->execute([
-            ":n" => $nombre,
-            ":t" => $tipo,
-            ":u" => $city
-        ]);
-
         $usuarios = [];
         $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
         $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
 
+        // usuarios.usuario es varchar(50): un nombre más largo se guardaría recortado y no podría iniciar sesión
         foreach ($usuarios as $usuario) {
-            $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
-            $stmt_insert = $_conexion->prepare($insert);
+            if (mb_strlen($usuario["usuario"]) > 50) {
+                header("Location: ../views/signup.php?err_usuario=" . urlencode("El nombre de la hermandad y la ciudad son demasiado largos"));
+                exit;
+            }
+        }
 
-            $stmt_insert->execute([
-                ":usuario" => $usuario["usuario"],
-                ":contrasena" => $usuario["contrasena"],
-                ":nombre" => $nombre
+        try {
+            // La hermandad y sus dos usuarios se crean juntos o no se crea nada
+            $_conexion->beginTransaction();
+
+            $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
+            $stmt = $_conexion->prepare($consulta);
+            $stmt->execute([
+                ":n" => $nombre,
+                ":t" => $tipo,
+                ":u" => $city
             ]);
+            $id_hermandad = $_conexion->lastInsertId();
+
+            foreach ($usuarios as $usuario) {
+                $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, :id)";
+                $stmt_insert = $_conexion->prepare($insert);
+
+                $stmt_insert->execute([
+                    ":usuario" => $usuario["usuario"],
+                    ":contrasena" => $usuario["contrasena"],
+                    ":id" => $id_hermandad
+                ]);
+            }
+
+            $_conexion->commit();
+        } catch (PDOException $e) {
+            $_conexion->rollBack();
+            // 1062: el nombre de usuario generado ya existe
+            if ($e->errorInfo[1] == 1062) {
+                header("Location: ../views/signup.php?err_usuario=" . urlencode("Ya existe una hermandad registrada con ese nombre y ciudad"));
+                exit;
+            }
+            throw $e;
         }
         header("Location: ../views/login.php");
+        exit;
     }
     header("Location: $envioError");
+    exit;
 }
 
 function crearUsuarioContrasena($nombre, $contrasena, $poblacion)

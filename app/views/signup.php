@@ -18,15 +18,15 @@
         <form action="../controllers/signupLogic.php" method="post" class="col-4">
             <div class="main">
                 <input type="text" name="nombre" class="form-control" placeholder="Nombre de usuario">
-                <?php if (isset($_GET["err_nombre"])) echo $_GET["err_nombre"]; ?>
+                <?php if (isset($_GET["err_nombre"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_nombre"]) . "</span>"; ?>
             </div>
             <div class="main">
                 <input type="password" name="contrasena" class="form-control" placeholder="Contraseña">
-                <?php if (isset($_GET["err_contrasena"])) echo $_GET["err_contrasena"]; ?>
+                <?php if (isset($_GET["err_contrasena"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_contrasena"]) . "</span>"; ?>
             </div>
             <div class="main">
                 <input type="text" name="poblacion" class="form-control" placeholder="Ciudad">
-                <?php if (isset($_GET["err_city"])) echo $_GET["err_city"]; ?>
+                <?php if (isset($_GET["err_city"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_city"]) . "</span>"; ?>
             </div>
             <div class="type">
                 <label for="tipo" class="form-label">Tipo</label>
@@ -34,13 +34,13 @@
                     <option value="penitencia">Penitencia</option>
                     <option value="gloria">Gloria</option>
                 </select>
-                <?php if (isset($_GET["err_tipo"])) echo $_GET["err_tipo"]; ?>
+                <?php if (isset($_GET["err_tipo"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_tipo"]) . "</span>"; ?>
             </div>
             <div class="main">
                 <input type="submit" id="signUpButton" value="Registrarse" class="btn btn-primary">
             </div>
         </form>
-        <?php if (isset($_GET["err_usuario"])) echo $_GET["err_usuario"]; ?>
+        <?php if (isset($_GET["err_usuario"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_usuario"]) . "</span>"; ?>
         <br>
         <div class="login">
             ¿No tienes cuenta? <a href="login.php">inicia sesión</a>

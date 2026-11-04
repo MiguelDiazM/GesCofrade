@@ -1,54 +1,41 @@
 describe("Hermanos", () => {
-  const DNI = "TESTCYPRESS";
+  // DNI único en cada ejecución; los tests trabajan siempre sobre esa fila
+  const DNI = "CY" + Date.now();
+  const fila = () => cy.contains("td", DNI).parent();
 
   beforeEach(() => {
-    cy.visit("https://localhost/GesCofrade/public/index.php");
-    cy.location("pathname").should("eq", "/GesCofrade/public/index.php");
-
-    cy.contains("Iniciar sesión").click();
-    cy.location("pathname").should("eq", "/GesCofrade/app/views/login.php");
-    cy.wait(500);
-    cy.get('input[name="user"]').type("admin_admin");
-    cy.wait(500);
-    cy.get('input[name="password"]').type("admin");
-
-    cy.contains("Iniciar sesión").click();
-    cy.wait(500);
-    cy.location("pathname").should("eq", "/GesCofrade/public/index.php");
-    cy.wait(500);
-    cy.get("#userIcon").click();
-    cy.wait(500);
-    cy.contains("Dashboard").click();
-
+    cy.login();
+    cy.visit("/app/views/dashboard.php");
     cy.get(".list").contains("Hermanos").click();
+    cy.location("pathname").should("eq", "/GesCofrade/app/views/hermanos.php");
   });
+
   it("Añadir elemento", () => {
     cy.contains("Nuevo").click();
 
     cy.get(".form-nuevo > #dni").type(DNI);
-
     cy.get(".form-nuevo > #nombre").type("Elemento Prueba Cypress");
-
     cy.get(".form-nuevo > #apellido").type("Elemento Prueba Cypress");
     cy.get(".form-nuevo > #direccion").type("Elemento Prueba Cypress");
     cy.get(".form-nuevo > #telefono").type("666666666");
 
     cy.get('.form-nuevo > [type="submit"]').click();
+    fila().should("contain", "Elemento Prueba Cypress").and("contain", "666666666");
   });
 
   it("Editar elemento", () => {
-    cy.get(":nth-child(2) > :nth-child(6) > .btn-editar").click();
+    fila().find(".btn-editar").click();
+    cy.get(".form-editar > #dni").should("have.value", DNI);
 
-    cy.get(".form-editar > #nombre").type("Elemento Prueba Cypress MODIFICADO");
-
-    cy.get(".form-editar > #apellido").type(
-      "Elemento Prueba Cypress MODIFICADO"
-    );
+    cy.get(".form-editar > #nombre").clear().type("Elemento Prueba Cypress MODIFICADO");
+    cy.get(".form-editar > #apellido").clear().type("Elemento Prueba Cypress MODIFICADO");
     cy.get('.form-editar > [type="submit"]').click();
+
+    fila().should("contain", "Elemento Prueba Cypress MODIFICADO");
   });
 
   it("borrar elemento", () => {
-    cy.get(':nth-child(2) > :nth-child(6) > form > button > .btn-borrar').click();
-   
+    fila().find(".btn-borrar").click();
+    cy.contains("td", DNI).should("not.exist");
   });
 });

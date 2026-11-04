@@ -1,0 +1,7 @@
+# Dependencias instaladas con npm install
+node_modules/
+
+# Resultados generados por Cypress
+cypress/videos/
+cypress/screenshots/
+cypress/downloads/
