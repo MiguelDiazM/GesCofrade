@@ -2,16 +2,24 @@
 require("../../config/database.php");   
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    if (!isset($_SESSION["id_hermandad"])) {
+        header("Location: ../views/login.php");
+        exit;
+    }
+    $id_hermandad = $_SESSION["id_hermandad"];
+
     $control = true;
     $err = "?";
     if ($_POST["control"] == "editar") {
         if (isset($_POST["dni"])) {
             $dni = $_POST["dni"];
 
-            $consulta = "SELECT * FROM hermanos WHERE DNI = :d";
+            $consulta = "SELECT * FROM hermanos WHERE DNI = :d AND JSON_CONTAINS(id_hermandad, :i, '$')";
             $stmt = $_conexion->prepare($consulta);
             $stmt->execute([
-                ":d" => $dni
+                ":d" => $dni,
+                ":i" => $id_hermandad
             ]);
 
             if ($stmt->rowCount() > 0) {
@@ -110,7 +118,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_apellido = isset($_POST["apellido"]) ? $_POST["apellido"] : null;
         $tmp_direccion = isset($_POST["direccion"]) ? $_POST["direccion"] : null;
         $tmp_telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
-        $id_hermandad = isset($_POST["id_hermandad"]) ? $_POST["id_hermandad"] : null;
 
         if ($tmp_nombre == null) {
             $err .= "err_nombre=Debes introducir un nombre&";
@@ -169,12 +176,34 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if ($_POST["control"] == "borrar") {
         
         $dni = $_POST["dni"];
-        $consulta = "DELETE FROM hermanos WHERE DNI = :dni";
+        $consulta = "SELECT id_hermandad FROM hermanos WHERE DNI = :dni AND JSON_CONTAINS(id_hermandad, :i, '$')";
         $stmt = $_conexion->prepare($consulta);
         $stmt->execute([
-            ":dni" => $dni
+            ":dni" => $dni,
+            ":i" => $id_hermandad
         ]);
-        
+        $hermano = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($hermano) {
+            // El hermano solo deja la hermandad actual; si no pertenece a ninguna más, se elimina
+            $hermandades = array_values(array_diff(json_decode($hermano["id_hermandad"]), [intval($id_hermandad)]));
+
+            if (count($hermandades) == 0) {
+                $consulta = "DELETE FROM hermanos WHERE DNI = :dni";
+                $stmt = $_conexion->prepare($consulta);
+                $stmt->execute([
+                    ":dni" => $dni
+                ]);
+            } else {
+                $consulta = "UPDATE hermanos SET id_hermandad = :h WHERE DNI = :dni";
+                $stmt = $_conexion->prepare($consulta);
+                $stmt->execute([
+                    ":h" => json_encode($hermandades),
+                    ":dni" => $dni
+                ]);
+            }
+        }
+
     }
     header("Location: ../views/hermanos.php$err");
     exit;

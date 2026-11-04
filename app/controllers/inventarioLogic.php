@@ -2,16 +2,24 @@
 require("../../config/database.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    session_start();
+    if (!isset($_SESSION["id_hermandad"])) {
+        header("Location: ../views/login.php");
+        exit;
+    }
+    $id_hermandad = $_SESSION["id_hermandad"];
+
     $control = true;
     $err = "?";
     if ($_POST["control"] == "editar") {
         if (isset($_POST["referencia"])) {
             $referencia = $_POST["referencia"];
 
-            $consulta = "SELECT * FROM inventario WHERE referencia = :r";
+            $consulta = "SELECT * FROM inventario WHERE referencia = :r AND id_hermandad = :i";
             $stmt = $_conexion->prepare($consulta);
             $stmt->execute([
-                ":r" => $referencia
+                ":r" => $referencia,
+                ":i" => $id_hermandad
             ]);
 
             if ($stmt->rowCount() > 0) {
@@ -90,7 +98,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_elemento = isset($_POST["elemento"]) ? $_POST["elemento"] : null;
         $tmp_descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : null;
         $tmp_referencia = isset($_POST["referencia"]) ? $_POST["referencia"] : null;
-        $id_hermandad = isset($_POST["id_hermandad"]) ? $_POST["id_hermandad"] : null;
 
         if ($tmp_elemento == null) {
             $err .= "&err_elemento=Debes introducir un nombre";
@@ -123,10 +130,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else if ($_POST["control"] == "borrar") {
         
         $referencia = $_POST["referencia"];
-        $consulta = "DELETE FROM inventario WHERE referencia = :r";
+        $consulta = "DELETE FROM inventario WHERE referencia = :r AND id_hermandad = :i";
         $stmt = $_conexion->prepare($consulta);
         $stmt->execute([
-            ":r" => $referencia
+            ":r" => $referencia,
+            ":i" => $id_hermandad
         ]);
         
     }
