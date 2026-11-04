@@ -28,8 +28,8 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `hermandad`
 --
 
-CREATE DATABASE IF NOT EXISTS gesCofrade;
-USE gesCofrade;
+CREATE DATABASE IF NOT EXISTS gescofrade;
+USE gescofrade;
 
 CREATE TABLE `hermandad` (
   `id_hermandad` int(11) NOT NULL,

@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $telefono = $datosAntiguos["telefono"];
             }
 
-            $consulta = "UPDATE Hermanos SET nombre = :e, apellido = :a, direccion = :d, telefono = :t WHERE DNI = :dni";
+            $consulta = "UPDATE hermanos SET nombre = :e, apellido = :a, direccion = :d, telefono = :t WHERE DNI = :dni";
             $stmt = $_conexion->prepare($consulta);
             $stmt->execute([
                 ":e" => $nombre,
@@ -219,7 +219,7 @@ function mostrarHermanos()
 
     $id_hermandad = $_SESSION["id_hermandad"];
 
-    $consulta = "SELECT * FROM Hermanos WHERE JSON_CONTAINS(id_hermandad,(:i) , '$');";
+    $consulta = "SELECT * FROM hermanos WHERE JSON_CONTAINS(id_hermandad,(:i) , '$');";
     $stmt = $_conexion->prepare($consulta);
     $stmt->execute([":i" => $id_hermandad]);
 
