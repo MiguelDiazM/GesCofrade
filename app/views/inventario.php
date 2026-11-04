@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: login.php");
+    exit;
+}
+require("../controllers/inventarioLogic.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,11 +15,6 @@
     <title>Inventario</title>
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
     <script src="../../public/assets/js/inventory.js"></script>
-
-    <?php
-    require("../controllers/inventarioLogic.php");
-    session_start();
-    ?>
 
 </head>
 

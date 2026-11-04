@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,9 +10,6 @@
     <title>Gescofrade inicio</title>
     <link rel="stylesheet" href="assets/css/index.css">
     <script src="../public/assets/js/index.js"></script>
-    <?php
-    session_start();
-    ?>
 </head>
 
 <body>

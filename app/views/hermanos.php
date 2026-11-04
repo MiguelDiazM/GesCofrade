@@ -1,3 +1,11 @@
+<?php
+session_start();
+if (!isset($_SESSION["usuario"])) {
+    header("Location: login.php");
+    exit;
+}
+require("../controllers/hermanosLogic.php");
+?>
 <!DOCTYPE html>
 <html lang="es">
 
@@ -7,10 +15,6 @@
     <title>Hermanos</title>
     <link rel="stylesheet" href="../../public/assets/css/inventario.css">
     <script src="../../public/assets/js/hermanos.js"></script>
-    <?php
-    require("../controllers/hermanosLogic.php");
-    session_start();
-    ?>
 </head>
 
 <body>

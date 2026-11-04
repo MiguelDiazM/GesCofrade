@@ -30,7 +30,7 @@
                 ]);
                 $datos = $stmt->fetch();
 
-
+                session_regenerate_id(true);
                 $_SESSION["usuario"] = $nombre;
                 $_SESSION["id_hermandad"] = $datos[0];
                 header("Location: ../../public/index.php");
