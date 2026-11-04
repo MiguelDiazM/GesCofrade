@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!$control) {
-            $err .= "err_referencia=No existe esa referencia en la BBDD&";
+            $err .= "err_referencia=" . urlencode("No existe esa referencia en la BBDD") . "&";
             header("Location: ../views/hermanos.php$err");
             exit;
         }
@@ -47,25 +47,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
 
         if ($tmp_nombre == null) {
-            $err .= "err_nombre=Debes introducir un nombre&";
+            $err .= "err_nombre=" . urlencode("Debes introducir un nombre") . "&";
         } else {
             $nombre = $tmp_nombre;
         }
 
         if ($tmp_apellido == null) {
-            $err .= "err_apellido=Debes introducir un apellido&";
+            $err .= "err_apellido=" . urlencode("Debes introducir un apellido") . "&";
         } else {
             $apellido = $tmp_apellido;
         }
 
         if ($tmp_direccion == null) {
-            $err .= "err_direccion=Debes introducir una direccion&";
+            $err .= "err_direccion=" . urlencode("Debes introducir una direccion") . "&";
         } else {
             $direccion = $tmp_direccion;
         }
 
         if ($tmp_telefono == null) {
-            $err .= "err_telefono=Debes introducir un telefono&";
+            $err .= "err_telefono=" . urlencode("Debes introducir un telefono") . "&";
         } else {
             $telefono = $tmp_telefono;
         }
@@ -124,25 +124,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_telefono = isset($_POST["telefono"]) ? $_POST["telefono"] : null;
 
         if ($tmp_nombre == null) {
-            $err .= "err_nombre=Debes introducir un nombre&";
+            $err .= "err_nombre=" . urlencode("Debes introducir un nombre") . "&";
         } else {
             $nombre = $tmp_nombre;
         }
 
         if ($tmp_apellido == null) {
-            $err .= "err_apellido=Debes introducir un apellido&";
+            $err .= "err_apellido=" . urlencode("Debes introducir un apellido") . "&";
         } else {
             $apellido = $tmp_apellido;
         }
 
         if ($tmp_direccion == null) {
-            $err .= "err_direccion=Debes introducir una direccion&";
+            $err .= "err_direccion=" . urlencode("Debes introducir una direccion") . "&";
         } else {
             $direccion = $tmp_direccion;
         }
 
         if ($tmp_telefono == null) {
-            $err .= "err_telefono=Debes introducir un telefono&";
+            $err .= "err_telefono=" . urlencode("Debes introducir un telefono") . "&";
         } else {
             $telefono = $tmp_telefono;
         }

@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!$control) {
-            $err .= "err_referencia=No existe esa referencia en la BBDD";
+            $err .= "err_referencia=" . urlencode("No existe esa referencia en la BBDD") . "";
             header("Location: ../views/inventario.php$err");
             exit;
         }
@@ -45,13 +45,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_descripcion = isset($_POST["descripcion"]) ? $_POST["descripcion"] : null;
 
         if ($tmp_elemento == null) {
-            $err .= "&err_elemento=Debes introducir un nombre";
+            $err .= "&err_elemento=" . urlencode("Debes introducir un nombre") . "";
         } else {
             $elemento = $tmp_elemento;
         }
 
         if ($tmp_descripcion == null) {
-            $err .= "&err_descripcion=Debes introducir una descripcion";
+            $err .= "&err_descripcion=" . urlencode("Debes introducir una descripcion") . "";
         } else {
             $descripcion = $tmp_descripcion;
         }
@@ -94,7 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         if (!$control) {
-            $err .= "err_referencia=Ya existe esa referencia en la BBDD";
+            $err .= "err_referencia=" . urlencode("Ya existe esa referencia en la BBDD") . "";
             header("Location: ../views/inventario.php$err");
             exit;
         }
@@ -104,19 +104,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tmp_referencia = isset($_POST["referencia"]) ? $_POST["referencia"] : null;
 
         if ($tmp_elemento == null) {
-            $err .= "&err_elemento=Debes introducir un nombre";
+            $err .= "&err_elemento=" . urlencode("Debes introducir un nombre") . "";
         } else {
             $elemento = $tmp_elemento;
         }
 
         if ($tmp_descripcion == null) {
-            $err .= "&err_descripcion=Debes introducir una descripcion";
+            $err .= "&err_descripcion=" . urlencode("Debes introducir una descripcion") . "";
         } else {
             $descripcion = $tmp_descripcion;
         }
 
         if ($tmp_referencia == null) {
-            $err .= "&err_referencia=Debes introducir una referencia";
+            $err .= "&err_referencia=" . urlencode("Debes introducir una referencia") . "";
         } else {
             $referencia = $tmp_referencia;
         }

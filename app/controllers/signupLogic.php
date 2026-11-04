@@ -19,28 +19,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (empty($tmp_nombre)) {
         $err_nombre = "El nombre no puede estar vacío";
-        $envioError .= "&err_nombre=$err_nombre";
+        $envioError .= "&err_nombre=" . urlencode($err_nombre);
     } else {
         $nombre = $tmp_nombre;
     }
 
     if (empty($tmp_contrasena)) {
         $err_contrasena = "La contraseña no puede estar vacía";
-        $envioError .= "&err_contrasena=$err_contrasena";
+        $envioError .= "&err_contrasena=" . urlencode($err_contrasena);
     } else {
         $contrasena = $tmp_contrasena;
     }
 
     if (empty($tmp_city)) {
         $err_city = "Debes introducir una ciudad";
-        $envioError .= "&err_city=$err_city";
+        $envioError .= "&err_city=" . urlencode($err_city);
     } else {
         $city = $tmp_city;
     }
 
     if (empty($tmp_tipo)) {
         $err_tipo = "Debes introducir un tipo";
-        $envioError .= "&err_tipo=$err_tipo";
+        $envioError .= "&err_tipo=" . urlencode($err_tipo);
     } else {
         $tipo = $tmp_tipo;
     }
@@ -80,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_conexion->rollBack();
             // 1062: el nombre de usuario generado ya existe
             if ($e->errorInfo[1] == 1062) {
-                header("Location: ../views/signup.php?err_usuario=Ya existe una hermandad registrada con ese nombre y ciudad");
+                header("Location: ../views/signup.php?err_usuario=" . urlencode("Ya existe una hermandad registrada con ese nombre y ciudad"));
                 exit;
             }
             throw $e;

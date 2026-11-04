@@ -35,12 +35,12 @@
                 exit;
             } else {
                 $err_contrasena = "La contraseña no coincide.";
-                header("Location: ../views/login.php?err_contrasena=$err_contrasena");
+                header("Location: ../views/login.php?err_contrasena=" . urlencode($err_contrasena));
                 exit;
             }
         } else {
             $err_nombre = "El nombre de usuario no se encuentra en la base de datos.";
-            header("Location: ../views/login.php?err_nombre=$err_nombre");
+            header("Location: ../views/login.php?err_nombre=" . urlencode($err_nombre));
             exit;
         }
     }
