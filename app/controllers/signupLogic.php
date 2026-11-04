@@ -20,28 +20,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $envioError = "../views/signup.php?";
 
     if (empty($tmp_nombre)) {
-        $err_nombre = "<span class='bg-warning'>El nombre no puede estar vacío</span>";
+        $err_nombre = "El nombre no puede estar vacío";
         $envioError .= "&err_nombre=$err_nombre";
     } else {
         $nombre = $tmp_nombre;
     }
 
     if (empty($tmp_contrasena)) {
-        $err_contrasena = "<span class='bg-warning'>La contraseña no puede estar vacía</span>";
+        $err_contrasena = "La contraseña no puede estar vacía";
         $envioError .= "&err_contrasena=$err_contrasena";
     } else {
         $contrasena = $tmp_contrasena;
     }
 
     if (empty($tmp_city)) {
-        $err_city = "<span class='bg-warning'>Debes introducir una ciudad</span>";
+        $err_city = "Debes introducir una ciudad";
         $envioError .= "&err_city=$err_city";
     } else {
         $city = $tmp_city;
     }
 
     if (empty($tmp_tipo)) {
-        $err_tipo = "<span class='bg-warning' Debes introducir un tipo></span>";
+        $err_tipo = "Debes introducir un tipo";
         $envioError .= "&err_tipo=$err_tipo";
     } else {
         $tipo = $tmp_tipo;

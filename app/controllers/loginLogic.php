@@ -36,12 +36,12 @@
                 header("Location: ../../public/index.php");
                 exit;
             } else {
-                $err_contrasena = "<span class='bg-warning'>La contraseña no coincide.</span>";
+                $err_contrasena = "La contraseña no coincide.";
                 header("Location: ../views/login.php?err_contrasena=$err_contrasena");
                 exit;
             }
         } else {
-            $err_nombre = "<span class='bg-warning'>El nombre de usuario no se encuentra en la base de datos.</span>";
+            $err_nombre = "El nombre de usuario no se encuentra en la base de datos.";
             header("Location: ../views/login.php?err_nombre=$err_nombre");
             exit;
         }

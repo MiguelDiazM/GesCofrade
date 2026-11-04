@@ -22,12 +22,12 @@ session_start();
         <form action="../controllers/loginLogic.php" method="POST">
             <div class="main">
                 <input type="text" id="user" name="user" placeholder="Nombre">
-                <?php if (isset($_GET["err_nombre"])) echo $_GET["err_nombre"]; ?>
+                <?php if (isset($_GET["err_nombre"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_nombre"]) . "</span>"; ?>
             </div>
 
             <div class="main">
                 <input type="password" id="password" name="password" placeholder="Contraseña">
-                <?php if (isset($_GET["err_contrasena"])) echo $_GET["err_contrasena"]; ?>
+                <?php if (isset($_GET["err_contrasena"])) echo "<span class='bg-warning'>" . htmlspecialchars($_GET["err_contrasena"]) . "</span>"; ?>
             </div>
 
             <input type="submit" class="login-button" value="Iniciar sesión"></input>

@@ -45,25 +45,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($tmp_nombre == null) {
             $err .= "err_nombre=Debes introducir un nombre&";
         } else {
-            $nombre = htmlspecialchars($tmp_nombre);
+            $nombre = $tmp_nombre;
         }
 
         if ($tmp_apellido == null) {
             $err .= "err_apellido=Debes introducir un apellido&";
         } else {
-            $apellido = htmlspecialchars($tmp_apellido);
+            $apellido = $tmp_apellido;
         }
 
         if ($tmp_direccion == null) {
             $err .= "err_direccion=Debes introducir una direccion&";
         } else {
-            $direccion = htmlspecialchars($tmp_direccion);
+            $direccion = $tmp_direccion;
         }
 
         if ($tmp_telefono == null) {
             $err .= "err_telefono=Debes introducir un telefono&";
         } else {
-            $telefono = htmlspecialchars($tmp_telefono);
+            $telefono = $tmp_telefono;
         }
 
         if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono)) {
@@ -122,25 +122,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($tmp_nombre == null) {
             $err .= "err_nombre=Debes introducir un nombre&";
         } else {
-            $nombre = htmlspecialchars($tmp_nombre);
+            $nombre = $tmp_nombre;
         }
 
         if ($tmp_apellido == null) {
             $err .= "err_apellido=Debes introducir un apellido&";
         } else {
-            $apellido = htmlspecialchars($tmp_apellido);
+            $apellido = $tmp_apellido;
         }
 
         if ($tmp_direccion == null) {
             $err .= "err_direccion=Debes introducir una direccion&";
         } else {
-            $direccion = htmlspecialchars($tmp_direccion);
+            $direccion = $tmp_direccion;
         }
 
         if ($tmp_telefono == null) {
             $err .= "err_telefono=Debes introducir un telefono&";
         } else {
-            $telefono = htmlspecialchars($tmp_telefono);
+            $telefono = $tmp_telefono;
         }
 
         if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono) && isset($id_hermandad)) {

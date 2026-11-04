@@ -43,13 +43,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($tmp_elemento == null) {
             $err .= "&err_elemento=Debes introducir un nombre";
         } else {
-            $elemento = htmlspecialchars($tmp_elemento);
+            $elemento = $tmp_elemento;
         }
 
         if ($tmp_descripcion == null) {
             $err .= "&err_descripcion=Debes introducir una descripcion";
         } else {
-            $descripcion = htmlspecialchars($tmp_descripcion);
+            $descripcion = $tmp_descripcion;
         }
 
         if (isset($elemento) && isset($descripcion)) {
@@ -102,19 +102,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($tmp_elemento == null) {
             $err .= "&err_elemento=Debes introducir un nombre";
         } else {
-            $elemento = htmlspecialchars($tmp_elemento);
+            $elemento = $tmp_elemento;
         }
 
         if ($tmp_descripcion == null) {
             $err .= "&err_descripcion=Debes introducir una descripcion";
         } else {
-            $descripcion = htmlspecialchars($tmp_descripcion);
+            $descripcion = $tmp_descripcion;
         }
 
         if ($tmp_referencia == null) {
             $err .= "&err_referencia=Debes introducir una referencia";
         } else {
-            $referencia = htmlspecialchars($tmp_referencia);
+            $referencia = $tmp_referencia;
         }
 
         if (isset($referencia) && isset($elemento) && isset($descripcion) && isset($id_hermandad)) {

@@ -58,9 +58,9 @@ require("../controllers/inventarioLogic.php");
 
                 foreach ($elementosInventario as $elemento) {
                     echo "<tr>";
-                    echo "<td>" . $elemento["referencia"] . "</td>";
-                    echo "<td>" . $elemento["elemento"] . "</td>";
-                    echo "<td>" . $elemento["descripcion"] . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["referencia"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["elemento"]) . "</td>";
+                    echo "<td>" . htmlspecialchars($elemento["descripcion"]) . "</td>";
 
                 ?>
                     <td>
@@ -68,7 +68,7 @@ require("../controllers/inventarioLogic.php");
 
                         <form action="../controllers/inventarioLogic.php" method="POST" id="formulario-borrar">
                             <input type="hidden" name="control" value="borrar">
-                            <input type="hidden" name="referencia" value=<?php echo $elemento["referencia"] ?>>
+                            <input type="hidden" name="referencia" value="<?php echo htmlspecialchars($elemento["referencia"]) ?>">
 
                             <button class="btn-borrar" type="submit" style="border:none; background:none; padding:0;">
                                 <img src="../../public/assets/img/delete.svg" alt="Enviar" width="100" height="50">
@@ -82,9 +82,9 @@ require("../controllers/inventarioLogic.php");
             </tbody>
         </table>
         <?php
-        if (isset($_GET["err_referencia"])) echo "<p>" . $_GET["err_referencia"] . "</p>";
-        if (isset($_GET["err_elemento"])) echo "<p>" . $_GET["err_elemento"] . "</p>";
-        if (isset($_GET["err_descripcion"])) echo "<p>" . $_GET["err_descripcion"] . "</p>";
+        if (isset($_GET["err_referencia"])) echo "<p>" . htmlspecialchars($_GET["err_referencia"]) . "</p>";
+        if (isset($_GET["err_elemento"])) echo "<p>" . htmlspecialchars($_GET["err_elemento"]) . "</p>";
+        if (isset($_GET["err_descripcion"])) echo "<p>" . htmlspecialchars($_GET["err_descripcion"]) . "</p>";
 
 
         ?>
@@ -111,26 +111,26 @@ require("../controllers/inventarioLogic.php");
             <form class="form-nuevo" method="POST" action="../controllers/inventarioLogic.php">
                 <h3>Nuevo elemento</h3>
                 <input type="hidden" name="control" value="nuevo">
-                <input type="hidden" name="id_hermandad" value=<?php echo $_SESSION["id_hermandad"] ?>>
+                <input type="hidden" name="id_hermandad" value="<?php echo htmlspecialchars($_SESSION["id_hermandad"]) ?>">
                 <label for="referencia">Referencia</label>
                 <input type="text" id="referencia" name="referencia">
 
                 <?php
-                if (isset($_GET["err_referencia"])) echo "<p>" . $_GET["err_referencia"] . "</p>";
+                if (isset($_GET["err_referencia"])) echo "<p>" . htmlspecialchars($_GET["err_referencia"]) . "</p>";
                 ?>
 
                 <label for="elemento">Elemento</label>
                 <input type="text" id="elemento" name="elemento">
 
                 <?php
-                if (isset($_GET["err_elemento"])) echo "<p>" . $_GET["err_elemento"] . "</p>";
+                if (isset($_GET["err_elemento"])) echo "<p>" . htmlspecialchars($_GET["err_elemento"]) . "</p>";
                 ?>
 
                 <label for="descripcion">Descripción</label>
                 <input type="text" id="descripcion" name="descripcion">
 
                 <?php
-                if (isset($_GET["err_descripcion"])) echo "<p>" . $_GET["err_descripcion"] . "</p>";
+                if (isset($_GET["err_descripcion"])) echo "<p>" . htmlspecialchars($_GET["err_descripcion"]) . "</p>";
                 ?>
 
                 <input type="submit" value="Guardar cambios">
