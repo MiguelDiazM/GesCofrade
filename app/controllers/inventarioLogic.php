@@ -26,6 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$control) {
             $err .= "err_referencia=No existe esa referencia en la BBDD";
             header("Location: ../views/inventario.php$err");
+            exit;
         }
 
         $tmp_elemento = isset($_POST["elemento"]) ? $_POST["elemento"] : null;
@@ -83,6 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$control) {
             $err .= "err_referencia=Ya existe esa referencia en la BBDD";
             header("Location: ../views/inventario.php$err");
+            exit;
         }
 
         $tmp_elemento = isset($_POST["elemento"]) ? $_POST["elemento"] : null;
@@ -107,9 +109,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } else {
             $referencia = htmlspecialchars($tmp_referencia);
         }
-        if ($tmp_id_hermandad != null) {
-            $id_hermandad = $tmp_id_hermandad;
-        }
 
         if (isset($referencia) && isset($elemento) && isset($descripcion) && isset($id_hermandad)) {
             $consulta = "INSERT INTO inventario (referencia, elemento, descripcion, id_hermandad) VALUES (:r, :e, :d, :i)";
@@ -132,6 +131,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
     header("Location: ../views/inventario.php$err");
+    exit;
 }
 
 

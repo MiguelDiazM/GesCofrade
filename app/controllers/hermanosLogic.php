@@ -25,7 +25,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (!$control) {
             $err .= "err_referencia=No existe esa referencia en la BBDD&";
-            header("Location: ../views/inventario.php$err");
+            header("Location: ../views/hermanos.php$err");
+            exit;
         }
 
         $tmp_nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : null;
@@ -102,6 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (!$control) {
             $err .= "err_referencia=&";
             header("Location: ../views/hermanos.php$err");
+            exit;
         }
 
         $tmp_nombre = isset($_POST["nombre"]) ? $_POST["nombre"] : null;
@@ -134,11 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $telefono = htmlspecialchars($tmp_telefono);
         }
 
-        if($tmp_id_hermandad != null){
-            $id_hermandad = $tmp_id_hermandad;
-        }
-    
-        print_r("nombre: $nombre, apellido: $apellido, direccion: $direccion, telefono: $telefono, hermandad: $id_hermandad");
         if (isset($nombre) && isset($apellido) && isset($direccion) && isset($telefono) && isset($id_hermandad)) {
             if ($nombre === "") {
                 $nombre = $datosAntiguos["nombre"];
@@ -180,6 +177,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     }
     header("Location: ../views/hermanos.php$err");
+    exit;
 }
 
 function mostrarHermanos()

@@ -7,6 +7,7 @@ session_start();
 
 if (isset($_SESSION["usuario"])) {
     header("Location: ../../public/index.php");
+    exit;
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -71,8 +72,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
         }
         header("Location: ../views/login.php");
+        exit;
     }
     header("Location: $envioError");
+    exit;
 }
 
 function crearUsuarioContrasena($nombre, $contrasena, $poblacion)

@@ -1,4 +1,4 @@
-    <?php
+<?php
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
     require("../../config/database.php");
@@ -7,6 +7,7 @@
 
     if (isset($_SESSION["usuario"])) {
         header("Location: ../../public/index.php");
+        exit;
     }
 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -37,10 +38,12 @@
             } else {
                 $err_contrasena = "<span class='bg-warning'>La contraseña no coincide.</span>";
                 header("Location: ../views/login.php?err_contrasena=$err_contrasena");
+                exit;
             }
         } else {
             $err_nombre = "<span class='bg-warning'>El nombre de usuario no se encuentra en la base de datos.</span>";
             header("Location: ../views/login.php?err_nombre=$err_nombre");
+            exit;
         }
     }
     ?>
