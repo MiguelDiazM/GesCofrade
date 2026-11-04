@@ -47,6 +47,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
+        $usuarios = [];
+        $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
+        $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
+
+        // usuarios.usuario es varchar(50): un nombre más largo se guardaría recortado y no podría iniciar sesión
+        foreach ($usuarios as $usuario) {
+            if (mb_strlen($usuario["usuario"]) > 50) {
+                header("Location: ../views/signup.php?err_usuario=" . urlencode("El nombre de la hermandad y la ciudad son demasiado largos"));
+                exit;
+            }
+        }
+
         try {
             // La hermandad y sus dos usuarios se crean juntos o no se crea nada
             $_conexion->beginTransaction();
@@ -59,10 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 ":u" => $city
             ]);
             $id_hermandad = $_conexion->lastInsertId();
-
-            $usuarios = [];
-            $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
-            $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
 
             foreach ($usuarios as $usuario) {
                 $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, :id)";
