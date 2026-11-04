@@ -27,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             ]);
 
             if ($stmt->rowCount() > 0) {
-                $datosAntiguos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                $datosAntiguos = $stmt->fetch(PDO::FETCH_ASSOC);
             } else {
                 $control = false;
             }
