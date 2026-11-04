@@ -4,6 +4,9 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit;
 }
+if (!isset($_SESSION["csrf"])) {
+    $_SESSION["csrf"] = bin2hex(random_bytes(32));
+}
 require("../controllers/inventarioLogic.php");
 ?>
 <!DOCTYPE html>
@@ -68,6 +71,7 @@ require("../controllers/inventarioLogic.php");
 
                         <form action="../controllers/inventarioLogic.php" method="POST" id="formulario-borrar">
                             <input type="hidden" name="control" value="borrar">
+                            <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
                             <input type="hidden" name="referencia" value="<?php echo htmlspecialchars($elemento["referencia"]) ?>">
 
                             <button class="btn-borrar" type="submit" style="border:none; background:none; padding:0;">
@@ -93,6 +97,7 @@ require("../controllers/inventarioLogic.php");
             <form class="form-editar" method="POST" action="../controllers/inventarioLogic.php">
                 <h3>Editar elemento</h3>
                 <input type="hidden" name="control" value="editar">
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
 
                 <label for="referencia">Referencia</label>
                 <input readonly type="text" id="referencia" name="referencia">
@@ -111,6 +116,7 @@ require("../controllers/inventarioLogic.php");
             <form class="form-nuevo" method="POST" action="../controllers/inventarioLogic.php">
                 <h3>Nuevo elemento</h3>
                 <input type="hidden" name="control" value="nuevo">
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
                 <input type="hidden" name="id_hermandad" value="<?php echo htmlspecialchars($_SESSION["id_hermandad"]) ?>">
                 <label for="referencia">Referencia</label>
                 <input type="text" id="referencia" name="referencia">

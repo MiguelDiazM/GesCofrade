@@ -4,6 +4,9 @@ if (!isset($_SESSION["usuario"])) {
     header("Location: login.php");
     exit;
 }
+if (!isset($_SESSION["csrf"])) {
+    $_SESSION["csrf"] = bin2hex(random_bytes(32));
+}
 require("../controllers/hermanosLogic.php");
 ?>
 <!DOCTYPE html>
@@ -69,6 +72,7 @@ require("../controllers/hermanosLogic.php");
                         <img src="../../public/assets/img/edit.svg" alt="Editar" class="btn-editar">
                         <form action="../controllers/hermanosLogic.php" method="POST">
                             <input type="hidden" name="control" value="borrar">
+                            <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
                             <input type="hidden" name="dni" value="<?php echo htmlspecialchars($elemento["DNI"]) ?>">
 
                             <button type="submit" style="border:none; background:none; padding:0;">
@@ -87,6 +91,7 @@ require("../controllers/hermanosLogic.php");
             <form class="form-editar" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Editar elemento</h3>
                 <input type="hidden" name="control" value="editar">
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
                 <label for="dni">DNI</label>
                 <input readonly type="text" id="dni" name="dni">
 
@@ -130,6 +135,7 @@ require("../controllers/hermanosLogic.php");
             <form class="form-nuevo" method="POST" action="../controllers/hermanosLogic.php">
                 <h3>Nuevo hermano</h3>
                 <input type="hidden" name="control" value="nuevo">
+                <input type="hidden" name="csrf" value="<?php echo $_SESSION["csrf"] ?>">
                 <input type="hidden" name="id_hermandad" value="<?php echo htmlspecialchars($_SESSION["id_hermandad"]) ?>">
                 <label for="dni">DNI</label>
                 <input type="text" id="dni" name="dni">

@@ -8,6 +8,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     $id_hermandad = $_SESSION["id_hermandad"];
+    if (!isset($_POST["csrf"], $_SESSION["csrf"]) || !hash_equals($_SESSION["csrf"], $_POST["csrf"])) {
+        header("Location: ../views/inventario.php");
+        exit;
+    }
 
     $control = true;
     $err = "?";
