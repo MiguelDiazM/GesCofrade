@@ -49,27 +49,43 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     if (isset($nombre) && isset($contrasena) && isset($city) && isset($tipo)) {
-        $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
-        $stmt = $_conexion->prepare($consulta);
-        $stmt->execute([
-            ":n" => $nombre,
-            ":t" => $tipo,
-            ":u" => $city
-        ]);
+        try {
+            // La hermandad y sus dos usuarios se crean juntos o no se crea nada
+            $_conexion->beginTransaction();
 
-        $usuarios = [];
-        $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
-        $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
-
-        foreach ($usuarios as $usuario) {
-            $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, (SELECT id_hermandad FROM hermandad WHERE nombre = :nombre LIMIT 1))";
-            $stmt_insert = $_conexion->prepare($insert);
-
-            $stmt_insert->execute([
-                ":usuario" => $usuario["usuario"],
-                ":contrasena" => $usuario["contrasena"],
-                ":nombre" => $nombre
+            $consulta = "INSERT INTO hermandad (nombre, tipo, ubicacion) VALUES (:n, :t, :u)";
+            $stmt = $_conexion->prepare($consulta);
+            $stmt->execute([
+                ":n" => $nombre,
+                ":t" => $tipo,
+                ":u" => $city
             ]);
+            $id_hermandad = $_conexion->lastInsertId();
+
+            $usuarios = [];
+            $usuarios[] = crearUsuarioContrasena($nombre, $contrasena, $city);
+            $usuarios[] = crearUsuarioAdminContrasena($nombre, $contrasena, $city);
+
+            foreach ($usuarios as $usuario) {
+                $insert = "INSERT INTO usuarios (usuario, contrasena, id_hermandad) VALUES (:usuario, :contrasena, :id)";
+                $stmt_insert = $_conexion->prepare($insert);
+
+                $stmt_insert->execute([
+                    ":usuario" => $usuario["usuario"],
+                    ":contrasena" => $usuario["contrasena"],
+                    ":id" => $id_hermandad
+                ]);
+            }
+
+            $_conexion->commit();
+        } catch (PDOException $e) {
+            $_conexion->rollBack();
+            // 1062: el nombre de usuario generado ya existe
+            if ($e->errorInfo[1] == 1062) {
+                header("Location: ../views/signup.php?err_usuario=Ya existe una hermandad registrada con ese nombre y ciudad");
+                exit;
+            }
+            throw $e;
         }
         header("Location: ../views/login.php");
         exit;
